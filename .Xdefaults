@@ -1,0 +1,69 @@
+Xft.antialias:          true
+Xft.hinting:            true
+Xft.hintstyle:          hintslight
+
+URxvt*inheritPixmap:    false
+URxvt*scrollBar:        false
+URxvt*termName: rxvt
+URxvt.perl-ext-common: default,tabbed
+
+URxvt.font:		xft:Bitstream Vera Sans Mono:size=12
+#URxvt.font:xft:DejaVu Sans Mono:size=11
+
+URxvt.keysym.C-Left: \033[1;5D
+URxvt.keysym.C-Right: \033[1;5C
+URxvt.keysym.C-Prior: \033[5;5~
+URxvt.keysym.C-Next: \033[6;5~
+#URxvt*inheritPixmap: true
+
+URxvt*urlLauncher:      google-chrome
+
+*visualBell : True
+
+# My color scheme
+#URxvt*foreground: #FFF8DC
+#URxvt*background: #2B2B2B
+URxvt*foreground: #2B2B2B
+URxvt*background: #FFFFFF
+#URxvt*background: #FFF8DC
+
+! Black (not tango) + DarkGrey
+*color8: #00aa00
+*color0: #1F1F1F
+
+# Dark Red
+*color1:  #FF512C
+# Red
+*color9:  #FF361E
+
+# TODO Dark Green :
+*color2: #008B00
+#*color10: #F2A21F
+*color10: #42C700
+
+# Dark Yellow
+*color3: #A0522D
+# Yellow
+*color11: #ffb90f
+
+# Dark Blue
+*color4:  #3A5FCD
+# Blue
+*color12: #4B9DE3
+
+# DarkMangenta
+*color5:  #ce5c00
+# Mangenta
+*color13: #ff7f00
+
+# Dark Cyan
+#*color6: #22A21F
+*color6: #1874CD
+# MP3 ^
+!TODO : Cyan 
+*color14: #00CDCD
+
+! LightGrey + White
+*color7: #9c9c9c
+#*color7: #9c9c9c
+*color15: #a020f0

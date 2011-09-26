@@ -1,0 +1,14 @@
+[alias]
+s = status
+b = branch
+ci = commit
+co = checkout
+
+l = log -C --decorate
+ls = log -C --stat --decorate
+lga = log --graph '--pretty=tformat:%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s' --all
+[color]
+	ui = auto
+[user]
+	name = Valiev Sergey
+	mail = svaliev@gmail.com

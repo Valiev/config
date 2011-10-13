@@ -11,8 +11,7 @@ URxvt.tabbed.tabbar-bg: -1
 URxvt.tabbed.tab-fg:    4
 URxvt.tabbed.tab-bg:    1
 
-URxvt.font:		xft:Bitstream Vera Sans Mono:size=12
-#URxvt.font:xft:DejaVu Sans Mono:size=11
+URxvt.font: xft:Bitstream Vera Sans Mono,xft:Dejavu Sans Mono
 
 URxvt.keysym.C-Left: \033[1;5D
 URxvt.keysym.C-Right: \033[1;5C

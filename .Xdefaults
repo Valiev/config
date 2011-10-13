@@ -6,6 +6,10 @@ URxvt*inheritPixmap:    false
 URxvt*scrollBar:        false
 URxvt*termName: rxvt
 URxvt.perl-ext-common: default,tabbed
+URxvt.tabbed.tabbar-fg: 6
+URxvt.tabbed.tabbar-bg: -1
+URxvt.tabbed.tab-fg:    4
+URxvt.tabbed.tab-bg:    1
 
 URxvt.font:		xft:Bitstream Vera Sans Mono:size=12
 #URxvt.font:xft:DejaVu Sans Mono:size=11

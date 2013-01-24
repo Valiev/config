@@ -71,6 +71,15 @@
   NeoBundle 'Shougo/vimproc'
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Lokaltog/vim-easymotion'
+  "NeoBundle 'davidhalter/jedi-vim.git'
+  NeoBundle 'ervandew/supertab'
+  NeoBundle 'taglist.vim'
+  NeoBundle 'mitechie/pyflakes-pathogen'
+  NeoBundle 'fs111/pydoc.vim'
+  "NeoBundle 'sontek/rope-vim'
+  "NeoBundle 'pep8'
+  NeoBundle 'Pydiction'
+
   filetype plugin indent on
   NeoBundleCheck
 " }

@@ -13,6 +13,7 @@
   set softtabstop=4
   set shiftwidth=4
   set tw=80
+  set backspace=indent,eol,start
   " Highlight >80 chars
   "au! BufNewFile,BufRead * exec 'match Todo /\%>' . &textwidth . 'v.\+/'
 " }

@@ -97,18 +97,22 @@
   let c_space_errors = 1
   let python_highlight_space_errors = 1
   let python_highlight_all = 1
-  autocmd FileType python set complete+=k~/.vim/syntax/python.vim 
+  autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
+  "autocmd FileType python set complete+=k~/.vim/syntax/python.vim 
+  "au FileType python set omnifunc=pythoncomplete#Complete
+  "let g:SuperTabDefaultCompletionType = "context"
   "isk+=.,(
   "autocmd FileType python setlocal noet tabstop=8 softtabstop=8 shiftwidth=8
   autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
   set tags=~/git/work/tests/tags
   let g:pylint_cwindow = 0 " Disable pylint window
+  let g:jedi#use_tabs_not_buffers = 0
 " }
 
 " let g:load_doxygen_syntax=1
 
 " Key mapping {
-  map <F5> :!make<CR>
+"  map <F5> :!make<CR>
   map <F2> :A<CR>
   map <F3> :TlistToggle<CR>
   map <F4> :GitBlame<CR>

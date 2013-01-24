@@ -10,5 +10,6 @@ lga = log --graph '--pretty=tformat:%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%C
 [color]
 	ui = auto
 [user]
-	name = Valiev Sergey
+	name = Sergey Valiev
 	mail = svaliev@gmail.com
+	email = svaliev@gmail.com

@@ -28,17 +28,7 @@ alias cdgwt="   cd ~/git/work/tests"
 alias mv="      mv -v"
 alias mgrep='   find . -type f | xargs -d "\n" -P $NUMCPU grep'
 
-alias ncmpc="   ncmpc -c"
-alias ncm="     ncmpcpp"
-alias mpd="     sudo mpd"
-
 alias hibr="    sudo hibernate-ram"
-alias top="     top -d 1"
-alias urxvt="	urxvt -pe tabbed"
-# }
-
-# python {
-alias pycheck="	python -m py_compile"
 # }
 
 # VIM {
@@ -67,9 +57,6 @@ alias gvimpy="  gvim $py_files"
 # NETWORK {
 alias ya="ping ya.ru"
 alias нф="ya"
-
-alias ping_router="ping 192.168.1.1"
-alias rdesktop_local="rdesktop -K -k en-us -u administrator -p 1q2w3e -g 1024x768"
 # }
 
 # XMONAD {

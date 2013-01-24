@@ -73,7 +73,7 @@
   let python_highlight_all = 1
   autocmd FileType python set complete+=k~/.vim/syntax/python.vim 
   "isk+=.,(
-  autocmd FileType python setlocal noet tabstop=8 softtabstop=8 shiftwidth=8
+  "autocmd FileType python setlocal noet tabstop=8 softtabstop=8 shiftwidth=8
   autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
   set tags=~/git/work/tests/tags
   let g:pylint_cwindow = 0 " Disable pylint window

@@ -51,7 +51,7 @@
   if has("autocmd") " resume last position in file 
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   endif
-  colorscheme koehler
+  colorscheme Peacock
 
   if has("gui_running") 
     highlight SpellBad term=underline gui=undercurl guisp=Orange 

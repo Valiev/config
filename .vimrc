@@ -71,7 +71,7 @@
   NeoBundle 'Shougo/vimproc'
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Lokaltog/vim-easymotion'
-  "NeoBundle 'davidhalter/jedi-vim.git'
+  NeoBundle 'davidhalter/jedi-vim.git'
   NeoBundle 'ervandew/supertab'
   NeoBundle 'taglist.vim'
   NeoBundle 'mitechie/pyflakes-pathogen'
@@ -106,7 +106,7 @@
   autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
   set tags=~/git/work/tests/tags
   let g:pylint_cwindow = 0 " Disable pylint window
-  let g:jedi#use_tabs_not_buffers = 0
+  let g:jedi#auto_vim_configuration = 0
 " }
 
 " let g:load_doxygen_syntax=1

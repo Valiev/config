@@ -6,6 +6,43 @@
   filetype plugin on
 " }
 
+" Pluging manager {
+  if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  endif
+  call neobundle#rc(expand('~/.vim/bundle/'))
+  " Let NeoBundle manage NeoBundle
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  " Recommended to install
+  "  " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f
+  "  your_machines_makefile
+  "NeoBundle 'Shougo/vimproc'
+  "NeoBundle 'mitechie/pyflakes-pathogen'
+  "NeoBundle 'sontek/rope-vim'
+  "NeoBundle 'pep8'
+  "NeoBundle 'snipMate'
+  "NeoBundle 'UltiSnips'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Lokaltog/vim-easymotion'
+  NeoBundle 'davidhalter/jedi-vim.git'
+  NeoBundle 'ervandew/supertab'
+  NeoBundle 'taglist.vim'
+  NeoBundle 'fs111/pydoc.vim'
+  NeoBundle 'Pydiction'
+  NeoBundle 'Colour-Sampler-Pack'
+  NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'tpope/vim-vividchalk'
+  NeoBundle 'tpope/vim-endwise'
+  NeoBundle "vim-ruby/vim-ruby"
+  NeoBundle "airblade/vim-gitgutter"
+  NeoBundle "tejr/vim-nagios"
+  NeoBundle "vim-scripts/pyflakes.vim"
+  NeoBundle "Keithbsmiley/rspec.vim"
+
+  filetype plugin indent on
+  NeoBundleCheck
+" }
+
 " Text {
   set nowrap
   set smartindent
@@ -36,7 +73,7 @@
 
 
 " GUI features {
-  set background=light
+  set background=dark
   set nocp
   set noerrorbells  " Тихо.
   set vb            " Еще тише. :)
@@ -51,38 +88,14 @@
   if has("autocmd") " resume last position in file 
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   endif
-  colorscheme Peacock
+  "colorscheme anotherdark
+  colorscheme molokai
 
   if has("gui_running") 
     highlight SpellBad term=underline gui=undercurl guisp=Orange 
   endif 
 " }
 
-" Pluging manager {
-  if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-  endif
-  call neobundle#rc(expand('~/.vim/bundle/'))
-  " Let NeoBundle manage NeoBundle
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  " Recommended to install
-  "  " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f
-  "  your_machines_makefile
-  NeoBundle 'Shougo/vimproc'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Lokaltog/vim-easymotion'
-  NeoBundle 'davidhalter/jedi-vim.git'
-  NeoBundle 'ervandew/supertab'
-  NeoBundle 'taglist.vim'
-  NeoBundle 'mitechie/pyflakes-pathogen'
-  NeoBundle 'fs111/pydoc.vim'
-  "NeoBundle 'sontek/rope-vim'
-  "NeoBundle 'pep8'
-  NeoBundle 'Pydiction'
-
-  filetype plugin indent on
-  NeoBundleCheck
-" }
 
 " GVim features {
 " set guifont=DejaVu\ Sans\ Mono\ 9
@@ -98,13 +111,18 @@
   let python_highlight_space_errors = 1
   let python_highlight_all = 1
   autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
+  autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd BufNewFile,BufRead *.json set ft=javascript
+  autocmd FileType ruby compiler ruby
+  set tabstop=2 
+  set softtabstop=2
+  set shiftwidth=2
   "autocmd FileType python set complete+=k~/.vim/syntax/python.vim 
   "au FileType python set omnifunc=pythoncomplete#Complete
   "let g:SuperTabDefaultCompletionType = "context"
   "isk+=.,(
-  "autocmd FileType python setlocal noet tabstop=8 softtabstop=8 shiftwidth=8
-  autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
-  set tags=~/git/work/tests/tags
+  "autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
+  set tags=~/dev/tags
   let g:pylint_cwindow = 0 " Disable pylint window
   let g:jedi#auto_vim_configuration = 0
 " }
@@ -112,9 +130,11 @@
 " let g:load_doxygen_syntax=1
 
 " Key mapping {
-"  map <F5> :!make<CR>
-  map <F2> :A<CR>
+  "map <F5> :!make<CR>
+  "map <F2> :A<CR>
   map <F3> :TlistToggle<CR>
   map <F4> :GitBlame<CR>
   map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+  map \ :NERDTreeToggle<CR>
+  
 " }

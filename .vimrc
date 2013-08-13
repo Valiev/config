@@ -38,6 +38,7 @@
   NeoBundle "tejr/vim-nagios"
   NeoBundle "vim-scripts/pyflakes.vim"
   NeoBundle "Keithbsmiley/rspec.vim"
+  NeoBundle "bling/vim-airline"
 
   filetype plugin indent on
   NeoBundleCheck
@@ -125,6 +126,8 @@
   set tags=~/dev/tags
   let g:pylint_cwindow = 0 " Disable pylint window
   let g:jedi#auto_vim_configuration = 0
+  let g:airline_theme='dark'
+  set laststatus=2
 " }
 
 " let g:load_doxygen_syntax=1

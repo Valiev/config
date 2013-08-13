@@ -58,11 +58,11 @@
 
 " Search {
   set noignorecase
-  set incsearch       " Искать по мере ввода символов
-  set hlsearch        " Подсвечивать все найденные строки
+  set incsearch       " Search during typing
+  set hlsearch        " Highlight found strings
   set history=500
   set undolevels=50
-  set completeopt=longest,menuone     " автодополнение как в нормальном IDE
+  set completeopt=longest,menuone     " IDE-like autocomplete
 " }
 
 
@@ -76,14 +76,14 @@
 " GUI features {
   set background=dark
   set nocp
-  set noerrorbells  " Тихо.
-  set vb            " Еще тише. :)
-  set showmatch     " Подсвечивать парные скобки 
-  set et            " Пробелы вместо табов.
+  set noerrorbells  " Silent
+  set vb            " Even more silent
+  set showmatch     " Highlight paired parentheses
+  set et            " Spaces instead of tabs
   set scrolloff=2
-  set nonu          " Выключить нумерацию строк.
+  set nonu          " Turn off line numeration. Really piss me off.
   set linespace=0
-  set ruler         " Показывать в нижней строке позицию курсора.
+  set ruler         " Show cursor position info in the bottom if vim
   set t_Co=256
 
   if has("autocmd") " resume last position in file 

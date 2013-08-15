@@ -135,6 +135,12 @@
 " Key mapping {
   "map <F5> :!make<CR>
   "map <F2> :A<CR>
+
+  " Shortcut to rapidly toggle `set list`
+  nmap <leader>l :set list!<CR>
+  " Use the same symbols as TextMate for tabstops and EOLs
+  set listchars=tab:▸\ ,eol:¬
+
   map <F3> :TlistToggle<CR>
   map <F4> :GitBlame<CR>
   map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>

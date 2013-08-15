@@ -39,6 +39,7 @@
   NeoBundle "vim-scripts/pyflakes.vim"
   NeoBundle "Keithbsmiley/rspec.vim"
   NeoBundle "bling/vim-airline"
+  NeoBundle "vim-scripts/DeleteTrailingWhitespace"
 
   filetype plugin indent on
   NeoBundleCheck
@@ -128,6 +129,9 @@
   let g:jedi#auto_vim_configuration = 0
   let g:airline_theme='dark'
   set laststatus=2
+  let g:DeleteTrailingWhitespace = 1
+  autocmd BufWritePre *.py,*.js :call <SID>DeleteTrailingWhitespace()
+
 " }
 
 " let g:load_doxygen_syntax=1

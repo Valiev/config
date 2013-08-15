@@ -130,7 +130,7 @@
   let g:airline_theme='dark'
   set laststatus=2
   let g:DeleteTrailingWhitespace = 1
-  autocmd BufWritePre *.py,*.js :call <SID>DeleteTrailingWhitespace()
+  let g:DeleteTrailingWhitespace_Action = 'delete'
 
 " }
 

@@ -87,15 +87,15 @@
   set ruler         " Show cursor position info in the bottom if vim
   set t_Co=256
 
-  if has("autocmd") " resume last position in file 
+  if has("autocmd") " resume last position in file
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   endif
   "colorscheme anotherdark
   colorscheme molokai
 
-  if has("gui_running") 
-    highlight SpellBad term=underline gui=undercurl guisp=Orange 
-  endif 
+  if has("gui_running")
+    highlight SpellBad term=underline gui=undercurl guisp=Orange
+  endif
 " }
 
 
@@ -116,10 +116,10 @@
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd BufNewFile,BufRead *.json set ft=javascript
   autocmd FileType ruby compiler ruby
-  set tabstop=2 
+  set tabstop=2
   set softtabstop=2
   set shiftwidth=2
-  "autocmd FileType python set complete+=k~/.vim/syntax/python.vim 
+  "autocmd FileType python set complete+=k~/.vim/syntax/python.vim
   "au FileType python set omnifunc=pythoncomplete#Complete
   "let g:SuperTabDefaultCompletionType = "context"
   "isk+=.,(
@@ -149,5 +149,5 @@
   map <F4> :GitBlame<CR>
   map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
   map \ :NERDTreeToggle<CR>
-  
+
 " }

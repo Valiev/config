@@ -40,6 +40,7 @@
   NeoBundle "Keithbsmiley/rspec.vim"
   NeoBundle "bling/vim-airline"
   NeoBundle "vim-scripts/DeleteTrailingWhitespace"
+  NeoBundle 'tpope/vim-surround'
 
   filetype plugin indent on
   NeoBundleCheck

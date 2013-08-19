@@ -33,13 +33,13 @@
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'tpope/vim-vividchalk'
   NeoBundle 'tpope/vim-endwise'
-  NeoBundle "vim-ruby/vim-ruby"
-  NeoBundle "airblade/vim-gitgutter"
-  NeoBundle "tejr/vim-nagios"
-  NeoBundle "vim-scripts/pyflakes.vim"
-  NeoBundle "Keithbsmiley/rspec.vim"
-  NeoBundle "bling/vim-airline"
-  NeoBundle "vim-scripts/DeleteTrailingWhitespace"
+  NeoBundle 'vim-ruby/vim-ruby'
+  NeoBundle 'airblade/vim-gitgutter'
+  NeoBundle 'tejr/vim-nagios'
+  NeoBundle 'vim-scripts/pyflakes.vim'
+  NeoBundle 'Keithbsmiley/rspec.vim'
+  NeoBundle 'bling/vim-airline'
+  NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
   NeoBundle 'tpope/vim-surround'
 
   filetype plugin indent on

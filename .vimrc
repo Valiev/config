@@ -42,6 +42,7 @@
   NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'elzr/vim-json'
+  NeoBundle 'vim-scripts/ScrollColors'
 
   filetype plugin indent on
   NeoBundleCheck

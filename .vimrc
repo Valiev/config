@@ -41,6 +41,7 @@
   NeoBundle 'bling/vim-airline'
   NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
   NeoBundle 'tpope/vim-surround'
+  NeoBundle 'elzr/vim-json'
 
   filetype plugin indent on
   NeoBundleCheck
@@ -115,7 +116,6 @@
   let python_highlight_all = 1
   autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
-  autocmd BufNewFile,BufRead *.json set ft=javascript
   autocmd FileType ruby compiler ruby
   set tabstop=2
   set softtabstop=2

@@ -1,10 +1,13 @@
 # VARIABLES {
-NUMCPU=$(cat /proc/cpuinfo | grep processor | wc -l)
+#NUMCPU=$(cat /proc/cpuinfo | grep processor | wc -l)
+
+. ~/.todo.cfg
 
 cpp_files=" *.cpp"
 c_files="   *.c"
 h_files="   *.h"
 py_files="  *.py"
+rb_files="  *.rb"
 tex_files=" *.tex"
 
 bash_aliases="  ~/.bash_aliases"
@@ -23,12 +26,14 @@ alias ll="  ls -l -h"
 alias la="  ls -A"
 
 alias rm="  rm -v"
-alias cdgwt="   cd ~/git/work/tests"
 
 alias mv="      mv -v"
 alias mgrep='   find . -type f | xargs -d "\n" -P $NUMCPU grep'
 
 alias hibr="    sudo hibernate-ram"
+alias spu='     sudo port uninstall'
+alias t="todo.sh"
+alias gitinfo='ssh gitolite@git.aligntech.com'
 # }
 
 # VIM {
@@ -40,6 +45,7 @@ alias vimcpp="  vim $cpp_files"
 alias vimc="    vim $c_files"
 alias vimtex="  vim $tex_files"
 alias vimpy="   vim $py_files"
+alias vimrb="   vim $rb_files"
 alias vimxmonad="   vim $xmonad_conf"
 # }
 
@@ -57,8 +63,4 @@ alias gvimpy="  gvim $py_files"
 # NETWORK {
 alias ya="ping ya.ru"
 alias нф="ya"
-# }
-
-# XMONAD {
-alias xmonad_recompile="xmonad --recompile"
 # }

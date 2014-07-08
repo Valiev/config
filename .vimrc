@@ -59,6 +59,8 @@
 " - Appearel
   NeoBundle 'kshenoy/vim-signature' " highlight marks
 
+  NeoBundle 'mhinz/vim-startify'
+
   NeoBundle 'bling/vim-airline' " status bar
   set laststatus=2
   set hidden
@@ -70,6 +72,8 @@
   NeoBundle 'bling/vim-bufferline'
 
 " - Colors
+  NeoBundle 'Colour-Sampler-Pack'
+
   NeoBundle 'flazz/vim-colorschemes'
 
   NeoBundle 'vim-scripts/ScrollColors'
@@ -112,7 +116,6 @@
   " NeoBundle 'Lokaltog/vim-easymotion'
   " NeoBundle 'ervandew/supertab'
   " NeoBundle 'taglist.vim'
-  " NeoBundle 'Colour-Sampler-Pack'
   " NeoBundle 'scrooloose/nerdtree'
   " NeoBundle 'vim-ruby/vim-ruby'
   " NeoBundle 'airblade/vim-gitgutter'
@@ -288,10 +291,6 @@
   nnoremap * #
   nnoremap - :Switch<cr>
 
-
-  map <F3> :TlistToggle<CR>
-  map <F4> :GitBlame<CR>
-  map \ :NERDTreeToggle<CR>
   noremap H ^
   noremap L $
   nnoremap U <C-r>

@@ -20,6 +20,12 @@
   NeoBundle "wting/rust.vim"
 
 " - Coding features
+  NeoBundle "bkad/CamelCaseMotion"
+
+  NeoBundle "vim-gitgutter" " Git diff
+
+  NeoBundle "scrooloose/syntastic"
+
   NeoBundle 'tpope/vim-surround'
 
   NeoBundle 'tpope/vim-commentary'
@@ -39,6 +45,7 @@
   let g:DeleteTrailingWhitespace_Action = 'delete'
 
   NeoBundle 'Townk/vim-autoclose'
+  NeoBundle 'mattn/flappyvird-vim'
 
 " - Python
   " NeoBundle 'mitechie/pyflakes-pathogen'
@@ -53,17 +60,27 @@
   " let g:jedi#use_splits_not_buffers = "right"
 
 " - JSON
-  NeoBundle 'elzr/vim-json'
-  let g:vim_json_syntax_conceal = 0
+  " NeoBundle 'pangloss/vim-javascript'
+  " NeoBundle 'elzr/vim-json'
+  " NeoBundle "leshill/vim-json"
+  " let g:vim_json_syntax_conceal = 0
+  " au! BufRead,BufNewFile *.json set filetype=json
 
 " - Appearel
+  NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
+
+  NeoBundle 'junegunn/goyo.vim' " Distraction-free
+  let g:goyo_width = 100
+
   NeoBundle 'kshenoy/vim-signature' " highlight marks
 
   NeoBundle 'mhinz/vim-startify'
 
   NeoBundle 'bling/vim-airline' " status bar
   set laststatus=2
-  set hidden
+  let g:airline#extensions#tabline#enabled = 1
+
+  " set hidden
   let g:airline_theme='dark'
   let g:airline_exclude_preview = 1
   let g:airline#extensions#tabline#enabled = 0
@@ -72,6 +89,12 @@
   NeoBundle 'bling/vim-bufferline'
 
 " - Colors
+  NeoBundle "noahfrederick/vim-noctu"
+
+  NeoBundle 'gorodinskiy/vim-coloresque'
+
+  NeoBundle 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
+
   NeoBundle 'Colour-Sampler-Pack'
 
   NeoBundle 'flazz/vim-colorschemes'
@@ -120,14 +143,12 @@
   " NeoBundle 'vim-ruby/vim-ruby'
   " NeoBundle 'airblade/vim-gitgutter'
   " NeoBundle 'Keithbsmiley/rspec.vim'
-  " NeoBundle 'godlygeek/csapprox'
   " NeoBundle 'kien/ctrlp.vim'
   " NeoBundle 'Valloric/YouCompleteMe'
   " NeoBundle 'nelstrom/vim-textobj-rubyblock'
   " NeoBundle 'nelstrom/vim-textobj-user'
   " NeoBundle 'mbbill/undotree'
   " NeoBundle 'Rykka/colorv.vim'
-  " NeoBundle 'skammer/vim-css-color'
   " NeoBundle "MarcWeber/vim-addon-mw-utils"
   " NeoBundle "tomtom/tlib_vim"
   " NeoBundle "vadv/vim-chef"
@@ -242,6 +263,7 @@
   au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
   au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
   au BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
+  " autocmd BufNewFile,BufRead *.json set ft=javascript
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
@@ -278,7 +300,8 @@
       \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
   omap s :normal vs<CR>
 
-  nmap <Leader><Leader> V
+  " nmap <Leader><Leader> V
+  nnoremap <Leader><Space> :Goyo<CR>
   map q: :q
   " Shortcut to rapidly toggle `set list`
   nmap <leader>l :set list!<CR>

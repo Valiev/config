@@ -227,11 +227,12 @@
   endif
 
   " colorscheme Mustang
+  colorscheme symfony
   " colorscheme ekvoli
   " colorscheme anotherdark
   " colorscheme molokai
   " colorscheme railscasts
-  colorscheme Molokai
+  " colorscheme Molokai
   " colorscheme badwolf
   " colorscheme scame
   "colorscheme softblue

@@ -71,6 +71,7 @@
 
   NeoBundle 'junegunn/goyo.vim' " Distraction-free
   let g:goyo_width = 100
+  nnoremap <Leader><Leader> :Goyo<CR>
 
   NeoBundle 'kshenoy/vim-signature' " highlight marks
 
@@ -302,7 +303,6 @@
   omap s :normal vs<CR>
 
   " nmap <Leader><Leader> V
-  nnoremap <Leader><Space> :Goyo<CR>
   map q: :q
   " Shortcut to rapidly toggle `set list`
   nmap <leader>l :set list!<CR>

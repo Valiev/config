@@ -331,5 +331,9 @@
 
   " make Y consistent with C and D. See :help Y.
   nnoremap Y y$
+  map <UP> <NOP>
+  map <DOWN> <NOP>
+  map <LEFT> <NOP>
+  map <RIGHT> <NOP>
 
 " }

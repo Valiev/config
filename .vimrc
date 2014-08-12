@@ -71,7 +71,6 @@
 
   NeoBundle 'junegunn/goyo.vim' " Distraction-free
   let g:goyo_width = 100
-  nnoremap <Leader><Leader> :Goyo<CR>
 
   NeoBundle 'kshenoy/vim-signature' " highlight marks
 
@@ -286,6 +285,7 @@
   "map <F2> :A<CR>
 
   let mapleader = "\<Space>"
+  nnoremap <Leader><Leader> :Goyo<CR>
   " save
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>

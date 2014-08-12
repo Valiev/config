@@ -227,9 +227,8 @@
   endif
 
   " colorscheme Mustang
-  colorscheme symfony
-  " colorscheme ekvoli
-  " colorscheme anotherdark
+  " colorscheme symfony
+  colorscheme anotherdark
   " colorscheme molokai
   " colorscheme railscasts
   " colorscheme Molokai

@@ -274,6 +274,7 @@
   "isk+=.,(
   "autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
   set tags=~/dev/tags
+  au FocusLost * :wa
   "set tags=./tags;$HOME " walk directory tree upto $HOME looking for tags
 
 " }

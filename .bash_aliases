@@ -18,12 +18,15 @@ todo_local="    TODO"
 xmonad_conf="   ~/.xmonad/xmonad.hs"
 
 PATH="$PATH:/sbin:/usr/sbin" # Debian workaround
+export EDITOR=vim
+
 # }
 
 # STUFF {
 alias ls="  ls --color='yes'"
 alias ll="  ls -l -h"
 alias la="  ls -A"
+alias repo="cat .git/config | grep url | cut -d= -f2"
 
 alias rm="  rm -v"
 
@@ -35,7 +38,8 @@ alias spu='     sudo port uninstall'
 alias t="todo.sh"
 alias gitinfo='ssh gitolite@git.aligntech.com'
 # }
-
+#
+#
 # VIM {
 alias vim="     vim -p"
 alias vimba="   vim $bash_aliases"

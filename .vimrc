@@ -17,12 +17,30 @@
 " - Filetypes
   NeoBundle 'tejr/vim-nagios'
 
+
+
   NeoBundle "wting/rust.vim"
 
 " - Coding features
+  NeoBundle 'junegunn/vim-easy-align'
+  " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+  vmap <Enter> <Plug>(EasyAlign)
+
+  " Git management
+  NeoBundle 'tpope/vim-fugitive'
+
+  " After object actions
+  NeoBundle 'junegunn/vim-after-object'
+  " va=  visual after =
+  " ca=  change after =
+  " da=  delete after =
+  " ya=  yank after =
+  autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ', '*', '.')
+
   NeoBundle "bkad/CamelCaseMotion"
 
-  NeoBundle "vim-gitgutter" " Git diff
+  " Git diff
+  NeoBundle "vim-gitgutter"
 
   NeoBundle "scrooloose/syntastic"
 
@@ -42,10 +60,14 @@
 
   NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
   let g:DeleteTrailingWhitespace=1
-  let g:DeleteTrailingWhitespace_Action = 'delete'
+  :
 
   NeoBundle 'Townk/vim-autoclose'
+
   NeoBundle 'mattn/flappyvird-vim'
+
+" - Haskell
+  " NeoBundle 'Twinside/vim-haskellConceal'
 
 " - Python
   " NeoBundle 'mitechie/pyflakes-pathogen'
@@ -68,6 +90,8 @@
 
 " - Appearel
   NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
+  let g:limelight_conceal_ctermfg = 'gray'
+  let g:limelight_conceal_guifg = 'DarkGray'
 
   NeoBundle 'junegunn/goyo.vim' " Distraction-free
   let g:goyo_width = 100
@@ -76,24 +100,34 @@
 
   NeoBundle 'mhinz/vim-startify'
 
+  " NeoBundle 'itchyny/lightline.vim'
+  " set laststatus=2 " To show menubar
+  " set noshowmode
   NeoBundle 'bling/vim-airline' " status bar
   set laststatus=2
   let g:airline#extensions#tabline#enabled = 1
 
-  " set hidden
-  let g:airline_theme='dark'
+  NeoBundle 'reedes/vim-thematic'
+
+  set hidden
+  let g:airline_theme='light'
   let g:airline_exclude_preview = 1
   let g:airline#extensions#tabline#enabled = 0
   autocmd BufEnter, BufNewFile * silent! lcd %:p:h
 
-  NeoBundle 'bling/vim-bufferline'
+  " NeoBundle 'bling/vim-bufferline'
 
 " - Colors
   NeoBundle "noahfrederick/vim-noctu"
 
+  let g:seoul256_background = 256
+  NeoBundle 'junegunn/seoul256.vim'
+
   NeoBundle 'gorodinskiy/vim-coloresque'
 
   NeoBundle 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
+
+
 
   NeoBundle 'Colour-Sampler-Pack'
 
@@ -228,12 +262,14 @@
 
   " colorscheme Mustang
   " colorscheme symfony
-  colorscheme anotherdark
+  " colorscheme anotherdark
   " colorscheme molokai
   " colorscheme railscasts
+  " colorscheme Mustang
   " colorscheme Molokai
   " colorscheme badwolf
   " colorscheme scame
+  colorscheme summerfruit256
   "colorscheme softblue
   "colorscheme jellybeans
 
@@ -256,11 +292,12 @@
   let c_space_errors = 1
   let python_highlight_space_errors = 1
   let python_highlight_all = 1
-  " autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
+  "utocmd FileType python set colorscheme= autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType ruby compiler ruby
   autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
   au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
+  " au BufRead,BufNewFile {*.erb}     set ft=ruby,eruby.chef
   au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
   au BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
   " autocmd BufNewFile,BufRead *.json set ft=javascript
@@ -315,8 +352,8 @@
   nnoremap * #
   nnoremap - :Switch<cr>
 
-  noremap H ^
-  noremap L $
+  noremap  H ^
+  noremap  L $
   nnoremap U <C-r>
 
   " jk to leave insert mode

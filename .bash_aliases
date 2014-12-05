@@ -37,6 +37,7 @@ alias hibr="    sudo hibernate-ram"
 alias spu='     sudo port uninstall'
 alias t="todo.sh"
 alias gitinfo='ssh gitolite@git.aligntech.com'
+alias lolless='lolcat | less'
 # }
 #
 #

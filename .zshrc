@@ -1,56 +1,97 @@
-# Created by newuser for 4.3.10
-autoload -U compinit && compinit
-autoload -U promptinit && promptinit
-autoload -z colors && colors
-autoload -U colors && colors
-autoload run-help
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-export COLORTERM=yes
-export EDITOR=vim
-umask 0077
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="kolo"
+# ZSH_THEME="sorin"
+ZSH_THEME="gozilla"
+ZSH_THEME="dieter"
+ZSH_THEME="kolo"
+ZSH_THEME="arrow"
+ZSH_THEME="wezm"
 
-bindkey '\e[3~' delete-char # del
-bindkey ';5D' backward-word # ctrl+left 
-bindkey ';5C' forward-word #ctrl+right
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-# bindkey -v
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# HISTORY
-HISTFILE=~/.history
-HISTSIZE=20000
-SAVEHIST=10000
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_NO_STORE # не заносить команду history в history
+zstyle ":completion:*:commands" rehash 1
 
-#prompt adam1
-prompt bart
-#RPROMPT='[%F{green}%T%f]'
-#PROMPT='[{orage}%~]'
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-setopt AUTO_CD
-setopt CORRECT
-setopt BRACECCL
-setopt NO_BEEP
+# Comment this out to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-LS_COLORS='no=00;37:fi=00;37:di=01;36:ln=04;36:pi=33:so=01;35:do=01;35:bd=33;01:cd=33;01:or=31;01:su=37:sg=30:tw=30:ow=34:st=37:ex=01;31:*.cmd=01;31:*.exe=01;31:*.com=01;31:*.btm=01;31:*.sh=01;31:*.run=01;31:*.tar=33:*.tgz=33:*.arj=33:*.taz=33:*.lzh=33:*.zip=33:*.z=33:*.Z=33:*.gz=33:*.bz2=33:*.deb=33:*.rpm=33:*.jar=33:*.rar=33:*.jpg=32:*.jpeg=32:*.gif=32:*.bmp=32:*.pbm=32:*.pgm=32:*.ppm=32:*.tga=32:*.xbm=32:*.xpm=32:*.tif=32:*.tiff=32:*.png=32:*.mov=34:*.mpg=34:*.mpeg=34:*.avi=34:*.fli=34:*.flv=34:*.3gp=34:*.mp4=34:*.divx=34:*.gl=32:*.dl=32:*.xcf=32:*.xwd=32:*.flac=35:*.mp3=35:*.mpc=35:*.ogg=35:*.wav=35:*.m3u=35:'; 
-zstyle ':completion:*' menu select
+# Uncomment to change how often before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
 
-eval `dircolors`
-zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-alias grep='grep --color=auto'
-alias ls='ls -F --color=auto'
-alias vimza="vim ~/.zshrc"
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-alias -s {pdf,djv{,u}}=evince
-alias -s {avi,mpeg,mpg,mov,m2v,flv,mkv}=mplayer
-alias -s py=python
-alias -s {ogg,mp3,wav,wma}=mplayer
-alias -s {tex,cpp,c}=vim
-# Highlight errors
-alias -g  HE='2>>( sed -ue "s/.*/$fg_bold[red]&$reset_color/" 1>&2 )'
+# Uncomment following line if you want to disable command autocorrection
+DISABLE_CORRECTION="true"
 
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(
+  git
+  git-extras
+  osx
+  knife
+  extract
+  colorize
+  themes
+  zsh-syntax-highlighting
+  command-not-found
+  autojump
+  dircycle
+  fasd
+  lol
+  brew
+  sprunge
+  fzf
+)
+
+source ~/.bash_aliases
+source $ZSH/oh-my-zsh.sh
+
+# Better history search
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down]]
+
+# Setup zsh-autosuggestions
+source ~/.zsh-autosuggestions/autosuggestions.zsh
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
+
+# Customize to your needs...
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/valiev/.rvm/bin
+#export DYLD_INSERT_LIBRARIES="/Users/valiev/dev/opensource/stderred/build/libstderred.dylib${DYLD_INSERT_LIBRARIES:+:$DYLD_INSERT_LIBRARIES}"
+

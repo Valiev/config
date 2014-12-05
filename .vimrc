@@ -29,6 +29,9 @@
   " Git management
   NeoBundle 'tpope/vim-fugitive'
 
+  " Quick method definition lookup
+  " NeoBundle 'gorkunov/smartgf.vim'
+
   " After object actions
   NeoBundle 'junegunn/vim-after-object'
   " va=  visual after =
@@ -60,11 +63,23 @@
 
   NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
   let g:DeleteTrailingWhitespace=1
-  :
+
 
   NeoBundle 'Townk/vim-autoclose'
 
-  NeoBundle 'mattn/flappyvird-vim'
+  " NeoBundle 'mattn/flappyvird-vim'
+
+  " NeoBundle 'wikitopian/hardmode'
+
+  " NeoBundle 'Yggdroot/indentLine'
+  " let g:indentLine_char = '︙'
+
+  " NeoBundle 'justinmk/vim-search-pulse'
+  " set cursorline
+
+  " NeoBundle 'justinmk/vim-matchparenalways'
+
+  " NeoBundle 'Keithbsmiley/investigate.vim'
 
 " - Haskell
   " NeoBundle 'Twinside/vim-haskellConceal'
@@ -76,10 +91,10 @@
   " NeoBundle 'fs111/pydoc.vim'
   " NeoBundle 'Pydiction'
   " NeoBundle 'vim-scripts/pyflakes.vim'
-  " NeoBundle 'davidhalter/jedi-vim.git'
-  " let g:pylint_cwindow = 0 " Disable pylint window
-  " let g:jedi#auto_vim_configuration = 0
-  " let g:jedi#use_splits_not_buffers = "right"
+  NeoBundle 'davidhalter/jedi-vim.git'
+  let g:pylint_cwindow = 0 " Disable pylint window
+  let g:jedi#auto_vim_configuration = 0
+  let g:jedi#use_splits_not_buffers = "right"
 
 " - JSON
   " NeoBundle 'pangloss/vim-javascript'
@@ -242,7 +257,7 @@
 
 
 " GUI features {
-  set background=light
+  set background=dark
   set nocp
   set noerrorbells  " Silent
   set vb            " Even more silent
@@ -261,7 +276,7 @@
   endif
 
   " colorscheme Mustang
-  " colorscheme symfony
+  colorscheme symfony
   " colorscheme anotherdark
   " colorscheme molokai
   " colorscheme railscasts
@@ -269,9 +284,11 @@
   " colorscheme Molokai
   " colorscheme badwolf
   " colorscheme scame
-  colorscheme summerfruit256
+  " colorscheme summerfruit256
   "colorscheme softblue
   "colorscheme jellybeans
+  " colorscheme 256-jungle
+
 
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
@@ -327,6 +344,8 @@
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>
   nnoremap <Leader>wq :wq<CR>
+  " map <Leader>r :SmargfRefreshTags<CR>
+
   " copy to clipboard
   vmap <Leader>y "+y
   vmap <Leader>d "+d
@@ -365,6 +384,13 @@
   " reselect visual block after indent
   vnoremap < <gv
   vnoremap > >gv"
+
+  " Movement in insert mode
+  inoremap <C-h> <C-o>h
+  inoremap <C-l> <C-o>a
+  inoremap <C-j> <C-o>j
+  inoremap <C-k> <C-o>k
+
 
   " make Y consistent with C and D. See :help Y.
   nnoremap Y y$

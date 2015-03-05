@@ -20,9 +20,11 @@ xmonad_conf="   ~/.xmonad/xmonad.hs"
 PATH="$PATH:/sbin:/usr/sbin" # Debian workaround
 export EDITOR=vim
 
+strerror() {python -c "import os; print os.strerror($1)"}
 # }
 
 # STUFF {
+alias c="   colorize"
 alias ls="  ls --color='yes'"
 alias ll="  ls -l -h"
 alias la="  ls -A"
@@ -38,12 +40,16 @@ alias spu='     sudo port uninstall'
 alias t="todo.sh"
 alias gitinfo='ssh gitolite@git.aligntech.com'
 alias lolless='lolcat | less'
+alias pyjs='python -m json.tool'
+alias toLower='tr "[[:upper:]]" "[[:lower:]]" '
+alias toUpper='tr "[[:lower:]]" "[[:upper:]]" '
 # }
 #
 #
 # VIM {
 alias vim="     vim -p"
 alias vimba="   vim $bash_aliases"
+alias zshrc="   vim ~/.zshrc"
 alias vimrc="   vim $vimrc"
 alias gvimrc="  vim $gvimrc"
 alias vimcpp="  vim $cpp_files"

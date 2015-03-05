@@ -1,186 +1,171 @@
 " vim: tabstop=2 softtabstop=2 shiftwidth=2
 
+" ============================================================================
 " BASIC {
+" ============================================================================
   syntax on
   filetype on
   filetype plugin on
 " }
 
+" ============================================================================
 " PLUGINS {
-" - init
-  if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+" ============================================================================
+" - init -
+  call plug#begin('~/.vim/plugged')
+
+
+" - Filetypes -
+  Plug 'tejr/vim-nagios', { 'for': 'nagios' }
+  Plug 'wting/rust.vim', { 'for': 'rust' }
+
+" - Coding features -
+  Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+  Plug 'majutsushi/tagbar'
+  Plug 'tpope/vim-fugitive' " Git management
+  Plug 'junegunn/vim-after-object' " After object actions
+  silent! if has_key(g:plugs, 'vim-after-object')
+    autocmd VimEnter * silent! call after_object#enable('=', ':', '-', '#', ' ', '*', '.', '|')
   endif
-  call neobundle#rc(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
+  Plug 'bkad/CamelCaseMotion'
+  Plug 'vim-gitgutter' " Git diff
+  Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'ruby'] }
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-speeddating'
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'ntpeters/vim-better-whitespace'
+  Plug 'Townk/vim-autoclose'
 
-" - Filetypes
-  NeoBundle 'tejr/vim-nagios'
-
-
-
-  NeoBundle "wting/rust.vim"
-
-" - Coding features
-  NeoBundle 'junegunn/vim-easy-align'
-  " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-  vmap <Enter> <Plug>(EasyAlign)
-
-  " Git management
-  NeoBundle 'tpope/vim-fugitive'
-
-  " Quick method definition lookup
-  " NeoBundle 'gorkunov/smartgf.vim'
-
-  " After object actions
-  NeoBundle 'junegunn/vim-after-object'
-  " va=  visual after =
-  " ca=  change after =
-  " da=  delete after =
-  " ya=  yank after =
-  autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ', '*', '.')
-
-  NeoBundle "bkad/CamelCaseMotion"
-
-  " Git diff
-  NeoBundle "vim-gitgutter"
-
-  NeoBundle "scrooloose/syntastic"
-
-  NeoBundle 'tpope/vim-surround'
-
-  NeoBundle 'tpope/vim-commentary'
-
-  NeoBundle 'tpope/vim-speeddating'
-
-  NeoBundle 'tpope/vim-endwise'
-
-  NeoBundle 'tpope/vim-repeat'
-
-  NeoBundle 'tpope/vim-unimpaired'
-
-  NeoBundle 'sheerun/vim-polyglot' " language packs
-
-  NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
-  let g:DeleteTrailingWhitespace=1
-
-
-  NeoBundle 'Townk/vim-autoclose'
-
+  " NeoBundle 'sheerun/vim-polyglot' " language packs
   " NeoBundle 'mattn/flappyvird-vim'
-
   " NeoBundle 'wikitopian/hardmode'
-
   " NeoBundle 'Yggdroot/indentLine'
   " let g:indentLine_char = '︙'
-
   " NeoBundle 'justinmk/vim-search-pulse'
   " set cursorline
-
   " NeoBundle 'justinmk/vim-matchparenalways'
-
   " NeoBundle 'Keithbsmiley/investigate.vim'
 
-" - Haskell
+" - Haskell -
   " NeoBundle 'Twinside/vim-haskellConceal'
 
-" - Python
+" - Python -
   " NeoBundle 'mitechie/pyflakes-pathogen'
   " NeoBundle 'sontek/rope-vim'
   " NeoBundle 'pep8'
   " NeoBundle 'fs111/pydoc.vim'
   " NeoBundle 'Pydiction'
   " NeoBundle 'vim-scripts/pyflakes.vim'
-  NeoBundle 'davidhalter/jedi-vim.git'
-  let g:pylint_cwindow = 0 " Disable pylint window
-  let g:jedi#auto_vim_configuration = 0
-  let g:jedi#use_splits_not_buffers = "right"
+  " NeoBundle 'davidhalter/jedi-vim.git'
+  " let g:pylint_cwindow = 0 " Disable pylint window
+  " let g:jedi#auto_vim_configuration = 0
+  " let g:jedi#use_splits_not_buffers = "right"
 
-" - JSON
+" - JSON -
   " NeoBundle 'pangloss/vim-javascript'
-  " NeoBundle 'elzr/vim-json'
+  Plug 'elzr/vim-json'
   " NeoBundle "leshill/vim-json"
   " let g:vim_json_syntax_conceal = 0
   " au! BufRead,BufNewFile *.json set filetype=json
 
-" - Appearel
-  NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
-  let g:limelight_conceal_ctermfg = 'gray'
-  let g:limelight_conceal_guifg = 'DarkGray'
+" - Appearel -
+  Plug 'bling/vim-airline' " status bar
+  set laststatus=2
+  " NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
+  " let g:limelight_conceal_ctermfg = 'gray'
+  " let g:limelight_conceal_guifg = 'DarkGray'
 
-  NeoBundle 'junegunn/goyo.vim' " Distraction-free
-  let g:goyo_width = 100
+  " NeoBundle 'junegunn/goyo.vim' " Distraction-free
+  " let g:goyo_width = 100
 
-  NeoBundle 'kshenoy/vim-signature' " highlight marks
+  " NeoBundle 'kshenoy/vim-signature' " highlight marks
 
-  NeoBundle 'mhinz/vim-startify'
-
+  " NeoBundle 'mhinz/vim-startify'
+  " NeoBundle 'chrisbra/vim-diff-enhanced'
   " NeoBundle 'itchyny/lightline.vim'
   " set laststatus=2 " To show menubar
   " set noshowmode
-  NeoBundle 'bling/vim-airline' " status bar
-  set laststatus=2
-  let g:airline#extensions#tabline#enabled = 1
+  " let g:airline#extensions#tabline#enabled = 1
 
-  NeoBundle 'reedes/vim-thematic'
+  " NeoBundle 'reedes/vim-thematic'
 
-  set hidden
-  let g:airline_theme='light'
-  let g:airline_exclude_preview = 1
-  let g:airline#extensions#tabline#enabled = 0
-  autocmd BufEnter, BufNewFile * silent! lcd %:p:h
+  " set hidden
+  " let g:airline_theme='light'
+  " let g:airline_exclude_preview = 1
+  " let g:airline#extensions#tabline#enabled = 0
+  " autocmd BufEnter, BufNewFile * silent! lcd %:p:h
 
   " NeoBundle 'bling/vim-bufferline'
+  "
 
 " - Colors
-  NeoBundle "noahfrederick/vim-noctu"
+  " NeoBundle "noahfrederick/vim-noctu"
 
-  let g:seoul256_background = 256
-  NeoBundle 'junegunn/seoul256.vim'
+  " let g:seoul256_background = 256
+  " NeoBundle 'junegunn/seoul256.vim'
 
-  NeoBundle 'gorodinskiy/vim-coloresque'
+  " NeoBundle 'gorodinskiy/vim-coloresque'
 
-  NeoBundle 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
+  " NeoBundle 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
 
+  " NeoBundle 'Colour-Sampler-Pack'
 
+  " NeoBundle 'flazz/vim-colorschemes'
 
-  NeoBundle 'Colour-Sampler-Pack'
+  " NeoBundle 'vim-scripts/ScrollColors'
 
-  NeoBundle 'flazz/vim-colorschemes'
+  " NeoBundle 'tpope/vim-vividchalk'
 
-  NeoBundle 'vim-scripts/ScrollColors'
+  " NeoBundle 'tomasr/molokai'
+  " let g:molokai_original = 1
+  " let g:rehash256 = 1
 
-  NeoBundle 'tpope/vim-vividchalk'
+  " NeoBundle 'kien/rainbow_parentheses.vim'
+  " let g:rbpt_colorpairs = [
+    " \ ['brown',       'RoyalBlue3'],
+    " \ ['Darkblue',    'SeaGreen3'],
+    " \ ['darkgray',    'DarkOrchid3'],
+    " \ ['darkgreen',   'firebrick3'],
+    " \ ['darkcyan',    'RoyalBlue3'],
+    " \ ['darkred',     'SeaGreen3'],
+    " \ ['darkmagenta', 'DarkOrchid3'],
+    " \ ['brown',       'firebrick3'],
+    " \ ['gray',        'RoyalBlue3'],
+    " \ ['black',       'SeaGreen3'],
+    " \ ['darkmagenta', 'DarkOrchid3'],
+    " \ ['Darkblue',    'firebrick3'],
+    " \ ['darkgreen',   'RoyalBlue3'],
+    " \ ['darkcyan',    'SeaGreen3'],
+    " \ ['darkred',     'DarkOrchid3'],
+    " \ ['red',         'firebrick3'],
+    " \ ]
+      " \ ['black',       'SeaGreen3'],
+      " \ ['brown',       'RoyalBlue3'],
+      " \ ['Darkblue',    'SeaGreen3'],
+      " \ ['darkgray',    'DarkOrchid3'],
+      " \ ['darkgreen',   'firebrick3'],
+      " \ ['darkcyan',    'RoyalBlue3'],
+      " \ ['darkred',     'SeaGreen3'],
+      " \ ['darkmagenta', 'DarkOrchid3'],
+      " \ ['brown',       'firebrick3'],
+      " \ ['darkmagenta', 'DarkOrchid3'],
+      " \ ['darkred',     'DarkOrchid3'],
+      " \ ['gray',        'RoyalBlue3'],
+      " \ ['darkcyan',    'SeaGreen3'],
+      " \ ['Darkblue',    'firebrick3'],
+      " \ ['darkgreen',   'RoyalBlue3'],
+      " \ ['red',         'firebrick3']
+      " \ ]
 
-  NeoBundle 'tomasr/molokai'
-  let g:molokai_original = 1
-  let g:rehash256 = 1
-
-  NeoBundle 'kien/rainbow_parentheses.vim'
-  let g:rbpt_colorpairs = [
-      \ ['black',       'SeaGreen3'],
-      \ ['brown',       'RoyalBlue3'],
-      \ ['Darkblue',    'SeaGreen3'],
-      \ ['darkgray',    'DarkOrchid3'],
-      \ ['darkgreen',   'firebrick3'],
-      \ ['darkcyan',    'RoyalBlue3'],
-      \ ['darkred',     'SeaGreen3'],
-      \ ['darkmagenta', 'DarkOrchid3'],
-      \ ['brown',       'firebrick3'],
-      \ ['darkmagenta', 'DarkOrchid3'],
-      \ ['darkred',     'DarkOrchid3'],
-      \ ['gray',        'RoyalBlue3'],
-      \ ['darkcyan',    'SeaGreen3'],
-      \ ['Darkblue',    'firebrick3'],
-      \ ['darkgreen',   'RoyalBlue3'],
-      \ ['red',         'firebrick3']
-      \ ]
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-  let g:rbpt_max = 16
-  let g:rbpt_loadcmd_toggle = 0
+  " au VimEnter * RainbowParenthesesToggle
+  " au Syntax * RainbowParenthesesLoadRound
+  " au Syntax * RainbowParenthesesLoadSquare
+  " au Syntax * RainbowParenthesesLoadBraces
+  " let g:rbpt_max = 16
+  " let g:rbpt_loadcmd_toggle = 0
 
 " - unsorted plugins
   " NeoBundle 'Shougo/vimproc'
@@ -217,11 +202,13 @@
   " hi IndentGuidesEven ctermbg=darkgrey
 
   filetype plugin indent on
-  NeoBundleCheck
+  call plug#end()
 " }
 
 
+" ============================================================================
 " Text {
+" ============================================================================
   set nowrap
   set smartindent
   set tabstop=4
@@ -239,7 +226,9 @@
   "au! BufNewFile,BufRead * exec 'match Todo /\%>' . &textwidth . 'v.\+/'
 " }
 
+" ============================================================================
 " Search {
+" ============================================================================
   set noignorecase
   set incsearch       " Search during typing
   set hlsearch        " Highlight found strings
@@ -249,15 +238,19 @@
 " }
 
 
+" ============================================================================
 " Folds {
+" ============================================================================
   set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
   set foldenable
   set foldmethod=manual
 " }
 
 
+" ============================================================================
 " GUI features {
-  set background=dark
+" ============================================================================
+  " set background=dark
   set nocp
   set noerrorbells  " Silent
   set vb            " Even more silent
@@ -276,18 +269,19 @@
   endif
 
   " colorscheme Mustang
-  colorscheme symfony
+  " colorscheme symfony
   " colorscheme anotherdark
-  " colorscheme molokai
+ " colorscheme molokai
   " colorscheme railscasts
   " colorscheme Mustang
   " colorscheme Molokai
   " colorscheme badwolf
   " colorscheme scame
   " colorscheme summerfruit256
-  "colorscheme softblue
-  "colorscheme jellybeans
+  " colorscheme softblue
+  " colorscheme jellybeans
   " colorscheme 256-jungle
+  " colorscheme 256-grayvim
 
 
   if has("gui_running")
@@ -296,7 +290,9 @@
 " }
 
 
+" ============================================================================
 " GVim features {
+" ============================================================================
 " set guifont=DejaVu\ Sans\ Mono\ 9
   set guifont=Inconsolata\ 13
   set guioptions-=m  "remove menu bar
@@ -305,11 +301,14 @@
   set guioptions-=r  "remove right-hand scroll bar
 " }
 
+" ============================================================================
 " Coding features {
+" ============================================================================
   let c_space_errors = 1
   let python_highlight_space_errors = 1
   let python_highlight_all = 1
   "utocmd FileType python set colorscheme= autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
+  autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace " strip whitespaces
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType ruby compiler ruby
   autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
@@ -317,7 +316,7 @@
   " au BufRead,BufNewFile {*.erb}     set ft=ruby,eruby.chef
   au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
   au BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
-  " autocmd BufNewFile,BufRead *.json set ft=javascript
+  autocmd BufNewFile,BufRead *.json set ft=json
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
@@ -328,9 +327,16 @@
   "autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
   set tags=~/dev/tags
   au FocusLost * :wa
-  "set tags=./tags;$HOME " walk directory tree upto $HOME looking for tags
+  "
+ " Always show line numbers, but only in current window.
+  " set number
+  " :au WinEnter * :setlocal number
+  " :au WinLeave * :setlocal nonumber "set tags=./tags;$HOME " walk directory tree upto $HOME looking for tags
 
-" }
+  " Automatically resize vertical splits.
+  " :au WinEnter * :set winfixheight
+  " :au WinEnter * :wincmd =
+" " }
 
 " let g:load_doxygen_syntax=1
 
@@ -354,9 +360,13 @@
   vmap <Leader>p "+p
   vmap <Leader>P "+P
 
-  vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-      \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-  omap s :normal vs<CR>
+  " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+  vmap <Enter> <Plug>(EasyAlign)
+  xmap <Enter> <Plug>(EasyAlign)
+
+  "vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+  "    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+  "omap s :normal vs<CR>
 
   " nmap <Leader><Leader> V
   map q: :q
@@ -364,6 +374,8 @@
   nmap <leader>l :set list!<CR>
   " Use the same symbols as TextMate for tabstops and EOLs
   set listchars=tab:▸\ ,eol:¬
+
+  nmap <Leader>t :TagbarToggle<CR>
 
   nnoremap <silent> <LocalLeader>rs :source ~/.vimrc<CR>
   nnoremap <silent> <C-J> gEa<CR><ESC>ew " Split line(opposite to S-J joining line)
@@ -400,3 +412,81 @@
   map <RIGHT> <NOP>
 
 " }
+
+" set background=dark
+
+" hi Boolean      ctermfg=LightGreen guifg=#55FF4D
+" hi Character    ctermfg=LightGreen guifg=#55FF4D
+" hi Comment      ctermfg=Yellow     guifg=#FFFF54
+" hi Conditional  ctermfg=LightGreen guifg=#55FF4D
+" hi Constant     ctermfg=Cyan       guifg=#55FFFF
+" hi CursorColumn guibg=#2A2A2A
+" hi CursorLine   guibg=#2A2A2A
+" hi Define       ctermfg=LightGreen guifg=#55FF4D
+" hi Directory    ctermfg=LightGreen guifg=#55FF4D
+" hi DiffAdd      ctermbg=Green      guibg=#004200 guifg=White
+" hi DiffChange   ctermbg=Blue       guibg=#000083 guifg=White
+" hi DiffDelete   ctermbg=Red        guibg=#810000 guifg=White
+" hi DiffText     guibg=#817000      guifg=White
+" hi Delimiter    ctermfg=LightGreen guifg=#55FF4D
+" hi Float        ctermfg=LightGreen guifg=#55FF4D
+" hi Folded       guibg=#444444      guifg=White
+" hi FoldColumn   guibg=#222222      guifg=#CCCCCC
+" hi Function     ctermfg=Cyan       guifg=#55FFFF
+" hi Identifier   ctermfg=Cyan       guifg=#55FFFF
+" hi Include      ctermfg=Cyan       guifg=#55FFFF
+" hi LineNr       ctermfg=Gray  guifg=#777777 guibg=#222222
+" hi MatchParen   ctermfg=White      ctermbg=Red
+" hi NonText      ctermfg=Black      guifg=#222222
+" hi Normal       ctermfg=White guibg=#222222 guifg=White
+" hi Number       ctermfg=LightGreen guifg=#55FF4D
+" hi Operator     ctermfg=LightGreen guifg=#55FF4D
+" hi Parent       ctermfg=LightGreen guifg=#55FF4D
+" hi Region       ctermfg=Cyan       guifg=#55FFFF
+" hi SignColumn   guibg=#222222
+" hi Special      ctermfg=Cyan       guifg=#55FFFF
+" hi Statement    ctermfg=LightGreen guifg=#55FF4D
+" hi StatusLine   guifg=#333333      guibg=#CCCCCC
+" hi StatusLineNC guibg=#999999      guifg=#333333
+" hi String       ctermfg=Red        guifg=#FF5555
+" hi Structure    ctermfg=LightGreen guifg=#55FF4D
+" hi Todo         guibg=#222222      guifg=#FFFFFF
+" hi Title        ctermfg=Cyan       guifg=#55FFFF
+" hi Type         ctermfg=LightGreen guifg=#55FF4D
+" hi VertSplit    ctermbg=White      ctermfg=White guibg=#333333 guifg=#333333
+" hi Visual       guibg=#555555
+" hi vimHiGroup   ctermfg=Cyan
+" hi vimOption    ctermfg=Cyan
+
+" hi cssValueAngle     guifg=#55FFFF
+" hi cssValueFrequency guifg=#55FFFF
+" hi cssValueInteger   guifg=#55FFFF
+" hi cssValueLength    guifg=#55FFFF
+" hi cssValueNumber    guifg=#55FFFF
+" hi cssValueTime      guifg=#55FFFF
+" hi cssTextAttr       guifg=#55FFFF
+" hi cssCommonAttr     guifg=#55FFFF
+" hi cssRenderAttr     guifg=#55FFFF
+" hi cssColor          guifg=#55FFFF
+" hi cssColorAttr      guifg=#55FFFF
+" hi cssRenderProp     guifg=#55FFFF
+" hi cssBoxAttr        guifg=#55FFFF
+" hi cssFontAttr       guifg=#55FFFF
+" hi cssUIAttr         guifg=#55FFFF
+" hi cssPseudoClass    guifg=#FF80FF
+
+" hi javascriptBraces     guifg=#55FF4D
+" hi javascriptValue      guifg=#55FF4D
+" hi javascriptFunction   guifg=#55FF4D
+" hi javascriptIdentifier guifg=#55FF4D
+" hi javascriptParens     guifg=#55FF4D
+
+" hi phpMethodsVar  ctermfg=Cyan guifg=#55FFFF
+" hi phpRegion      ctermfg=Cyan guifg=#55FFFF
+" hi phpVarSelector ctermfg=Cyan guifg=#55FFFF
+
+" hi vimGroup        guifg=#55FFFF
+" hi vimHiCtermColor guifg=#55FFFF
+" hi vimHiGroup      guifg=#55FFFF
+
+" hi link htmlLink none

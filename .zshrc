@@ -67,6 +67,13 @@ plugins=(
   brew
   sprunge
   fzf
+  gem
+  jsontools
+  dirhistory
+  sublime
+  sudo
+  npm
+  bundle
 )
 
 source ~/.bash_aliases
@@ -80,16 +87,19 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down]]
 
+COMPLETION_WAITING_DOTS="true"
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
+
 # Setup zsh-autosuggestions
-source ~/.zsh-autosuggestions/autosuggestions.zsh
+# source ~/.zsh-autosuggestions/autosuggestions.zsh
 # Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
+# zle-line-init() {
+#     zle autosuggest-start
+# }
+# zle -N zle-line-init
 # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
 # zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle
+# bindkey '^T' autosuggest-toggle
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/valiev/.rvm/bin

@@ -38,16 +38,7 @@
   Plug 'tpope/vim-unimpaired'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'Townk/vim-autoclose'
-
-  " NeoBundle 'sheerun/vim-polyglot' " language packs
-  " NeoBundle 'mattn/flappyvird-vim'
-  " NeoBundle 'wikitopian/hardmode'
-  " NeoBundle 'Yggdroot/indentLine'
-  " let g:indentLine_char = '︙'
-  " NeoBundle 'justinmk/vim-search-pulse'
-  " set cursorline
-  " NeoBundle 'justinmk/vim-matchparenalways'
-  " NeoBundle 'Keithbsmiley/investigate.vim'
+  Plug 'sheerun/vim-polyglot' " language packs
 
 " - Haskell -
   " NeoBundle 'Twinside/vim-haskellConceal'

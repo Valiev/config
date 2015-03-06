@@ -44,16 +44,17 @@
   " NeoBundle 'Twinside/vim-haskellConceal'
 
 " - Python -
+  Plug 'davidhalter/jedi-vim', { 'for' : 'python' }
+  let g:pylint_cwindow = 0 " Disable pylint window
+  let g:jedi#auto_vim_configuration = 0
+  let g:jedi#use_splits_not_buffers = "right"
+  " UNSORTED
   " NeoBundle 'mitechie/pyflakes-pathogen'
   " NeoBundle 'sontek/rope-vim'
   " NeoBundle 'pep8'
   " NeoBundle 'fs111/pydoc.vim'
   " NeoBundle 'Pydiction'
   " NeoBundle 'vim-scripts/pyflakes.vim'
-  " NeoBundle 'davidhalter/jedi-vim.git'
-  " let g:pylint_cwindow = 0 " Disable pylint window
-  " let g:jedi#auto_vim_configuration = 0
-  " let g:jedi#use_splits_not_buffers = "right"
 
 " - JSON -
   " NeoBundle 'pangloss/vim-javascript'

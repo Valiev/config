@@ -57,11 +57,8 @@
   " NeoBundle 'vim-scripts/pyflakes.vim'
 
 " - JSON -
-  " NeoBundle 'pangloss/vim-javascript'
-  Plug 'elzr/vim-json'
-  " NeoBundle "leshill/vim-json"
+  Plug 'elzr/vim-json', { 'for': 'json' }
   " let g:vim_json_syntax_conceal = 0
-  " au! BufRead,BufNewFile *.json set filetype=json
 
 " - Appearel -
   Plug 'bling/vim-airline' " status bar

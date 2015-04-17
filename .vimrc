@@ -57,12 +57,13 @@
   " NeoBundle 'vim-scripts/pyflakes.vim'
 
 " - JSON -
-  Plug 'elzr/vim-json', { 'for': 'json' }
+  Plug 'elzr/vim-json' ", { 'for': 'json' }
   " let g:vim_json_syntax_conceal = 0
 
 " - Appearel -
   Plug 'bling/vim-airline' " status bar
   set laststatus=2
+  Plug 'chrisbra/vim-diff-enhanced' " enhanced diff
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
   " NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
@@ -75,7 +76,6 @@
   " NeoBundle 'kshenoy/vim-signature' " highlight marks
 
   " NeoBundle 'mhinz/vim-startify'
-  " NeoBundle 'chrisbra/vim-diff-enhanced'
   " NeoBundle 'itchyny/lightline.vim'
   " set laststatus=2 " To show menubar
   " set noshowmode
@@ -93,28 +93,21 @@
   "
 
 " - Colors
-  " NeoBundle "noahfrederick/vim-noctu"
+  " Plug 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
+  Plug 'vim-scripts/ScrollColors'
+  Plug 'kien/rainbow_parentheses.vim'
 
+  " UNSORTED
+  " NeoBundle "noahfrederick/vim-noctu"
   " let g:seoul256_background = 256
   " NeoBundle 'junegunn/seoul256.vim'
-
   " NeoBundle 'gorodinskiy/vim-coloresque'
-
-  " NeoBundle 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
-
   " NeoBundle 'Colour-Sampler-Pack'
-
   " NeoBundle 'flazz/vim-colorschemes'
-
-  " NeoBundle 'vim-scripts/ScrollColors'
-
   " NeoBundle 'tpope/vim-vividchalk'
-
   " NeoBundle 'tomasr/molokai'
   " let g:molokai_original = 1
   " let g:rehash256 = 1
-
-  " NeoBundle 'kien/rainbow_parentheses.vim'
   " let g:rbpt_colorpairs = [
     " \ ['brown',       'RoyalBlue3'],
     " \ ['Darkblue',    'SeaGreen3'],
@@ -243,7 +236,7 @@
 " ============================================================================
 " GUI features {
 " ============================================================================
-  " set background=dark
+  set background=dark
   set nocp
   set noerrorbells  " Silent
   set vb            " Even more silent

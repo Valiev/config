@@ -352,6 +352,23 @@
   vmap <Leader>p "+p
   vmap <Leader>P "+P
 
+  " Tabs
+  map <Leader>1 1gt
+  map <Leader>2 2gt
+  map <Leader>3 3gt
+  map <Leader>4 4gt
+  map <Leader>5 5gt
+  map <Leader>6 6gt
+  map <Leader>7 7gt
+  map <Leader>8 8gt
+  map <Leader>9 9gt
+  " map <Leader>0 :tablast<CR>
+  map <Leader>] :tabnext<CR>
+  map <Leader>[ :tabprevious<CR>
+  let g:lasttab = 1
+  nmap <Leader>0 :exe "tabn ".g:lasttab<CR>
+  autocmd TabLeave * let g:lasttab = tabpagenr()
+
   " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
   vmap <Enter> <Plug>(EasyAlign)
   xmap <Enter> <Plug>(EasyAlign)

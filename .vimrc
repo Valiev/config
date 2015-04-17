@@ -303,10 +303,10 @@
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType ruby compiler ruby
   autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
-  au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
   " au BufRead,BufNewFile {*.erb}     set ft=ruby,eruby.chef
-  au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
-  au BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
+  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
+  autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
+  autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
   autocmd BufNewFile,BufRead *.json set ft=json
   set tabstop=2
   set softtabstop=2

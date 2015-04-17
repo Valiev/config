@@ -203,7 +203,9 @@
   set tabstop=4
   set softtabstop=4
   set shiftwidth=4
-  set showbreak=‖
+  set showbreak=⁻
+  set breakindent
+  set linebreak
   set tw=80
   set backspace=indent,eol,start
   set clipboard+=unnamed " Yanks go on clipboard instead.

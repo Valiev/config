@@ -74,6 +74,7 @@ plugins=(
   sudo
   npm
   bundle
+  kitchen
 )
 
 source ~/.bash_aliases

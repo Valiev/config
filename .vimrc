@@ -63,6 +63,8 @@
 " - Appearel -
   Plug 'bling/vim-airline' " status bar
   set laststatus=2
+  Plug 'scrooloose/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
   " NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
   " let g:limelight_conceal_ctermfg = 'gray'
   " let g:limelight_conceal_guifg = 'DarkGray'
@@ -368,6 +370,16 @@
   let g:lasttab = 1
   nmap <Leader>0 :exe "tabn ".g:lasttab<CR>
   autocmd TabLeave * let g:lasttab = tabpagenr()
+
+  " NerdTree
+  map <Leader><Tab> :NERDTreeToggle<CR>
+  " Close vim if NerdTree is the only tab
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  " Start NerdTree if no files at start up
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  " Tabs
+  " let g:nerdtree_tabs_open_on_console_startup=1
 
   " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
   vmap <Enter> <Plug>(EasyAlign)

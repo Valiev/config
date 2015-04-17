@@ -308,6 +308,7 @@
   autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
   autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
   autocmd BufNewFile,BufRead *.json set ft=json
+  autocmd BufNewFile,BufRead *.cfg set ft=nagios
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2

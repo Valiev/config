@@ -13,8 +13,8 @@ tex_files=" *.tex"
 bash_aliases="  ~/.bash_aliases"
 vimrc="         ~/.vimrc"
 gvimrc="        ~/.gvimrc"
-todo_global="   ~/TODO"
-todo_local="    TODO"
+# todo_global="   ~/TODO"
+# todo_local="    TODO"
 xmonad_conf="   ~/.xmonad/xmonad.hs"
 
 PATH="$PATH:/sbin:/usr/sbin" # Debian workaround
@@ -24,7 +24,10 @@ strerror() {python -c "import os; print os.strerror($1)"}
 # }
 
 # STUFF {
+alias b="   butler"
+alias k="   kitchen"
 alias c="   colorize"
+alias g="   git"
 alias ls="  ls --color='yes'"
 alias ll="  ls -l -h"
 alias la="  ls -A"
@@ -43,6 +46,8 @@ alias lolless='lolcat | less'
 alias pyjs='python -m json.tool'
 alias toLower='tr "[[:upper:]]" "[[:lower:]]" '
 alias toUpper='tr "[[:lower:]]" "[[:upper:]]" '
+# alias first  = 'awk { print $1 }'
+# alias first = 'awk \'{ print $1 }\' '
 # }
 #
 #
@@ -60,8 +65,8 @@ alias vimrb="   vim $rb_files"
 alias vimxmonad="   vim $xmonad_conf"
 # }
 
-alias TODO="    vim $todo_global"
-alias todo="    vim $todo_local"
+# alias TODO="    vim $todo_global"
+alias todo="    ack -w TODO"
 
 # GVIM {
 alias gvim="    gvim -p"

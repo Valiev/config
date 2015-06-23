@@ -20,6 +20,10 @@ ZSH_THEME="wezm"
 
 zstyle ":completion:*:commands" rehash 1
 
+
+# Colors
+eval `gdircolors dev/opensource/dircolors-solarized/dircolors.ansi-dark`
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 

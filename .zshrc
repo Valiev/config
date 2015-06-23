@@ -79,6 +79,7 @@ plugins=(
   npm
   bundle
   kitchen
+  vagrant
 )
 
 source ~/.bash_aliases

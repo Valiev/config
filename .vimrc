@@ -39,6 +39,23 @@
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'Townk/vim-autoclose'
   Plug 'sheerun/vim-polyglot' " language packs
+  Plug 'szw/vim-ctrlspace'
+  Plug 'arecarn/fold-cycle.vim' " folds
+  Plug 'terryma/vim-expand-region'
+  Plug 'tpope/vim-vinegar'
+  " Plug 'luochen1990/indent-detector.vim'
+  Plug 'luochen1990/select-and-search'
+  Plug 'gastonsimone/vim-dokumentary'
+  Plug 'kien/ctrlp.vim'
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
+  let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'dir2':  '\v[\/]vendor$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ 'link': 'some_bad_symbolic_links',
+    \ }
+  set hidden
+  " TabLine xxx term=underline cterm=underline ctermfg=12 ctermbg=0 gui=underline guibg=DarkGrey
 
 " - Haskell -
   " NeoBundle 'Twinside/vim-haskellConceal'
@@ -57,15 +74,45 @@
   " NeoBundle 'vim-scripts/pyflakes.vim'
 
 " - JSON -
-  Plug 'elzr/vim-json' ", { 'for': 'json' }
+  " Plug 'elzr/vim-json' ", { 'for': 'json' }
+  Plug 'othree/yajs.vim', { 'for' : 'javascript' }
   " let g:vim_json_syntax_conceal = 0
 
 " - Appearel -
   Plug 'bling/vim-airline' " status bar
   set laststatus=2
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#whitespace#enabled = 0
+  " let g:airline_left_sep = '◣'
+  " let g:airline_right_sep = '◢'
+  " let g:airline#extensions#tabline#left_sep = ' > '
+  " let g:airline#extensions#tabline#left_alt_sep = ' || '
+  " let g:airline_theme = 'simple'
+  " let g:airline_powerline_fonts = 1
   Plug 'chrisbra/vim-diff-enhanced' " enhanced diff
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
+  " Plug 'ryanoasis/vim-webdevicons'
+  " NERDTress File highlighting
+  " function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  " exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  " exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  " endfunction
+
+  " call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+  " call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+  " call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+  " call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+  " call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+  " call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+  " call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+  " call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+  " call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+  " call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+  " call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+  " call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+  " call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+
   " NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
   " let g:limelight_conceal_ctermfg = 'gray'
   " let g:limelight_conceal_guifg = 'DarkGray'
@@ -73,7 +120,7 @@
   " NeoBundle 'junegunn/goyo.vim' " Distraction-free
   " let g:goyo_width = 100
 
-  " NeoBundle 'kshenoy/vim-signature' " highlight marks
+  Plug 'kshenoy/vim-signature' " highlight marks
 
   " NeoBundle 'mhinz/vim-startify'
   " NeoBundle 'itchyny/lightline.vim'
@@ -94,8 +141,29 @@
 
 " - Colors
   " Plug 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
+  Plug 'google/vim-colorscheme-primary'
   Plug 'vim-scripts/ScrollColors'
-  Plug 'kien/rainbow_parentheses.vim'
+  " Plug 'kien/rainbow_parentheses.vim'
+  Plug 'luochen1990/rainbow'
+  Plug 'zefei/vim-colortuner'
+  Plug 'flazz/vim-colorschemes'
+  Plug 'godlygeek/csapprox'
+  let g:CSApprox_hook_post = [
+    \ 'highlight Normal            ctermbg=NONE',
+    \ 'highlight LineNr            ctermbg=NONE',
+    \ 'highlight SignifyLineAdd    cterm=bold ctermbg=NONE ctermfg=green',
+    \ 'highlight SignifyLineDelete cterm=bold ctermbg=NONE ctermfg=red',
+    \ 'highlight SignifyLineChange cterm=bold ctermbg=NONE ctermfg=yellow',
+    \ 'highlight SignifySignAdd    cterm=bold ctermbg=NONE ctermfg=green',
+    \ 'highlight SignifySignDelete cterm=bold ctermbg=NONE ctermfg=red',
+    \ 'highlight SignifySignChange cterm=bold ctermbg=NONE ctermfg=yellow',
+    \ 'highlight SignColumn        ctermbg=NONE',
+    \ 'highlight CursorLine        ctermbg=NONE cterm=underline',
+    \ 'highlight Folded            ctermbg=NONE cterm=bold',
+    \ 'highlight FoldColumn        ctermbg=NONE cterm=bold',
+    \ 'highlight NonText           ctermbg=NONE',
+    \ 'highlight clear LineNr'
+  \]
 
   " UNSORTED
   " NeoBundle "noahfrederick/vim-noctu"
@@ -143,6 +211,7 @@
       " \ ['darkgreen',   'RoyalBlue3'],
       " \ ['red',         'firebrick3']
       " \ ]
+  " colorscheme zephyr
 
   " au VimEnter * RainbowParenthesesToggle
   " au Syntax * RainbowParenthesesLoadRound
@@ -155,14 +224,10 @@
   " NeoBundle 'Shougo/vimproc'
   " NeoBundle 'Shougo/unite.vim'
   " NeoBundle 'Lokaltog/vim-easymotion'
-  " NeoBundle 'ervandew/supertab'
+  Plug 'ervandew/supertab'
   " NeoBundle 'taglist.vim'
-  " NeoBundle 'scrooloose/nerdtree'
   " NeoBundle 'vim-ruby/vim-ruby'
-  " NeoBundle 'airblade/vim-gitgutter'
   " NeoBundle 'Keithbsmiley/rspec.vim'
-  " NeoBundle 'kien/ctrlp.vim'
-  " NeoBundle 'Valloric/YouCompleteMe'
   " NeoBundle 'nelstrom/vim-textobj-rubyblock'
   " NeoBundle 'nelstrom/vim-textobj-user'
   " NeoBundle 'mbbill/undotree'
@@ -179,7 +244,6 @@
   " let g:colorcode_global=0
   " NeoBundle 'kbairak/TurboMark'
   " NeoBundle 'szw/vim-ctrlspace'
-  " NeoBundle 'tpope/vim-fugitive'
   " let g:syntastic_enable_signs=1
   " let g:indent_guides_auto_colors=0
   " hi IndentGuidesOdd  ctermbg=black
@@ -254,20 +318,20 @@
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   endif
 
+  colorscheme Monokai
+  " colorscheme 256-jungle
   " colorscheme Mustang
   " colorscheme symfony
   " colorscheme anotherdark
- " colorscheme molokai
+  " colorscheme molokai
   " colorscheme railscasts
-  " colorscheme Mustang
-  " colorscheme Molokai
   " colorscheme badwolf
   " colorscheme scame
   " colorscheme summerfruit256
   " colorscheme softblue
   " colorscheme jellybeans
-  " colorscheme 256-jungle
   " colorscheme 256-grayvim
+  " colorscheme zephyr
 
 
   if has("gui_running")
@@ -332,7 +396,7 @@
   "map <F2> :A<CR>
 
   let mapleader = "\<Space>"
-  nnoremap <Leader><Leader> :Goyo<CR>
+  " nnoremap <Leader><Leader> :Goyo<CR>
   " save
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>
@@ -367,10 +431,10 @@
   " NerdTree
   map <Leader><Tab> :NERDTreeToggle<CR>
   " Close vim if NerdTree is the only tab
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
   " Start NerdTree if no files at start up
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  " autocmd StdinReadPre * let s:std_in=1
+  " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
   " Tabs
   " let g:nerdtree_tabs_open_on_console_startup=1
 
@@ -390,12 +454,18 @@
   set listchars=tab:▸\ ,eol:¬
 
   nmap <Leader>t :TagbarToggle<CR>
+  nmap <Leader>b :CtrlPBuffer<CR>
+  nmap <Leader>r :CtrlPMRU<CR>
+  " Buffers
+  nmap <Leader>j :bnext<CR>
+  nmap <Leader>k :bprevious<CR>
 
   nnoremap <silent> <LocalLeader>rs :source ~/.vimrc<CR>
+
   nnoremap <silent> <C-J> gEa<CR><ESC>ew " Split line(opposite to S-J joining line)
   nnoremap # :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
   nnoremap * #
-  nnoremap - :Switch<cr>
+  " nnoremap - :Switch<cr>
 
   noremap  H ^
   noremap  L $
@@ -425,9 +495,21 @@
   map <LEFT> <NOP>
   map <RIGHT> <NOP>
 
+  " folds
+  let g:fold_cycle_default_mapping = 0 "disable default mappings
+  nmap <Tab><Tab> <Plug>(fold-cycle-open)
+  nmap <S-Tab><S-Tab> <Plug>(fold-cycle-close)
+
+  let NERDTreeHijackNetrw=1
+  let g:netrw_liststyle=1
+  "
+  vmap v <Plug>(expand_region_expand)
+  vmap <C-v> <Plug>(expand_region_shrink)
+  let g:rainbow_active = 1
+  let g:select_and_search_active = 1
 " }
 
-" set background=dark
+ set background=dark
 
 " hi Boolean      ctermfg=LightGreen guifg=#55FF4D
 " hi Character    ctermfg=LightGreen guifg=#55FF4D
@@ -448,7 +530,7 @@
 " hi FoldColumn   guibg=#222222      guifg=#CCCCCC
 " hi Function     ctermfg=Cyan       guifg=#55FFFF
 " hi Identifier   ctermfg=Cyan       guifg=#55FFFF
-" hi Include      ctermfg=Cyan       guifg=#55FFFF
+" hi Include      ctermfg=Cyan       guifg=#63FFFF
 " hi LineNr       ctermfg=Gray  guifg=#777777 guibg=#222222
 " hi MatchParen   ctermfg=White      ctermbg=Red
 " hi NonText      ctermfg=Black      guifg=#222222

@@ -97,6 +97,18 @@ bindkey "^[[B" down-line-or-beginning-search # Down]]
 COMPLETION_WAITING_DOTS="true"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # Setup zsh-autosuggestions
 # source ~/.zsh-autosuggestions/autosuggestions.zsh
 # Enable autosuggestions automatically

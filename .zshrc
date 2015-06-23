@@ -84,6 +84,7 @@ plugins=(
 
 source ~/.bash_aliases
 source $ZSH/oh-my-zsh.sh
+source "$(butler --init-completion)"
 
 # Better history search
 autoload -U up-line-or-beginning-search

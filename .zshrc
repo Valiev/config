@@ -79,6 +79,7 @@ plugins=(
   bundle
   kitchen
   vagrant
+  almostontop
 )
 
 source ~/.bash_aliases

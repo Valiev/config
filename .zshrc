@@ -66,7 +66,6 @@ plugins=(
   command-not-found
   autojump
   dircycle
-  fasd
   lol
   brew
   sprunge

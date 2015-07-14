@@ -369,6 +369,7 @@
 
   let mapleader = "\<Space>"
   " nnoremap <Leader><Leader> :Goyo<CR>
+  nnoremap <Leader><Leader> :CtrlP<CR>
   " save
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>

@@ -83,35 +83,9 @@
   set laststatus=2
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
-  " let g:airline_left_sep = '◣'
-  " let g:airline_right_sep = '◢'
-  " let g:airline#extensions#tabline#left_sep = ' > '
-  " let g:airline#extensions#tabline#left_alt_sep = ' || '
-  " let g:airline_theme = 'simple'
-  " let g:airline_powerline_fonts = 1
   Plug 'chrisbra/vim-diff-enhanced' " enhanced diff
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
-  " Plug 'ryanoasis/vim-webdevicons'
-  " NERDTress File highlighting
-  " function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  " exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  " exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-  " endfunction
-
-  " call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-  " call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-  " call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-  " call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-  " call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-  " call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-  " call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-  " call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-  " call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-  " call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-  " call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-  " call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-  " call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
   " NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
   " let g:limelight_conceal_ctermfg = 'gray'
@@ -121,9 +95,6 @@
   " let g:goyo_width = 100
 
   Plug 'kshenoy/vim-signature' " highlight marks
-
-  " NeoBundle 'mhinz/vim-startify'
-  " NeoBundle 'itchyny/lightline.vim'
   " set laststatus=2 " To show menubar
   " set noshowmode
   " let g:airline#extensions#tabline#enabled = 1
@@ -488,9 +459,10 @@
   inoremap <C-j> <C-o>j
   inoremap <C-k> <C-o>k
 
-
   " make Y consistent with C and D. See :help Y.
   nnoremap Y y$
+
+  " Hard mode
   map <UP> <NOP>
   map <DOWN> <NOP>
   map <LEFT> <NOP>
@@ -511,79 +483,3 @@
 " }
 
  set background=dark
-
-" hi Boolean      ctermfg=LightGreen guifg=#55FF4D
-" hi Character    ctermfg=LightGreen guifg=#55FF4D
-" hi Comment      ctermfg=Yellow     guifg=#FFFF54
-" hi Conditional  ctermfg=LightGreen guifg=#55FF4D
-" hi Constant     ctermfg=Cyan       guifg=#55FFFF
-" hi CursorColumn guibg=#2A2A2A
-" hi CursorLine   guibg=#2A2A2A
-" hi Define       ctermfg=LightGreen guifg=#55FF4D
-" hi Directory    ctermfg=LightGreen guifg=#55FF4D
-" hi DiffAdd      ctermbg=Green      guibg=#004200 guifg=White
-" hi DiffChange   ctermbg=Blue       guibg=#000083 guifg=White
-" hi DiffDelete   ctermbg=Red        guibg=#810000 guifg=White
-" hi DiffText     guibg=#817000      guifg=White
-" hi Delimiter    ctermfg=LightGreen guifg=#55FF4D
-" hi Float        ctermfg=LightGreen guifg=#55FF4D
-" hi Folded       guibg=#444444      guifg=White
-" hi FoldColumn   guibg=#222222      guifg=#CCCCCC
-" hi Function     ctermfg=Cyan       guifg=#55FFFF
-" hi Identifier   ctermfg=Cyan       guifg=#55FFFF
-" hi Include      ctermfg=Cyan       guifg=#63FFFF
-" hi LineNr       ctermfg=Gray  guifg=#777777 guibg=#222222
-" hi MatchParen   ctermfg=White      ctermbg=Red
-" hi NonText      ctermfg=Black      guifg=#222222
-" hi Normal       ctermfg=White guibg=#222222 guifg=White
-" hi Number       ctermfg=LightGreen guifg=#55FF4D
-" hi Operator     ctermfg=LightGreen guifg=#55FF4D
-" hi Parent       ctermfg=LightGreen guifg=#55FF4D
-" hi Region       ctermfg=Cyan       guifg=#55FFFF
-" hi SignColumn   guibg=#222222
-" hi Special      ctermfg=Cyan       guifg=#55FFFF
-" hi Statement    ctermfg=LightGreen guifg=#55FF4D
-" hi StatusLine   guifg=#333333      guibg=#CCCCCC
-" hi StatusLineNC guibg=#999999      guifg=#333333
-" hi String       ctermfg=Red        guifg=#FF5555
-" hi Structure    ctermfg=LightGreen guifg=#55FF4D
-" hi Todo         guibg=#222222      guifg=#FFFFFF
-" hi Title        ctermfg=Cyan       guifg=#55FFFF
-" hi Type         ctermfg=LightGreen guifg=#55FF4D
-" hi VertSplit    ctermbg=White      ctermfg=White guibg=#333333 guifg=#333333
-" hi Visual       guibg=#555555
-" hi vimHiGroup   ctermfg=Cyan
-" hi vimOption    ctermfg=Cyan
-
-" hi cssValueAngle     guifg=#55FFFF
-" hi cssValueFrequency guifg=#55FFFF
-" hi cssValueInteger   guifg=#55FFFF
-" hi cssValueLength    guifg=#55FFFF
-" hi cssValueNumber    guifg=#55FFFF
-" hi cssValueTime      guifg=#55FFFF
-" hi cssTextAttr       guifg=#55FFFF
-" hi cssCommonAttr     guifg=#55FFFF
-" hi cssRenderAttr     guifg=#55FFFF
-" hi cssColor          guifg=#55FFFF
-" hi cssColorAttr      guifg=#55FFFF
-" hi cssRenderProp     guifg=#55FFFF
-" hi cssBoxAttr        guifg=#55FFFF
-" hi cssFontAttr       guifg=#55FFFF
-" hi cssUIAttr         guifg=#55FFFF
-" hi cssPseudoClass    guifg=#FF80FF
-
-" hi javascriptBraces     guifg=#55FF4D
-" hi javascriptValue      guifg=#55FF4D
-" hi javascriptFunction   guifg=#55FF4D
-" hi javascriptIdentifier guifg=#55FF4D
-" hi javascriptParens     guifg=#55FF4D
-
-" hi phpMethodsVar  ctermfg=Cyan guifg=#55FFFF
-" hi phpRegion      ctermfg=Cyan guifg=#55FFFF
-" hi phpVarSelector ctermfg=Cyan guifg=#55FFFF
-
-" hi vimGroup        guifg=#55FFFF
-" hi vimHiCtermColor guifg=#55FFFF
-" hi vimHiGroup      guifg=#55FFFF
-
-" hi link htmlLink none

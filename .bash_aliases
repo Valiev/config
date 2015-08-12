@@ -15,6 +15,7 @@ alias b="   butler"
 alias k="   kitchen"
 alias c="   colorize"
 alias g="   git"
+alias n="   on_finish"
 alias ls="  ls --color='yes'"
 alias ll="  ls -l -h"
 alias la="  ls -A"
@@ -36,6 +37,20 @@ function bak() {
   else
     mv -v "$filepath" "$filepath.bak"
   fi
+}
+
+function growl() {
+  terminal-notifier -activate com.googlecode.iterm2 -title "iTerm2 notification" -subtitle "A message from your shell:" -message "$@"
+}
+
+function on_finish() {
+  exit_code=$?
+  last_cmd=`history | tail -1 | cut -d' ' -f2-`
+  say -v Alex "task is finished"
+  terminal-notifier -activate com.googlecode.iterm2 \
+    -title "iTerm2 notification"                    \
+    -subtitle "$last_cmd"                           \
+    -message "exit code: $exit_code"
 }
 
 

@@ -119,6 +119,9 @@
   Plug 'vim-scripts/ScrollColors'
   " Plug 'kien/rainbow_parentheses.vim'
   Plug 'luochen1990/rainbow'
+  let g:rainbow_conf = {
+  \   'ctermfgs': ['blue', 'cyan', 'green', 'yellow', 'red']
+  \ }
   Plug 'zefei/vim-colortuner'
   Plug 'flazz/vim-colorschemes'
   Plug 'godlygeek/csapprox'

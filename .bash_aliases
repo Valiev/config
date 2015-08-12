@@ -27,6 +27,17 @@ alias toLower='tr "[[:upper:]]" "[[:lower:]]" '
 alias toUpper='tr "[[:lower:]]" "[[:upper:]]" '
 # }
 
+function bak() {
+  local filepath=$(basename "$1")
+  local extension="${filepath##*.}"
+  local filename="${filepath%.*}"
+  if [[ "X$extension" == "Xbak" ]]; then
+    mv -v "$filepath" "$filename"
+  else
+    mv -v "$filepath" "$filepath.bak"
+  fi
+}
+
 
 # VIM {
 alias vim="     vim -p"

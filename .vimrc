@@ -81,6 +81,7 @@
 " - Appearel -
   Plug 'bling/vim-airline' " status bar
   set laststatus=2
+  let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
   Plug 'chrisbra/vim-diff-enhanced' " enhanced diff

@@ -19,33 +19,40 @@
   Plug 'tejr/vim-nagios', { 'for': 'nagios' }
   Plug 'wting/rust.vim', { 'for': 'rust' }
 
-" - Coding features -
+" - Text features
+  Plug 'haya14busa/incsearch.vim'
+  Plug 'haya14busa/incsearch-fuzzy.vim'
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+  Plug 'bkad/CamelCaseMotion'
+  Plug 'tpope/vim-speeddating'
+  Plug 'ntpeters/vim-better-whitespace'
+  Plug 'Townk/vim-autoclose'
+  Plug 'terryma/vim-expand-region'
+  Plug 'vasconcelloslf/vim-interestingwords'
+
+" - Coding features -
+  " Plug 'epeli/slimux'
+  Plug 'christoomey/vim-tmux-navigator'
   Plug 'majutsushi/tagbar'
   Plug 'tpope/vim-fugitive' " Git management
   Plug 'junegunn/vim-after-object' " After object actions
   silent! if has_key(g:plugs, 'vim-after-object')
     autocmd VimEnter * silent! call after_object#enable('=', ':', '-', '#', ' ', '*', '.', '|')
   endif
-  Plug 'bkad/CamelCaseMotion'
   Plug 'vim-gitgutter' " Git diff
   Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'ruby'] }
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-speeddating'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-unimpaired'
-  Plug 'ntpeters/vim-better-whitespace'
-  Plug 'Townk/vim-autoclose'
   Plug 'sheerun/vim-polyglot' " language packs
   Plug 'szw/vim-ctrlspace'
-  Plug 'arecarn/fold-cycle.vim' " folds
-  Plug 'terryma/vim-expand-region'
+  " Plug 'arecarn/fold-cycle.vim' " folds
   Plug 'tpope/vim-vinegar'
   " Plug 'luochen1990/indent-detector.vim'
   Plug 'luochen1990/select-and-search'
-  Plug 'gastonsimone/vim-dokumentary'
+  " Plug 'gastonsimone/vim-dokumentary'
   Plug 'kien/ctrlp.vim'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
   let g:ctrlp_custom_ignore = {
@@ -226,6 +233,7 @@
   " hi IndentGuidesOdd  ctermbg=black
   " hi IndentGuidesEven ctermbg=darkgrey
 
+  Plug 'ryanoasis/vim-devicons'
   filetype plugin indent on
   call plug#end()
 " }
@@ -249,6 +257,7 @@
   set fo-=r " Do not automatically insert a comment leader after an enter
 
 
+
   " Highlight >80 chars
   "au! BufNewFile,BufRead * exec 'match Todo /\%>' . &textwidth . 'v.\+/'
 " }
@@ -262,15 +271,25 @@
   set history=500
   set undolevels=50
   set completeopt=longest,menuone     " IDE-like autocomplete
+  set hlsearch
+  let g:incsearch#auto_nohlsearch = 1
+  map n  <Plug>(incsearch-nohl-n)
+  map N  <Plug>(incsearch-nohl-N)
+  map *  <Plug>(incsearch-nohl-*)
+  map #  <Plug>(incsearch-nohl-#)
+  map g* <Plug>(incsearch-nohl-g*)
+  map g# <Plug>(incsearch-nohl-g#)
+  map z/ <Plug>(incsearch-fuzzy-/)
 " }
 
 
 " ============================================================================
 " Folds {
 " ============================================================================
-  set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
-  set foldenable
-  set foldmethod=manual
+  " set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
+  " set foldenable
+  " set foldmethod=manual
+  set nofoldenable
 " }
 
 
@@ -326,15 +345,23 @@
   set guioptions-=T  "remove toolbar
   set guioptions-=L  "remove left-hand scroll bar
   set guioptions-=r  "remove right-hand scroll bar
+
 " }
 
 " ============================================================================
 " Coding features {
 " ============================================================================
+  set encoding=utf8
+  set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
   let c_space_errors = 1
   let python_highlight_space_errors = 1
   let python_highlight_all = 1
   "utocmd FileType python set colorscheme= autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
+  " autocmd BufRead,BufNewFile *
+  "       \  if expand('%:p:h') =~# '.*/cookbooks/.*'
+  "       \|   setlocal makeprg=foodcritic\ $*\ %
+  "       \|   setlocal errorformat=%m:\ %f:%l
+  "       \| endif
   autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace " strip whitespaces
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType ruby compiler ruby

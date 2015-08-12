@@ -17,6 +17,7 @@ ZSH_THEME="wezm"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias - -='cd -'
 
 zstyle ":completion:*:commands" rehash 1
 

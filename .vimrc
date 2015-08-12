@@ -349,7 +349,14 @@
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
+
+  " Words completion
+  set complete-=k
+  set complete+=k
+  set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+
   "autocmd FileType python set complete+=k~/.vim/syntax/python.vim
+  "
   "au FileType python set omnifunc=pythoncomplete#Complete
   "let g:SuperTabDefaultCompletionType = "context"
   "isk+=.,(
@@ -459,7 +466,6 @@
   " reselect visual block after indent
   vnoremap < <gv
   vnoremap > >gv"
-
   " Movement in insert mode
   inoremap <C-h> <C-o>h
   inoremap <C-l> <C-o>a
@@ -474,19 +480,29 @@
   map <DOWN> <NOP>
   map <LEFT> <NOP>
   map <RIGHT> <NOP>
+  " Switching windows and close window
+  map <C-j> <C-W>j
+  map <C-k> <C-W>k
+  map <C-h> <C-W>h
+  map <C-l> <C-W>l
+  map <C-q> <C-W>q " check this mapping
 
   " folds
-  let g:fold_cycle_default_mapping = 0 "disable default mappings
-  nmap <Tab><Tab> <Plug>(fold-cycle-open)
-  nmap <S-Tab><S-Tab> <Plug>(fold-cycle-close)
+  " let g:fold_cycle_default_mapping = 1 "disable default mappings
+  " nmap <Tab><Tab> <Plug>(fold-cycle-open)
+  " nmap <S-Tab><S-Tab> <Plug>(fold-cycle-close)
 
   let NERDTreeHijackNetrw=1
-  let g:netrw_liststyle=1
+  let g:netrw_liststyle=3
   "
   vmap v <Plug>(expand_region_expand)
   vmap <C-v> <Plug>(expand_region_shrink)
   let g:rainbow_active = 1
   let g:select_and_search_active = 1
+
+  " Git Gutter
+  nmap ]h <Plug>GitGutterNextHunk
+  nmap [h <Plug>GitGutterPrevHunk
 " }
 
- set background=dark
+  set background=dark

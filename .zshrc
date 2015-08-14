@@ -81,6 +81,7 @@ plugins=(
   kitchen
   vagrant
   almostontop
+  emoji
 )
 
 source ~/.bash_aliases

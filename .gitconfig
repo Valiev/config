@@ -3,13 +3,19 @@ s = status
 b = branch
 ci = commit
 co = checkout
+pr = pull --rebase
 
 l = log -C --decorate
 ls = log -C --stat --decorate
 lga = log --graph '--pretty=tformat:%Cblue%h%Creset %Cgreen%ar%Creset %Cblue%d%Creset %s' --all
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+
 [color]
 	ui = auto
 [user]
 	name = Sergey Valiev
-	mail = svaliev@gmail.com
-	email = svaliev@gmail.com
+	mail = svaliev@aligntech.com
+	email = svaliev@aligntech.com
+[push]
+	default = simple

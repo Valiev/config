@@ -18,6 +18,7 @@
 " - Filetypes -
   Plug 'tejr/vim-nagios', { 'for': 'nagios' }
   Plug 'wting/rust.vim', { 'for': 'rust' }
+  Plug 'Valiev/vim-bamboo-log'
 
 " - Text features
   Plug 'haya14busa/incsearch.vim'

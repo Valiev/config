@@ -21,6 +21,7 @@
   Plug 'Valiev/vim-bamboo-log'
 
 " - Text features
+  Plug 'wincent/ferret'  "multi-file search
   Plug 'haya14busa/incsearch.vim'
   Plug 'haya14busa/incsearch-fuzzy.vim'
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }

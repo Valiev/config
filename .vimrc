@@ -30,7 +30,6 @@
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'Townk/vim-autoclose'
   Plug 'terryma/vim-expand-region'
-  Plug 'vasconcelloslf/vim-interestingwords'
 
 " - Coding features -
   " Plug 'epeli/slimux'

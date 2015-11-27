@@ -64,6 +64,8 @@
   set hidden
   " TabLine xxx term=underline cterm=underline ctermfg=12 ctermbg=0 gui=underline guibg=DarkGrey
 
+" - Terraform
+  Plug 'bkad/vim-terraform'
 " - Haskell -
   Plug 'neco-ghc', { 'for' : 'haskell' }
   setlocal omnifunc=necoghc#omnifunc

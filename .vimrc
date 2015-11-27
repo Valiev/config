@@ -483,9 +483,13 @@
   nmap <Leader>t :TagbarToggle<CR>
   nmap <Leader>b :CtrlPBuffer<CR>
   nmap <Leader>r :CtrlPMRU<CR>
+
   " Buffers
-  nmap <Leader>j :bnext<CR>
-  nmap <Leader>k :bprevious<CR>
+  nmap <Leader>bn :bnext<CR>
+  nmap <Leader>bp :bprevious<CR>
+  noremap H :bprev<CR>
+  noremap L :bnext<CR>
+  nmap <Leader>d :bd<CR>
 
   nnoremap <silent> <LocalLeader>rs :source ~/.vimrc<CR>
 
@@ -494,8 +498,8 @@
   nnoremap * #
   " nnoremap - :Switch<cr>
 
-  noremap  H ^
-  noremap  L $
+  " noremap  H ^
+  " noremap  L $
   nnoremap U <C-r>
 
   " jk to leave insert mode

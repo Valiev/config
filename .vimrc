@@ -40,7 +40,6 @@
   silent! if has_key(g:plugs, 'vim-after-object')
     autocmd VimEnter * silent! call after_object#enable('=', ':', '-', '#', ' ', '*', '.', '|')
   endif
-  Plug 'vim-gitgutter' " Git diff
   Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'ruby'] }
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
@@ -106,6 +105,9 @@
   " let g:goyo_width = 100
 
   Plug 'kshenoy/vim-signature' " highlight marks
+  Plug 'mhinz/vim-signify' " h
+    " Plug 'vim-gitgutter' " Git diff
+
   " set laststatus=2 " To show menubar
   " set noshowmode
   " let g:airline#extensions#tabline#enabled = 1

@@ -74,13 +74,16 @@ plugins=(
   jsontools
   dirhistory
   sublime
-  sudo
+  # sudo
   npm
   bundle
   kitchen
   vagrant
   almostontop
   emoji
+  terraform
+  thefuck
+  golang
 )
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

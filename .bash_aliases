@@ -57,7 +57,30 @@ function on_finish() {
     -message "exit code: $exit_code"
 }
 
+function knife_env_fuzzy_search() {
+  local env=$1
+  local search_term=$2
+  knife search "chef_environment:$env AND (recipe:*$search_term* OR role:*$search_term* OR name:*$search_term*)"
+}
 
+function env_releases() {
+  local env=$1
+  knife environment show $env -a default_attributes.releases
+}
+
+function env_e1() {
+  knife_env_fuzzy_search E1 $1
+}
+
+function env_s3() {
+  knife_env_fuzzy_search S3 $1
+}
+
+function env_et() {
+  knife_env_fuzzy_search ET $1
+}
+
+alias knife_env="knife_env_fuzzy_search"
 # VIM {
 alias vim="     vim -p"
 alias vimba="   vim $bash_aliases"

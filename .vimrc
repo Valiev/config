@@ -318,6 +318,10 @@
   set ruler         " Show cursor position info in the bottom if vim
   set t_Co=256
   set shortmess=atI " Shortens messages
+  function s:SetCursorLine()
+    hi cursorline cterm=none ctermbg=darkblue ctermfg=white
+  endfunction
+  autocmd VimEnter * call s:SetCursorLine()
 
   if has("autocmd") " resume last position in file
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -424,6 +428,7 @@
   nnoremap <Leader>q :q<CR>
   nnoremap <Leader>wq :wq<CR>
   " map <Leader>r :SmargfRefreshTags<CR>
+  nnoremap <Leader>h :set cursorline!<CR>
 
   " copy to clipboard
   vmap <Leader>y "+y

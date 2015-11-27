@@ -46,7 +46,7 @@
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-unimpaired'
-  Plug 'sheerun/vim-polyglot' " language packs
+  Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'python', 'haskell'] }
   Plug 'szw/vim-ctrlspace'
   " Plug 'arecarn/fold-cycle.vim' " folds
   Plug 'tpope/vim-vinegar'
@@ -83,11 +83,15 @@
   " NeoBundle 'vim-scripts/pyflakes.vim'
 
 " - JSON -
-  " Plug 'elzr/vim-json' ", { 'for': 'json' }
-  Plug 'othree/yajs.vim', { 'for' : 'javascript' }
+  Plug 'elzr/vim-json', { 'for': 'json' }
+  hi! def link jsonKeyword Identifier
+  " , { 'for': 'json' }
+  " let g:indentLine_noConcealCursor=""
+  " Plug 'othree/yajs.vim', { 'for' : 'javascript' }
   " let g:vim_json_syntax_conceal = 0
 
 " - Appearel -
+  set noshowmode
   Plug 'bling/vim-airline' " status bar
   set laststatus=2
   let g:airline_powerline_fonts = 1

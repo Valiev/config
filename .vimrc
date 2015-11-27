@@ -546,8 +546,21 @@
   let g:select_and_search_active = 1
 
   " Git Gutter
-  nmap ]h <Plug>GitGutterNextHunk
-  nmap [h <Plug>GitGutterPrevHunk
+  "
+  "
+  nmap <leader>gj <Plug>(signify-next-hunk)
+  nmap <leader>gk <Plug>(signify-prev-hunk)
+  omap ic <plug>(signify-motion-inner-pending)
+  xmap ic <plug>(signify-motion-inner-visual)
+  omap ac <plug>(signify-motion-outer-pending)
+  xmap ac <plug>(signify-motion-outer-visual)
+  "
+  "
+  " nmap ]h <Plug>GitGutterNextHunk
+  " nmap [h <Plug>GitGutterPrevHunk
+  " nmap <Leader>ha <Plug>GitGutterStageHunk
+  " nmap <Leader>hu <Plug>GitGutterRevertHunk
+  " nmap <Leader>hv <Plug>GitGutterPreviewHunk
 " }
 
   set background=dark

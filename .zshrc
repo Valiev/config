@@ -51,7 +51,6 @@ COMPLETION_WAITING_DOTS="true"
 # much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -83,6 +82,10 @@ plugins=(
   almostontop
   emoji
 )
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+# ZSH_HIGHLIGHT_STYLES[cursor]='bg=blue'
 
 source ~/.bash_aliases
 source $ZSH/oh-my-zsh.sh

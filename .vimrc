@@ -385,6 +385,7 @@
   autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
   au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
   autocmd BufNewFile,BufRead *.json set ft=json
+  autocmd BufNewFile,BufRead *.json set foldmethod=syntax
   autocmd BufNewFile,BufRead *.cfg set ft=nagios
   set tabstop=2
   set softtabstop=2

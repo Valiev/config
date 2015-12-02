@@ -548,7 +548,6 @@
 
   " Git Gutter
   "
-  "
   nmap <leader>gj <Plug>(signify-next-hunk)
   nmap <leader>gk <Plug>(signify-prev-hunk)
   omap ic <plug>(signify-motion-inner-pending)
@@ -557,6 +556,9 @@
   xmap ac <plug>(signify-motion-outer-visual)
   "
   "
+
+  nmap <Leader>gs :Gstatus<CR>
+  nmap <Leader>gc :Gcommit<CR>
   " nmap ]h <Plug>GitGutterNextHunk
   " nmap [h <Plug>GitGutterPrevHunk
   " nmap <Leader>ha <Plug>GitGutterStageHunk

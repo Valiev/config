@@ -1,4 +1,3 @@
-" [comment]: <> vim: tabstop=2 softtabstop=2 shiftwidth=2
 "
 " VIM configuration
 " =================
@@ -548,3 +547,8 @@ filetype plugin on
   " nmap <Leader>hv <Plug>GitGutterPreviewHunk
 
   set background=dark
+
+" Ugly hack to support both `.vimrc` syntax and `markdown`
+" ```
+" [//]: # vim: tabstop=2 softtabstop=2 shiftwidth=2
+" ```

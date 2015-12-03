@@ -1,5 +1,3 @@
-[//]: # vim: tabstop=2 softtabstop=2 shiftwidth=2
-
 VIM configuration
 =================
 ## Plugins
@@ -231,3 +229,7 @@ nmap [h <Plug>GitGutterPrevHunk
 nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterRevertHunk
 nmap <Leader>hv <Plug>GitGutterPreviewHunk
+Ugly hack to support both `.vimrc` syntax and `markdown`
+```
+[//]: # vim: tabstop=2 softtabstop=2 shiftwidth=2
+```

@@ -1,21 +1,17 @@
-" vim: tabstop=2 softtabstop=2 shiftwidth=2
+" [comment]: <> vim: tabstop=2 softtabstop=2 shiftwidth=2
+"
+" VIM configuration
+" =================
+syntax on
+filetype on
+filetype plugin on
 
-" ============================================================================
-" BASIC {
-" ============================================================================
-  syntax on
-  filetype on
-  filetype plugin on
-" }
-
-" ============================================================================
-" PLUGINS {
-" ============================================================================
-" - init -
+" ## Plugins
+" init with `call plug#begin('~/.vim/plugged')`
   call plug#begin('~/.vim/plugged')
 
-
-" - Filetypes -
+"
+" - Filetypes
   Plug 'tejr/vim-nagios', { 'for': 'nagios' }
   Plug 'wting/rust.vim', { 'for': 'rust' }
   Plug 'Valiev/vim-bamboo-log'
@@ -31,8 +27,8 @@
   Plug 'Townk/vim-autoclose'
   Plug 'terryma/vim-expand-region'
 
-" - Coding features -
-  " Plug 'epeli/slimux'
+" - Coding features
+  " [comment]: <> Plug 'epeli/slimux'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'majutsushi/tagbar'
   Plug 'tpope/vim-fugitive' " Git management
@@ -62,16 +58,15 @@
     \ 'link': 'some_bad_symbolic_links',
     \ }
   set hidden
-  " TabLine xxx term=underline cterm=underline ctermfg=12 ctermbg=0 gui=underline guibg=DarkGrey
 
 " - Terraform
   Plug 'bkad/vim-terraform'
-" - Haskell -
+" - Haskell
   Plug 'neco-ghc', { 'for' : 'haskell' }
   setlocal omnifunc=necoghc#omnifunc
   " NeoBundle 'Twinside/vim-haskellConceal'
 
-" - Python -
+" - Python
   Plug 'davidhalter/jedi-vim', { 'for' : 'python' }
   let g:pylint_cwindow = 0 " Disable pylint window
   let g:jedi#auto_vim_configuration = 0
@@ -84,7 +79,7 @@
   " NeoBundle 'Pydiction'
   " NeoBundle 'vim-scripts/pyflakes.vim'
 
-" - JSON -
+" - JSON
   Plug 'elzr/vim-json', { 'for': 'json' }
   hi! def link jsonKeyword Identifier
   " , { 'for': 'json' }
@@ -92,7 +87,7 @@
   " Plug 'othree/yajs.vim', { 'for' : 'javascript' }
   " let g:vim_json_syntax_conceal = 0
 
-" - Appearel -
+" - Appearel
   set noshowmode
   Plug 'bling/vim-airline' " status bar
   set laststatus=2
@@ -245,12 +240,10 @@
   Plug 'ryanoasis/vim-devicons'
   filetype plugin indent on
   call plug#end()
-" }
 
 
-" ============================================================================
-" Text {
-" ============================================================================
+"
+" ## Text
   set nowrap
   set smartindent
   set tabstop=4
@@ -269,11 +262,9 @@
 
   " Highlight >80 chars
   "au! BufNewFile,BufRead * exec 'match Todo /\%>' . &textwidth . 'v.\+/'
-" }
 
-" ============================================================================
-" Search {
-" ============================================================================
+"
+" ## Search
   set noignorecase
   set incsearch       " Search during typing
   set hlsearch        " Highlight found strings
@@ -289,22 +280,18 @@
   map g* <Plug>(incsearch-nohl-g*)
   map g# <Plug>(incsearch-nohl-g#)
   map z/ <Plug>(incsearch-fuzzy-/)
-" }
 
 
-" ============================================================================
-" Folds {
-" ============================================================================
+"
+" ## Folds
   " set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
   " set foldenable
   " set foldmethod=manual
   set nofoldenable
-" }
 
 
-" ============================================================================
-" GUI features {
-" ============================================================================
+"
+" ## GUI features
   set background=dark
   set nocp
   set noerrorbells  " Silent
@@ -346,12 +333,10 @@
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
   endif
-" }
 
 
-" ============================================================================
-" GVim features {
-" ============================================================================
+"
+" ## GVim features
 " set guifont=DejaVu\ Sans\ Mono\ 9
   set guifont=Inconsolata\ 13
   set guioptions-=m  "remove menu bar
@@ -359,11 +344,9 @@
   set guioptions-=L  "remove left-hand scroll bar
   set guioptions-=r  "remove right-hand scroll bar
 
-" }
 
-" ============================================================================
-" Coding features {
-" ============================================================================
+"
+" ## Coding features
   set encoding=utf8
   set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
   let c_space_errors = 1
@@ -413,7 +396,6 @@
   " Automatically resize vertical splits.
   " :au WinEnter * :set winfixheight
   " :au WinEnter * :wincmd =
-" " }
 
 " let g:load_doxygen_syntax=1
 
@@ -564,6 +546,5 @@
   " nmap <Leader>ha <Plug>GitGutterStageHunk
   " nmap <Leader>hu <Plug>GitGutterRevertHunk
   " nmap <Leader>hv <Plug>GitGutterPreviewHunk
-" }
 
   set background=dark

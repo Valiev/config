@@ -1,9 +1,23 @@
+
 VIM configuration
 =================
 ## Plugins
-init with `call plug#begin('~/.vim/plugged')`
+Vim is really great editor. But to extend it to fit my into personal needs I
+use plugin manager. I used to use [NeoBundle](https://github.com/Shougo/neobundle.vim),
+but migrated to [vim-plug](https://github.com/junegunn/vim-plug) recently.
+And I really enjoy it.
 
-- Filetypes
+[Installation](https://github.com/junegunn/vim-plug#installation) is easy.
+To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` to your `.vimrc` file.
+
+
+### Filetypes
+
+- [vim-nagios](https://github.com/tejr/vim-nagios) plugin provides syntax
+highlight for [Nagios](https://www.nagios.org/) monitoring configuration
+files. `Plug 'tejr/vim-nagios', { 'for': 'nagios' }` line is used to provide
+this plugin to be enabled only for `nagios` files. Could be enabled by
+setting filetype explicitly.
 - Text features
 - Coding features
 [comment]: <> Plug 'epeli/slimux'

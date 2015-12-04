@@ -6,11 +6,24 @@ filetype on
 filetype plugin on
 
 " ## Plugins
-" init with `call plug#begin('~/.vim/plugged')`
+" Vim is really great editor. But to extend it to fit my into personal needs I
+" use plugin manager. I used to use [NeoBundle](https://github.com/Shougo/neobundle.vim),
+" but migrated to [vim-plug](https://github.com/junegunn/vim-plug) recently.
+" And I really enjoy it.
+"
+" [Installation](https://github.com/junegunn/vim-plug#installation) is easy.
+" To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` to your `.vimrc` file.
+"
   call plug#begin('~/.vim/plugged')
 
 "
-" - Filetypes
+" ### Filetypes
+"
+" - [vim-nagios](https://github.com/tejr/vim-nagios) plugin provides syntax
+"   highlight for [Nagios](https://www.nagios.org/) monitoring configuration
+"   files. `Plug 'tejr/vim-nagios', { 'for': 'nagios' }` line is used to provide
+"   this plugin to be enabled only for `nagios` files. Could be enabled by
+"   setting filetype explicitly with `:set filetype=nagios`.
   Plug 'tejr/vim-nagios', { 'for': 'nagios' }
   Plug 'wting/rust.vim', { 'for': 'rust' }
   Plug 'Valiev/vim-bamboo-log'

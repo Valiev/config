@@ -17,8 +17,11 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
 highlight for [Nagios](https://www.nagios.org/) monitoring configuration
 files. `Plug 'tejr/vim-nagios', { 'for': 'nagios' }` line is used to provide
 this plugin to be enabled only for `nagios` files. Could be enabled by
-setting filetype explicitly.
-- Text features
+setting filetype explicitly with `:set filetype=nagios`.
+- [vim-bamboo-log](https://github.com/Valiev/vim-bamboo-log) plugin provides
+syntax highlight for Bamboo CI build logs.
+
+### Text features
 - Coding features
 [comment]: <> Plug 'epeli/slimux'
 Plug 'arecarn/fold-cycle.vim' " folds

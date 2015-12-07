@@ -329,10 +329,10 @@ filetype plugin on
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   endif
 
-  " colorscheme Monokai
+  colorscheme Monokai
   " colorscheme 256-jungle
   " colorscheme Mustang
-  colorscheme symfony
+  " colorscheme symfony
   " colorscheme anotherdark
   " colorscheme molokai
   " colorscheme railscasts

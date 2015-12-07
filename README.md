@@ -1,14 +1,10 @@
 Configuration files
 ===================
 
-vim
----
-`.vimrc` and `.gvimrc` files
-
-shells
-------
-`.bash_aliases` and `.zshrc` files
+## vim
+My vimrc documentation could be found
+[here](https://github.com/Valiev/config/blob/master/docs/vimrc.md)
 
 
-
-
+## shells
+documentation will be provided soon.

@@ -82,7 +82,6 @@ function env_et() {
 
 alias knife_env="knife_env_fuzzy_search"
 # VIM {
-alias vim="     vim -p"
 alias vimba="   vim $bash_aliases"
 alias zshrc="   vim ~/.zshrc"
 alias vimrc="   vim $vimrc"

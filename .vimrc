@@ -44,6 +44,8 @@ filetype plugin on
 
 " - Coding features
   " [comment]: <> Plug 'epeli/slimux'
+  Plug 'ludovicchabant/vim-gutentags'
+  let g:gutentags_cache_dir = '~/dev/tags'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'majutsushi/tagbar'
   Plug 'tpope/vim-fugitive' " Git management

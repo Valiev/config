@@ -38,39 +38,60 @@ filetype plugin on
 "   command: `<Leader>a` starts search, `<Leader>s` searches for the word under
 "   cursor
   Plug 'wincent/ferret'
+" - [haya14busa/incsearch.vim](https://github.com/url_here) plugin
   Plug 'haya14busa/incsearch.vim'
+" - [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
   Plug 'haya14busa/incsearch-fuzzy.vim'
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+" - [bkad/CamelCaseMotion](https://github.com/url_here) plugin
   Plug 'bkad/CamelCaseMotion'
+" - [tpope/vim-speeddating](https://github.com/url_here) plugin
   Plug 'tpope/vim-speeddating'
+" - [ntpeters/vim-better-whitespace](https://github.com/url_here) plugin
   Plug 'ntpeters/vim-better-whitespace'
+" - [Townk/vim-autoclose](https://github.com/url_here) plugin
   Plug 'Townk/vim-autoclose'
+" - [terryma/vim-expand-region](https://github.com/url_here) plugin
   Plug 'terryma/vim-expand-region'
 
-" - Coding features
-  " [comment]: <> Plug 'epeli/slimux'
+"
+" ### Coding features
+"
+" - `Plug 'epeli/slimux'` TODO
+" - [ludovicchabant/vim-gutentags](https://github.com/url_here) plugin
   Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_cache_dir = '~/dev/tags'
+" - [christoomey/vim-tmux-navigator](https://github.com/url_here) plugin
   Plug 'christoomey/vim-tmux-navigator'
+" - [majutsushi/tagbar](https://github.com/url_here) plugin
   Plug 'majutsushi/tagbar'
+" - [tpope/vim-fugitive ] " Git managemet(https://github.com/url_here) pluginn
   Plug 'tpope/vim-fugitive' " Git management
   Plug 'junegunn/vim-after-object' " After object actions
   silent! if has_key(g:plugs, 'vim-after-object')
     autocmd VimEnter * silent! call after_object#enable('=', ':', '-', '#', ' ', '*', '.', '|')
   endif
   Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'ruby'] }
+" - [tpope/vim-surround](https://github.com/url_here) plugin
   Plug 'tpope/vim-surround'
+" - [tpope/vim-commentary](https://github.com/url_here) plugin
   Plug 'tpope/vim-commentary'
+" - [tpope/vim-endwise](https://github.com/url_here) plugin
   Plug 'tpope/vim-endwise'
+" - [tpope/vim-repeat](https://github.com/url_here) plugin
   Plug 'tpope/vim-repeat'
+" - [tpope/vim-unimpaired](https://github.com/url_here) plugin
   Plug 'tpope/vim-unimpaired'
   Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'python', 'haskell'] }
+" - [szw/vim-ctrlspace](https://github.com/url_here) plugin
   Plug 'szw/vim-ctrlspace'
-  " Plug 'arecarn/fold-cycle.vim' " folds
+" - TODO Plug 'arecarn/fold-cycle.vim' " folds
+" - [tpope/vim-vinegar](https://github.com/url_here) plugin
   Plug 'tpope/vim-vinegar'
-  " Plug 'luochen1990/indent-detector.vim'
+" - TODO Plug 'luochen1990/indent-detector.vim'
+" - [luochen1990/select-and-search](https://github.com/url_here) plugin
   Plug 'luochen1990/select-and-search'
-  " Plug 'gastonsimone/vim-dokumentary'
+" - [kien/ctrlp.vim](https://github.com/url_here) plugin
   Plug 'kien/ctrlp.vim'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
   let g:ctrlp_custom_ignore = {
@@ -81,7 +102,7 @@ filetype plugin on
     \ }
   set hidden
 
-" - Terraform
+" - [bkad/vim-terraform](https://github.com/url_here) plugin
   Plug 'bkad/vim-terraform'
 " - Haskell
   Plug 'neco-ghc', { 'for' : 'haskell' }
@@ -89,6 +110,8 @@ filetype plugin on
   " NeoBundle 'Twinside/vim-haskellConceal'
 
 " - Python
+" [davidhalter/jedi-vim ], { 'for' : 'python'}(https://github.com/url_here)
+" plugin
   Plug 'davidhalter/jedi-vim', { 'for' : 'python' }
   let g:pylint_cwindow = 0 " Disable pylint window
   let g:jedi#auto_vim_configuration = 0
@@ -102,22 +125,25 @@ filetype plugin on
   " NeoBundle 'vim-scripts/pyflakes.vim'
 
 " - JSON
+" [elzr/vim-json ], { 'for': 'json'}(https://github.com/url_here) plugin
   Plug 'elzr/vim-json', { 'for': 'json' }
   hi! def link jsonKeyword Identifier
-  " , { 'for': 'json' }
-  " let g:indentLine_noConcealCursor=""
-  " Plug 'othree/yajs.vim', { 'for' : 'javascript' }
-  " let g:vim_json_syntax_conceal = 0
 
-" - Appearel
+"
+" ### Appearel
+"
   set noshowmode
   Plug 'bling/vim-airline' " status bar
   set laststatus=2
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
+" - [chrisbra/vim-diff-enhanced ] " enhanced dif(https://github.com/url_here)
+" pluginf
   Plug 'chrisbra/vim-diff-enhanced' " enhanced diff
+" - [scrooloose/nerdtree](https://github.com/url_here) plugin
   Plug 'scrooloose/nerdtree'
+" - [jistr/vim-nerdtree-tabs](https://github.com/url_here) plugin
   Plug 'jistr/vim-nerdtree-tabs'
 
   " NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
@@ -127,8 +153,13 @@ filetype plugin on
   " NeoBundle 'junegunn/goyo.vim' " Distraction-free
   " let g:goyo_width = 100
 
+" - [kshenoy/vim-signature ] " highlight mars(https://github.com/url_here) plugink
   Plug 'kshenoy/vim-signature' " highlight marks
+" - [mhinz/vim-signify ] "h(https://github.com/url_here) plugin
   Plug 'mhinz/vim-signify' " h
+" - unsorted
+"
+" ```
     " Plug 'vim-gitgutter' " Git diff
 
   " set laststatus=2 " To show menubar
@@ -145,18 +176,26 @@ filetype plugin on
 
   " NeoBundle 'bling/vim-bufferline'
   "
+" ```
 
-" - Colors
-  " Plug 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
+"
+" ### Colors
+"
+" - [google/vim-colorscheme-primary](https://github.com/url_here) plugin
   Plug 'google/vim-colorscheme-primary'
+" - [vim-scripts/ScrollColors](https://github.com/url_here) plugin
   Plug 'vim-scripts/ScrollColors'
   " Plug 'kien/rainbow_parentheses.vim'
+" - [luochen1990/rainbow](https://github.com/url_here) plugin
   Plug 'luochen1990/rainbow'
   let g:rainbow_conf = {
   \   'ctermfgs': ['blue', 'cyan', 'green', 'yellow', 'red']
   \ }
+" - [zefei/vim-colortuner](https://github.com/url_here) plugin
   Plug 'zefei/vim-colortuner'
+" - [flazz/vim-colorschemes](https://github.com/url_here) plugin
   Plug 'flazz/vim-colorschemes'
+" - [godlygeek/csapprox](https://github.com/url_here) plugin
   Plug 'godlygeek/csapprox'
   let g:CSApprox_hook_post = [
     \ 'highlight Normal            ctermbg=NONE',
@@ -175,6 +214,11 @@ filetype plugin on
     \ 'highlight clear LineNr'
   \]
 
+" - [ervandew/supertab](https://github.com/url_here) plugin
+  Plug 'ervandew/supertab'
+
+" - Unsorted stuff
+" ```
   " UNSORTED
   " NeoBundle "noahfrederick/vim-noctu"
   " let g:seoul256_background = 256
@@ -234,7 +278,6 @@ filetype plugin on
   " NeoBundle 'Shougo/vimproc'
   " NeoBundle 'Shougo/unite.vim'
   " NeoBundle 'Lokaltog/vim-easymotion'
-  Plug 'ervandew/supertab'
   " NeoBundle 'taglist.vim'
   " NeoBundle 'vim-ruby/vim-ruby'
   " NeoBundle 'Keithbsmiley/rspec.vim'
@@ -258,7 +301,9 @@ filetype plugin on
   " let g:indent_guides_auto_colors=0
   " hi IndentGuidesOdd  ctermbg=black
   " hi IndentGuidesEven ctermbg=darkgrey
+" ```
 
+" - [ryanoasis/vim-devicons](https://github.com/url_here) plugin
   Plug 'ryanoasis/vim-devicons'
   filetype plugin indent on
   call plug#end()
@@ -421,9 +466,7 @@ filetype plugin on
 
 " let g:load_doxygen_syntax=1
 
-" Key mapping {
-  "map <F5> :!make<CR>
-  "map <F2> :A<CR>
+" ## Mappings
 
   let mapleader = "\<Space>"
   " nnoremap <Leader><Leader> :Goyo<CR>

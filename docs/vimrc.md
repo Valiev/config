@@ -27,15 +27,38 @@ syntax highlight for Bamboo CI build logs.
 extremlly useful bindings for quick search in project with `:Ack`
 command: `<Leader>a` starts search, `<Leader>s` searches for the word under
 cursor
-- Coding features
-[comment]: <> Plug 'epeli/slimux'
-Plug 'arecarn/fold-cycle.vim' " folds
-Plug 'luochen1990/indent-detector.vim'
-Plug 'gastonsimone/vim-dokumentary'
-- Terraform
+- [haya14busa/incsearch.vim](https://github.com/url_here) plugin
+- [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
+- [bkad/CamelCaseMotion](https://github.com/url_here) plugin
+- [tpope/vim-speeddating](https://github.com/url_here) plugin
+- [ntpeters/vim-better-whitespace](https://github.com/url_here) plugin
+- [Townk/vim-autoclose](https://github.com/url_here) plugin
+- [terryma/vim-expand-region](https://github.com/url_here) plugin
+
+### Coding features
+
+- `Plug 'epeli/slimux'` TODO
+- [ludovicchabant/vim-gutentags](https://github.com/url_here) plugin
+- [christoomey/vim-tmux-navigator](https://github.com/url_here) plugin
+- [majutsushi/tagbar](https://github.com/url_here) plugin
+- [tpope/vim-fugitive ] " Git managemet(https://github.com/url_here) pluginn
+- [tpope/vim-surround](https://github.com/url_here) plugin
+- [tpope/vim-commentary](https://github.com/url_here) plugin
+- [tpope/vim-endwise](https://github.com/url_here) plugin
+- [tpope/vim-repeat](https://github.com/url_here) plugin
+- [tpope/vim-unimpaired](https://github.com/url_here) plugin
+- [szw/vim-ctrlspace](https://github.com/url_here) plugin
+- TODO Plug 'arecarn/fold-cycle.vim' " folds
+- [tpope/vim-vinegar](https://github.com/url_here) plugin
+- TODO Plug 'luochen1990/indent-detector.vim'
+- [luochen1990/select-and-search](https://github.com/url_here) plugin
+- [kien/ctrlp.vim](https://github.com/url_here) plugin
+- [bkad/vim-terraform](https://github.com/url_here) plugin
 - Haskell
 NeoBundle 'Twinside/vim-haskellConceal'
 - Python
+[davidhalter/jedi-vim ], { 'for' : 'python'}(https://github.com/url_here)
+plugin
 UNSORTED
 NeoBundle 'mitechie/pyflakes-pathogen'
 NeoBundle 'sontek/rope-vim'
@@ -44,16 +67,24 @@ NeoBundle 'fs111/pydoc.vim'
 NeoBundle 'Pydiction'
 NeoBundle 'vim-scripts/pyflakes.vim'
 - JSON
-, { 'for': 'json' }
-let g:indentLine_noConcealCursor=""
-Plug 'othree/yajs.vim', { 'for' : 'javascript' }
-let g:vim_json_syntax_conceal = 0
-- Appearel
+[elzr/vim-json ], { 'for': 'json'}(https://github.com/url_here) plugin
+
+### Appearel
+
+- [chrisbra/vim-diff-enhanced ] " enhanced dif(https://github.com/url_here)
+pluginf
+- [scrooloose/nerdtree](https://github.com/url_here) plugin
+- [jistr/vim-nerdtree-tabs](https://github.com/url_here) plugin
 NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_guifg = 'DarkGray'
 NeoBundle 'junegunn/goyo.vim' " Distraction-free
 let g:goyo_width = 100
+- [kshenoy/vim-signature ] " highlight mars(https://github.com/url_here) plugink
+- [mhinz/vim-signify ] "h(https://github.com/url_here) plugin
+- unsorted
+
+```
 Plug 'vim-gitgutter' " Git diff
 set laststatus=2 " To show menubar
 set noshowmode
@@ -66,9 +97,20 @@ let g:airline#extensions#tabline#enabled = 0
 autocmd BufEnter, BufNewFile * silent! lcd %:p:h
 NeoBundle 'bling/vim-bufferline'
 
-- Colors
-Plug 'godlygeek/csapprox' " gvim-only colorscheme support in terminal
+```
+
+### Colors
+
+- [google/vim-colorscheme-primary](https://github.com/url_here) plugin
+- [vim-scripts/ScrollColors](https://github.com/url_here) plugin
 Plug 'kien/rainbow_parentheses.vim'
+- [luochen1990/rainbow](https://github.com/url_here) plugin
+- [zefei/vim-colortuner](https://github.com/url_here) plugin
+- [flazz/vim-colorschemes](https://github.com/url_here) plugin
+- [godlygeek/csapprox](https://github.com/url_here) plugin
+- [ervandew/supertab](https://github.com/url_here) plugin
+- Unsorted stuff
+```
 UNSORTED
 NeoBundle "noahfrederick/vim-noctu"
 let g:seoul256_background = 256
@@ -149,6 +191,8 @@ let g:syntastic_enable_signs=1
 let g:indent_guides_auto_colors=0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
+```
+- [ryanoasis/vim-devicons](https://github.com/url_here) plugin
 
 ## Text
 Highlight >80 chars
@@ -203,9 +247,7 @@ Automatically resize vertical splits.
 :au WinEnter * :set winfixheight
 :au WinEnter * :wincmd =
 let g:load_doxygen_syntax=1
-Key mapping {
-map <F5> :!make<CR>
-map <F2> :A<CR>
+## Mappings
 nnoremap <Leader><Leader> :Goyo<CR>
 save
 map <Leader>r :SmargfRefreshTags<CR>

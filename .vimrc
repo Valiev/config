@@ -32,7 +32,12 @@ filetype plugin on
 
 "
 " ### Text features
-  Plug 'wincent/ferret'  "multi-file search
+"
+" - [winrcent/ferret](https://github.com/wincent/ferret) plugin provides
+"   extremlly useful bindings for quick search in project with `:Ack`
+"   command: `<Leader>a` starts search, `<Leader>s` searches for the word under
+"   cursor
+  Plug 'wincent/ferret'
   Plug 'haya14busa/incsearch.vim'
   Plug 'haya14busa/incsearch-fuzzy.vim'
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }

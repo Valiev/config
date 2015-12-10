@@ -22,6 +22,11 @@ setting filetype explicitly with `:set filetype=nagios`.
 syntax highlight for Bamboo CI build logs.
 
 ### Text features
+
+- [winrcent/ferret](https://github.com/wincent/ferret) plugin provides
+extremlly useful bindings for quick search in project with `:Ack`
+command: `<Leader>a` starts search, `<Leader>s` searches for the word under
+cursor
 - Coding features
 [comment]: <> Plug 'epeli/slimux'
 Plug 'arecarn/fold-cycle.vim' " folds
@@ -246,6 +251,7 @@ nmap [h <Plug>GitGutterPrevHunk
 nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterRevertHunk
 nmap <Leader>hv <Plug>GitGutterPreviewHunk
+set background=dark
 Ugly hack to support both `.vimrc` syntax and `markdown`
 ```
 [//]: # vim: tabstop=2 softtabstop=2 shiftwidth=2

@@ -27,7 +27,9 @@ syntax highlight for Bamboo CI build logs.
 extremlly useful bindings for quick search in project with `:Ack`
 command: `<Leader>a` starts search, `<Leader>s` searches for the word under
 cursor
-- [haya14busa/incsearch.vim](https://github.com/url_here) plugin
+- [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim)
+plugin incrementally highlights **all** pattern matches unlike
+default `incsearch`
 - [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
 - [bkad/CamelCaseMotion](https://github.com/url_here) plugin
 - [tpope/vim-speeddating](https://github.com/url_here) plugin

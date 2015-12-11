@@ -38,7 +38,9 @@ filetype plugin on
 "   command: `<Leader>a` starts search, `<Leader>s` searches for the word under
 "   cursor
   Plug 'wincent/ferret'
-" - [haya14busa/incsearch.vim](https://github.com/url_here) plugin
+" - [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim)
+"   plugin incrementally highlights **all** pattern matches unlike
+"   default `incsearch`
   Plug 'haya14busa/incsearch.vim'
 " - [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
   Plug 'haya14busa/incsearch-fuzzy.vim'

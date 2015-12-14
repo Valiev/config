@@ -30,7 +30,9 @@ cursor
 - [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim)
 plugin incrementally highlights **all** pattern matches unlike
 default `incsearch`
-- [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
+- FIXME: [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
+- [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) plugin
+provides extremlly easy text alignment. One of my favorite plugins.
 - [bkad/CamelCaseMotion](https://github.com/url_here) plugin
 - [tpope/vim-speeddating](https://github.com/url_here) plugin
 - [ntpeters/vim-better-whitespace](https://github.com/url_here) plugin

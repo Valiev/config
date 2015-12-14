@@ -42,8 +42,10 @@ filetype plugin on
 "   plugin incrementally highlights **all** pattern matches unlike
 "   default `incsearch`
   Plug 'haya14busa/incsearch.vim'
-" - [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
+" - FIXME: [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
   Plug 'haya14busa/incsearch-fuzzy.vim'
+" - [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) plugin
+"   provides extremlly easy text alignment. One of my favorite plugins.
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 " - [bkad/CamelCaseMotion](https://github.com/url_here) plugin
   Plug 'bkad/CamelCaseMotion'

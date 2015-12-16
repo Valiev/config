@@ -50,7 +50,8 @@ filetype plugin on
 " - [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) plugin
 "   provides extremlly easy text alignment. One of my favorite plugins.
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-" - [bkad/CamelCaseMotion](https://github.com/url_here) plugin
+" - [bkad/CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) provides
+"   operations on words with `CamelCases` or 'this_kind_of_words'
   Plug 'bkad/CamelCaseMotion'
 " - [tpope/vim-speeddating](https://github.com/url_here) plugin
   Plug 'tpope/vim-speeddating'

@@ -58,7 +58,9 @@ filetype plugin on
 " - [ntpeters/vim-better-whitespace](https://github.com/url_here) plugin
   Plug 'ntpeters/vim-better-whitespace'
 " - [Townk/vim-autoclose](https://github.com/url_here) plugin
-  Plug 'Townk/vim-autoclose'
+ " Plug 'Townk/vim-autoclose'
+ " FIXME this one is good
+  Plug 'https://github.com/jiangmiao/auto-pairs'
 " - [terryma/vim-expand-region](https://github.com/url_here) plugin
   Plug 'terryma/vim-expand-region'
 

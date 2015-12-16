@@ -80,6 +80,18 @@ function env_et() {
   knife_env_fuzzy_search ET $1
 }
 
+function topcmds() {
+  LC_CTYPE=C
+  LANG=C
+
+  local n=$1
+  if [ -z "$n" ]; then
+    n=10
+  fi
+
+  cat $HISTFILE | cut -d';' -f2 | awk '{ print $1 }' | grep -Ev '^#' | tr -d '|' | sort | uniq -c | sort -n -r | head -n $n
+}
+
 alias knife_env="knife_env_fuzzy_search"
 # VIM {
 alias vimba="   vim $bash_aliases"

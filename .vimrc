@@ -1,11 +1,12 @@
-"
 " VIM configuration
 " =================
 syntax on
 filetype on
 filetype plugin on
 
+"
 " ## Plugins
+"
 " Vim is really great editor. But to extend it to fit my into personal needs I
 " use plugin manager. I used to use [NeoBundle](https://github.com/Shougo/neobundle.vim),
 " but migrated to [vim-plug](https://github.com/junegunn/vim-plug) recently.
@@ -16,6 +17,7 @@ filetype plugin on
 "
   call plug#begin('~/.vim/plugged')
 
+"
 "
 " ### Filetypes
 "
@@ -30,6 +32,7 @@ filetype plugin on
 "   syntax highlight for Bamboo CI build logs.
   Plug 'Valiev/vim-bamboo-log'
 
+"
 "
 " ### Text features
 "
@@ -58,6 +61,8 @@ filetype plugin on
 " - [terryma/vim-expand-region](https://github.com/url_here) plugin
   Plug 'terryma/vim-expand-region'
 
+
+"
 "
 " ### Coding features
 "
@@ -134,6 +139,7 @@ filetype plugin on
   hi! def link jsonKeyword Identifier
 
 "
+"
 " ### Appearel
 "
   set noshowmode
@@ -142,6 +148,7 @@ filetype plugin on
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
+  " Plug 'jszakmeister/vim-togglecursor'
 " - [chrisbra/vim-diff-enhanced ] " enhanced dif(https://github.com/url_here)
 " pluginf
   Plug 'chrisbra/vim-diff-enhanced' " enhanced diff

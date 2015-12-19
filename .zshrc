@@ -84,6 +84,7 @@ plugins=(
   terraform
   thefuck
   golang
+  tmux
 )
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

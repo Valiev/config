@@ -32,6 +32,12 @@ alias toLower='tr "[[:upper:]]" "[[:lower:]]" '
 alias toUpper='tr "[[:lower:]]" "[[:upper:]]" '
 # }
 
+# TMUX
+alias ta='tmux attach'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tns='tmux new-session -s'
+
 function bak() {
   local filepath=$(basename "$1")
   local extension="${filepath##*.}"

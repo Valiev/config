@@ -84,6 +84,9 @@ filetype plugin on
     autocmd VimEnter * silent! call after_object#enable('=', ':', '-', '#', ' ', '*', '.', '|')
   endif
   Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'ruby'] }
+" - [tmux-plugins/vim-tmux](https://github.com/tmux-plugins/vim-tmux) plugin
+"   provides tmux configuration files syntax highlighting
+  Plug 'tmux-plugins/vim-tmux'
 " - [tpope/vim-surround](https://github.com/url_here) plugin
   Plug 'tpope/vim-surround'
 " - [tpope/vim-commentary](https://github.com/url_here) plugin

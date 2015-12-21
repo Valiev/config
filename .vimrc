@@ -45,27 +45,40 @@ filetype plugin on
 "   command: `<Leader>a` starts search, `<Leader>s` searches for the word under
 "   cursor
   Plug 'wincent/ferret'
+
 " - [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim)
 "   plugin incrementally highlights **all** pattern matches unlike
 "   default `incsearch`
   Plug 'haya14busa/incsearch.vim'
-" - FIXME: [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
+
+" - [haya14busa/incsearch-fuzzy.vim](https://github.com/haya14busa/incsearch-fuzzy.vim)
+"   plugin provides fuzzy search support.
   Plug 'haya14busa/incsearch-fuzzy.vim'
+
 " - [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) plugin
 "   provides extremlly easy text alignment. One of my favorite plugins.
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+
 " - [bkad/CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) provides
 "   operations on words with `CamelCases` or 'this_kind_of_words'
   Plug 'bkad/CamelCaseMotion'
-" - [tpope/vim-speeddating](https://github.com/url_here) plugin
+
+" - [tpope/vim-speeddating](https://github.com/tpope/vim-speeddating) plugin
+"   bring `<C-A>`/`<C-X>` increment/decrement combinations work for various
+"   types of dates
   Plug 'tpope/vim-speeddating'
-" - [ntpeters/vim-better-whitespace](https://github.com/url_here) plugin
+
+" - [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
+"   plugin highlights all whitespaces and moreover provides whitespace stripping.
   Plug 'ntpeters/vim-better-whitespace'
-" - [Townk/vim-autoclose](https://github.com/url_here) plugin
- " Plug 'Townk/vim-autoclose'
- " FIXME this one is good
+
+" - [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) plugin
+"   provides auto-closing brackets
   Plug 'https://github.com/jiangmiao/auto-pairs'
-" - [terryma/vim-expand-region](https://github.com/url_here) plugin
+
+" - [terryma/vim-expand-region](https://github.com/erryma/vim-expand-region) plugin allows
+"   to visually select increasingly larger regions of text using the same key
+"   combination
   Plug 'terryma/vim-expand-region'
 
 
@@ -91,6 +104,9 @@ filetype plugin on
 " - [tmux-plugins/vim-tmux](https://github.com/tmux-plugins/vim-tmux) plugin
 "   provides tmux configuration files syntax highlighting
   Plug 'tmux-plugins/vim-tmux'
+  " - [benmills/vimux](https://github.com/benmills/vimux) plugin provides
+  "   integration between `vim` and `tmux`
+  Plug 'benmills/vimux'
 " - [tpope/vim-surround](https://github.com/url_here) plugin
   Plug 'tpope/vim-surround'
 " - [tpope/vim-commentary](https://github.com/url_here) plugin
@@ -469,6 +485,12 @@ filetype plugin on
   set complete-=k
   set complete+=k
   set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+  " faster redrawing
+  set ttyfast
+  set nolazyredraw " don't redraw while executing macros"
+  set magic " Set magic on, for regex"
+  set mat=2 " how many tenths of a second to blink"
+
 
   "autocmd FileType python set complete+=k~/.vim/syntax/python.vim
   "

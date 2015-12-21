@@ -1,7 +1,8 @@
-
 VIM configuration
 =================
+
 ## Plugins
+
 Vim is really great editor. But to extend it to fit my into personal needs I
 use plugin manager. I used to use [NeoBundle](https://github.com/Shougo/neobundle.vim),
 but migrated to [vim-plug](https://github.com/junegunn/vim-plug) recently.
@@ -11,6 +12,7 @@ And I really enjoy it.
 To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` to your `.vimrc` file.
 
 
+
 ### Filetypes
 
 - [vim-nagios](https://github.com/tejr/vim-nagios) plugin provides syntax
@@ -18,8 +20,11 @@ highlight for [Nagios](https://www.nagios.org/) monitoring configuration
 files. `Plug 'tejr/vim-nagios', { 'for': 'nagios' }` line is used to provide
 this plugin to be enabled only for `nagios` files. Could be enabled by
 setting filetype explicitly with `:set filetype=nagios`.
+- [wting/rust.vim](https://github.com/wting/rust.vim) plugin brings `rust`
+support to vim.
 - [vim-bamboo-log](https://github.com/Valiev/vim-bamboo-log) plugin provides
 syntax highlight for Bamboo CI build logs.
+
 
 ### Text features
 
@@ -30,14 +35,23 @@ cursor
 - [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim)
 plugin incrementally highlights **all** pattern matches unlike
 default `incsearch`
-- FIXME: [haya14busa/incsearch-fuzzy.vim](https://github.com/url_here) plugin
+- [haya14busa/incsearch-fuzzy.vim](https://github.com/haya14busa/incsearch-fuzzy.vim)
+plugin provides fuzzy search support.
 - [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) plugin
 provides extremlly easy text alignment. One of my favorite plugins.
-- [bkad/CamelCaseMotion](https://github.com/url_here) plugin
-- [tpope/vim-speeddating](https://github.com/url_here) plugin
-- [ntpeters/vim-better-whitespace](https://github.com/url_here) plugin
-- [Townk/vim-autoclose](https://github.com/url_here) plugin
-- [terryma/vim-expand-region](https://github.com/url_here) plugin
+- [bkad/CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) provides
+operations on words with `CamelCases` or 'this_kind_of_words'
+- [tpope/vim-speeddating](https://github.com/tpope/vim-speeddating) plugin
+bring `<C-A>`/`<C-X>` increment/decrement combinations work for various
+types of dates
+- [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
+plugin highlights all whitespaces and moreover provides whitespace stripping.
+- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) plugin
+provides auto-closing brackets
+- [terryma/vim-expand-region](https://github.com/erryma/vim-expand-region) plugin allows
+to visually select increasingly larger regions of text using the same key
+combination
+
 
 ### Coding features
 
@@ -46,6 +60,10 @@ provides extremlly easy text alignment. One of my favorite plugins.
 - [christoomey/vim-tmux-navigator](https://github.com/url_here) plugin
 - [majutsushi/tagbar](https://github.com/url_here) plugin
 - [tpope/vim-fugitive ] " Git managemet(https://github.com/url_here) pluginn
+- [tmux-plugins/vim-tmux](https://github.com/tmux-plugins/vim-tmux) plugin
+provides tmux configuration files syntax highlighting
+- [benmills/vimux](https://github.com/benmills/vimux) plugin provides
+integration between `vim` and `tmux`
 - [tpope/vim-surround](https://github.com/url_here) plugin
 - [tpope/vim-commentary](https://github.com/url_here) plugin
 - [tpope/vim-endwise](https://github.com/url_here) plugin
@@ -73,8 +91,10 @@ NeoBundle 'vim-scripts/pyflakes.vim'
 - JSON
 [elzr/vim-json ], { 'for': 'json'}(https://github.com/url_here) plugin
 
+
 ### Appearel
 
+Plug 'jszakmeister/vim-togglecursor'
 - [chrisbra/vim-diff-enhanced ] " enhanced dif(https://github.com/url_here)
 pluginf
 - [scrooloose/nerdtree](https://github.com/url_here) plugin
@@ -236,6 +256,7 @@ autocmd BufRead,BufNewFile *
 \| endif
 au BufRead,BufNewFile {*.erb}     set ft=ruby,eruby.chef
 Words completion
+faster redrawing
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim
 
 au FileType python set omnifunc=pythoncomplete#Complete

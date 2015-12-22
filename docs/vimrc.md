@@ -1,6 +1,7 @@
 VIM configuration
 =================
 
+
 ## Plugins
 
 Vim is really great editor. But to extend it to fit my into personal needs I
@@ -40,7 +41,7 @@ plugin provides fuzzy search support.
 - [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) plugin
 provides extremlly easy text alignment. One of my favorite plugins.
 - [bkad/CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) provides
-operations on words with `CamelCases` or 'this_kind_of_words'
+operations on words with `CamelCases` or `this_kind_of_words`
 - [tpope/vim-speeddating](https://github.com/tpope/vim-speeddating) plugin
 bring `<C-A>`/`<C-X>` increment/decrement combinations work for various
 types of dates
@@ -55,11 +56,14 @@ combination
 
 ### Coding features
 
-- `Plug 'epeli/slimux'` TODO
-- [ludovicchabant/vim-gutentags](https://github.com/url_here) plugin
-- [christoomey/vim-tmux-navigator](https://github.com/url_here) plugin
-- [majutsushi/tagbar](https://github.com/url_here) plugin
-- [tpope/vim-fugitive ] " Git managemet(https://github.com/url_here) pluginn
+- [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags) plugin
+brings seamless and not irritating tags creation.
+- [majutsushi/tagbar](https://github.com/majutsushi/tagbar) plugin bring
+tagbar for vim.
+- [junegunn/vim-after-object](https://github.com/junegunn/vim-after-object)
+plugin brings `ca=`/`da=` and other vim-motions.
+- [scrooloose/syntastic](https://github.com/scrooloose/syntastic) plugin
+provides syntax support for vast programming languages and/or filetypes.
 - [tmux-plugins/vim-tmux](https://github.com/tmux-plugins/vim-tmux) plugin
 provides tmux configuration files syntax highlighting
 - [benmills/vimux](https://github.com/benmills/vimux) plugin provides
@@ -70,11 +74,14 @@ integration between `vim` and `tmux`
 - [tpope/vim-repeat](https://github.com/url_here) plugin
 - [tpope/vim-unimpaired](https://github.com/url_here) plugin
 - [szw/vim-ctrlspace](https://github.com/url_here) plugin
-- TODO Plug 'arecarn/fold-cycle.vim' " folds
 - [tpope/vim-vinegar](https://github.com/url_here) plugin
-- TODO Plug 'luochen1990/indent-detector.vim'
 - [luochen1990/select-and-search](https://github.com/url_here) plugin
 - [kien/ctrlp.vim](https://github.com/url_here) plugin
+- TODO Plug 'luochen1990/indent-detector.vim'
+- TODO Plug 'tpope/vim-fugitive' " Git management
+- TODO Plug 'arecarn/fold-cycle.vim' " folds
+- TODO `Plug 'epeli/slimux'`
+- TODO Plug 'christoomey/vim-tmux-navigator'
 - [bkad/vim-terraform](https://github.com/url_here) plugin
 - Haskell
 NeoBundle 'Twinside/vim-haskellConceal'
@@ -219,6 +226,7 @@ hi IndentGuidesEven ctermbg=darkgrey
 - [ryanoasis/vim-devicons](https://github.com/url_here) plugin
 
 ## Text
+
 Highlight >80 chars
 au! BufNewFile,BufRead * exec 'match Todo /\%>' . &textwidth . 'v.\+/'
 

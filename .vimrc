@@ -5,6 +5,7 @@ filetype on
 filetype plugin on
 
 "
+"
 " ## Plugins
 "
 " Vim is really great editor. But to extend it to fit my into personal needs I
@@ -60,7 +61,7 @@ filetype plugin on
   Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 
 " - [bkad/CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) provides
-"   operations on words with `CamelCases` or 'this_kind_of_words'
+"   operations on words with `CamelCases` or `this_kind_of_words`
   Plug 'bkad/CamelCaseMotion'
 
 " - [tpope/vim-speeddating](https://github.com/tpope/vim-speeddating) plugin
@@ -86,46 +87,62 @@ filetype plugin on
 "
 " ### Coding features
 "
-" - `Plug 'epeli/slimux'` TODO
-" - [ludovicchabant/vim-gutentags](https://github.com/url_here) plugin
+" - [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags) plugin
+"   brings seamless and not irritating tags creation.
   Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_cache_dir = '~/dev/tags'
-" - [christoomey/vim-tmux-navigator](https://github.com/url_here) plugin
-  Plug 'christoomey/vim-tmux-navigator'
-" - [majutsushi/tagbar](https://github.com/url_here) plugin
+
+" - [majutsushi/tagbar](https://github.com/majutsushi/tagbar) plugin bring
+"   tagbar for vim.
   Plug 'majutsushi/tagbar'
-" - [tpope/vim-fugitive ] " Git managemet(https://github.com/url_here) pluginn
-  Plug 'tpope/vim-fugitive' " Git management
-  Plug 'junegunn/vim-after-object' " After object actions
+
+
+" - [junegunn/vim-after-object](https://github.com/junegunn/vim-after-object)
+"   plugin brings `ca=`/`da=` and other vim-motions.
+  Plug 'junegunn/vim-after-object'
   silent! if has_key(g:plugs, 'vim-after-object')
     autocmd VimEnter * silent! call after_object#enable('=', ':', '-', '#', ' ', '*', '.', '|')
   endif
+
+" - [scrooloose/syntastic](https://github.com/scrooloose/syntastic) plugin
+"   provides syntax support for vast programming languages and/or filetypes.
   Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'ruby'] }
+
 " - [tmux-plugins/vim-tmux](https://github.com/tmux-plugins/vim-tmux) plugin
 "   provides tmux configuration files syntax highlighting
   Plug 'tmux-plugins/vim-tmux'
+
   " - [benmills/vimux](https://github.com/benmills/vimux) plugin provides
   "   integration between `vim` and `tmux`
   Plug 'benmills/vimux'
+
 " - [tpope/vim-surround](https://github.com/url_here) plugin
   Plug 'tpope/vim-surround'
 " - [tpope/vim-commentary](https://github.com/url_here) plugin
+
   Plug 'tpope/vim-commentary'
 " - [tpope/vim-endwise](https://github.com/url_here) plugin
+
   Plug 'tpope/vim-endwise'
 " - [tpope/vim-repeat](https://github.com/url_here) plugin
+
   Plug 'tpope/vim-repeat'
 " - [tpope/vim-unimpaired](https://github.com/url_here) plugin
+
   Plug 'tpope/vim-unimpaired'
+
   Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'python', 'haskell'] }
+
 " - [szw/vim-ctrlspace](https://github.com/url_here) plugin
   Plug 'szw/vim-ctrlspace'
-" - TODO Plug 'arecarn/fold-cycle.vim' " folds
+
 " - [tpope/vim-vinegar](https://github.com/url_here) plugin
   Plug 'tpope/vim-vinegar'
-" - TODO Plug 'luochen1990/indent-detector.vim'
+
+
 " - [luochen1990/select-and-search](https://github.com/url_here) plugin
   Plug 'luochen1990/select-and-search'
+
 " - [kien/ctrlp.vim](https://github.com/url_here) plugin
   Plug 'kien/ctrlp.vim'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
@@ -137,8 +154,15 @@ filetype plugin on
     \ }
   set hidden
 
+" - TODO Plug 'luochen1990/indent-detector.vim'
+" - TODO Plug 'tpope/vim-fugitive' " Git management
+" - TODO Plug 'arecarn/fold-cycle.vim' " folds
+" - TODO `Plug 'epeli/slimux'`
+" - TODO Plug 'christoomey/vim-tmux-navigator'
+
 " - [bkad/vim-terraform](https://github.com/url_here) plugin
   Plug 'bkad/vim-terraform'
+
 " - Haskell
   Plug 'neco-ghc', { 'for' : 'haskell' }
   setlocal omnifunc=necoghc#omnifunc
@@ -151,6 +175,7 @@ filetype plugin on
   let g:pylint_cwindow = 0 " Disable pylint window
   let g:jedi#auto_vim_configuration = 0
   let g:jedi#use_splits_not_buffers = "right"
+
   " UNSORTED
   " NeoBundle 'mitechie/pyflakes-pathogen'
   " NeoBundle 'sontek/rope-vim'
@@ -168,18 +193,21 @@ filetype plugin on
 "
 " ### Appearel
 "
-  set noshowmode
   Plug 'bling/vim-airline' " status bar
+  set noshowmode
   set laststatus=2
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
+
   " Plug 'jszakmeister/vim-togglecursor'
 " - [chrisbra/vim-diff-enhanced ] " enhanced dif(https://github.com/url_here)
 " pluginf
   Plug 'chrisbra/vim-diff-enhanced' " enhanced diff
+
 " - [scrooloose/nerdtree](https://github.com/url_here) plugin
   Plug 'scrooloose/nerdtree'
+
 " - [jistr/vim-nerdtree-tabs](https://github.com/url_here) plugin
   Plug 'jistr/vim-nerdtree-tabs'
 
@@ -192,8 +220,10 @@ filetype plugin on
 
 " - [kshenoy/vim-signature ] " highlight mars(https://github.com/url_here) plugink
   Plug 'kshenoy/vim-signature' " highlight marks
+
 " - [mhinz/vim-signify ] "h(https://github.com/url_here) plugin
   Plug 'mhinz/vim-signify' " h
+
 " - unsorted
 "
 " ```
@@ -220,18 +250,23 @@ filetype plugin on
 "
 " - [google/vim-colorscheme-primary](https://github.com/url_here) plugin
   Plug 'google/vim-colorscheme-primary'
+
 " - [vim-scripts/ScrollColors](https://github.com/url_here) plugin
   Plug 'vim-scripts/ScrollColors'
+
   " Plug 'kien/rainbow_parentheses.vim'
 " - [luochen1990/rainbow](https://github.com/url_here) plugin
   Plug 'luochen1990/rainbow'
   let g:rainbow_conf = {
   \   'ctermfgs': ['blue', 'cyan', 'green', 'yellow', 'red']
   \ }
+
 " - [zefei/vim-colortuner](https://github.com/url_here) plugin
   Plug 'zefei/vim-colortuner'
+
 " - [flazz/vim-colorschemes](https://github.com/url_here) plugin
   Plug 'flazz/vim-colorschemes'
+
 " - [godlygeek/csapprox](https://github.com/url_here) plugin
   Plug 'godlygeek/csapprox'
   let g:CSApprox_hook_post = [
@@ -342,12 +377,14 @@ filetype plugin on
 
 " - [ryanoasis/vim-devicons](https://github.com/url_here) plugin
   Plug 'ryanoasis/vim-devicons'
+
   filetype plugin indent on
   call plug#end()
 
 
 "
 " ## Text
+"
   set nowrap
   set smartindent
   set tabstop=4
@@ -361,8 +398,6 @@ filetype plugin on
   set clipboard+=unnamed " Yanks go on clipboard instead.
   set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
   set fo-=r " Do not automatically insert a comment leader after an enter
-
-
 
   " Highlight >80 chars
   "au! BufNewFile,BufRead * exec 'match Todo /\%>' . &textwidth . 'v.\+/'

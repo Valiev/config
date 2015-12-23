@@ -5,7 +5,6 @@ filetype on
 filetype plugin on
 
 "
-"
 " ## Plugins
 "
 " Vim is really great editor. But to extend it to fit my into personal needs I

@@ -112,23 +112,34 @@ filetype plugin on
 "   provides tmux configuration files syntax highlighting
   Plug 'tmux-plugins/vim-tmux'
 
-  " - [benmills/vimux](https://github.com/benmills/vimux) plugin provides
-  "   integration between `vim` and `tmux`
+" - [benmills/vimux](https://github.com/benmills/vimux) plugin provides
+"   integration between `vim` and `tmux`
   Plug 'benmills/vimux'
 
-" - [tpope/vim-surround](https://github.com/url_here) plugin
+" - [tpope/vim-surround](https://github.com/tpope/vim-surround) plugin manages
+"   parentheses, brackets, quotes, XML tags, and more.
   Plug 'tpope/vim-surround'
-" - [tpope/vim-commentary](https://github.com/url_here) plugin
 
+" - [tpope/vim-commentary](https://github.com/tpope/vim-commentary) plugin
+"   provides universal binding to manage comments for various filetypes
   Plug 'tpope/vim-commentary'
-" - [tpope/vim-endwise](https://github.com/url_here) plugin
 
+" - [tpope/vim-endwise](https://github.com/tpope/vim-endwise) plugin helps to end
+"   certain structures automatically
   Plug 'tpope/vim-endwise'
-" - [tpope/vim-repeat](https://github.com/url_here) plugin
 
+" - [tpope/vim-repeat](https://github.com/tpope/vim-repeat) plugin provides
+"   repeat for custom plugin actions
   Plug 'tpope/vim-repeat'
-" - [tpope/vim-unimpaired](https://github.com/url_here) plugin
 
+" - [tpope/vim-unimpaired](https://github.com/url_here) plugin provides neat
+"   paired mappings, like:
+"     * `[<Space>`/`]<Space>` to paste blank lines
+"     * `cos` to toggle spell checking
+"     * `col` to toggle `list` command
+"     * `cos` to toggle cursor highlight
+"     * `cow` to toggle word wrapping
+"     * `con` to toggle line numbering
   Plug 'tpope/vim-unimpaired'
 
   Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'python', 'haskell'] }

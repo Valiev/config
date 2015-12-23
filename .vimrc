@@ -6,7 +6,7 @@ filetype plugin on
 
 "
 "
-" ## Plugins
+"## Plugins
 "
 " Vim is really great editor. But to extend it to fit my into personal needs I
 " use plugin manager. I used to use [NeoBundle](https://github.com/Shougo/neobundle.vim),
@@ -20,7 +20,7 @@ filetype plugin on
 
 "
 "
-" ### Filetypes
+"### Filetypes
 "
 " - [vim-nagios](https://github.com/tejr/vim-nagios) plugin provides syntax
 "   highlight for [Nagios](https://www.nagios.org/) monitoring configuration
@@ -39,7 +39,7 @@ filetype plugin on
 
 "
 "
-" ### Text features
+"### Text features
 "
 " - [winrcent/ferret](https://github.com/wincent/ferret) plugin provides
 "   extremlly useful bindings for quick search in project with `:Ack`
@@ -85,7 +85,7 @@ filetype plugin on
 
 "
 "
-" ### Coding features
+"### Coding features
 "
 " - [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags) plugin
 "   brings seamless and not irritating tags creation.
@@ -95,7 +95,6 @@ filetype plugin on
 " - [majutsushi/tagbar](https://github.com/majutsushi/tagbar) plugin bring
 "   tagbar for vim.
   Plug 'majutsushi/tagbar'
-
 
 " - [junegunn/vim-after-object](https://github.com/junegunn/vim-after-object)
 "   plugin brings `ca=`/`da=` and other vim-motions.
@@ -202,7 +201,7 @@ filetype plugin on
 
 "
 "
-" ### Appearel
+"### Appearel
 "
   Plug 'bling/vim-airline' " status bar
   set noshowmode
@@ -257,7 +256,7 @@ filetype plugin on
 " ```
 
 "
-" ### Colors
+"### Colors
 "
 " - [google/vim-colorscheme-primary](https://github.com/url_here) plugin
   Plug 'google/vim-colorscheme-primary'

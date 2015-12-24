@@ -36,6 +36,10 @@ filetype plugin on
 "   syntax highlight for Bamboo CI build logs.
   Plug 'Valiev/vim-bamboo-log'
 
+" - [bkad/vim-terraform](https://github.com/bkad/vim-terraform) plugin brings
+"   `terraform` support for vim
+  Plug 'bkad/vim-terraform'
+
 "
 "
 " ### Text features
@@ -140,19 +144,17 @@ filetype plugin on
 "     * `con` to toggle line numbering
   Plug 'tpope/vim-unimpaired'
 
+" - [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) a collection
+"   on language packs
   Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'python', 'haskell'] }
 
-" - [szw/vim-ctrlspace](https://github.com/url_here) plugin
-  Plug 'szw/vim-ctrlspace'
-
-" - [tpope/vim-vinegar](https://github.com/url_here) plugin
-  Plug 'tpope/vim-vinegar'
-
-
-" - [luochen1990/select-and-search](https://github.com/url_here) plugin
+" - [luochen1990/select-and-search](https://github.com/luochen1990/select-and-search)
+"   plugin's feature is to select text in v mode, then press n to search next one
+"   (N for prev one)
   Plug 'luochen1990/select-and-search'
 
-" - [kien/ctrlp.vim](https://github.com/url_here) plugin
+" - [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim) is fuzzy finder for
+"   files, buffers and MRUs
   Plug 'kien/ctrlp.vim'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
   let g:ctrlp_custom_ignore = {
@@ -163,38 +165,22 @@ filetype plugin on
     \ }
   set hidden
 
-" - TODO Plug 'luochen1990/indent-detector.vim'
-" - TODO Plug 'tpope/vim-fugitive' " Git management
-" - TODO Plug 'arecarn/fold-cycle.vim' " folds
-" - TODO `Plug 'epeli/slimux'`
-" - TODO Plug 'christoomey/vim-tmux-navigator'
 
-" - [bkad/vim-terraform](https://github.com/url_here) plugin
-  Plug 'bkad/vim-terraform'
-
-" - Haskell
+" - [neco-ghc](https://github.com/eagletmt/neco-ghc) is nice autocompletion for
+"   `haskell`
   Plug 'neco-ghc', { 'for' : 'haskell' }
   setlocal omnifunc=necoghc#omnifunc
-  " NeoBundle 'Twinside/vim-haskellConceal'
 
-" - Python
-" [davidhalter/jedi-vim ], { 'for' : 'python'}(https://github.com/url_here)
-" plugin
+" - [davidhalter/jedi-vim ](https://github.com/davidhalter/jedi-vim) is
+"   autocompletion for `python`
   Plug 'davidhalter/jedi-vim', { 'for' : 'python' }
   let g:pylint_cwindow = 0 " Disable pylint window
   let g:jedi#auto_vim_configuration = 0
   let g:jedi#use_splits_not_buffers = "right"
 
-  " UNSORTED
-  " NeoBundle 'mitechie/pyflakes-pathogen'
-  " NeoBundle 'sontek/rope-vim'
-  " NeoBundle 'pep8'
-  " NeoBundle 'fs111/pydoc.vim'
-  " NeoBundle 'Pydiction'
-  " NeoBundle 'vim-scripts/pyflakes.vim'
 
-" - JSON
-" [elzr/vim-json ], { 'for': 'json'}(https://github.com/url_here) plugin
+" - [elzr/vim-json ](https://github.com/elzr/vim-json) brings better `json`
+"   highlighting
   Plug 'elzr/vim-json', { 'for': 'json' }
   hi! def link jsonKeyword Identifier
 

@@ -266,15 +266,9 @@ filetype plugin on
   filetype plugin indent on
   call plug#end()
 
-
-"
-" ## Text
-"
+"= Configuration
   set nowrap
   set smartindent
-  set tabstop=4
-  set softtabstop=4
-  set shiftwidth=4
   set showbreak=⁻
   set breakindent
   set linebreak
@@ -284,11 +278,6 @@ filetype plugin on
   set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
   set fo-=r " Do not automatically insert a comment leader after an enter
 
-  " Highlight >80 chars
-  "au! BufNewFile,BufRead * exec 'match Todo /\%>' . &textwidth . 'v.\+/'
-
-"
-" ## Search
   set noignorecase
   set incsearch       " Search during typing
   set hlsearch        " Highlight found strings
@@ -296,29 +285,9 @@ filetype plugin on
   set undolevels=50
   set completeopt=longest,menuone     " IDE-like autocomplete
   set hlsearch
-  let g:incsearch#auto_nohlsearch = 1
-  map /  <Plug>(incsearch-forward)
-  map ?  <Plug>(incsearch-backward)
-  map g/ <Plug>(incsearch-stay)
-  map n  <Plug>(incsearch-nohl-n)
-  map N  <Plug>(incsearch-nohl-N)
-  map *  <Plug>(incsearch-nohl-*)
-  map #  <Plug>(incsearch-nohl-#)
-  map g* <Plug>(incsearch-nohl-g*)
-  map g# <Plug>(incsearch-nohl-g#)
-  map z/ <Plug>(incsearch-fuzzy-/)
 
-
-"
-" ## Folds
-  " set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
-  " set foldenable
-  " set foldmethod=manual
   set nofoldenable
 
-
-"
-" ## GUI features
   set background=dark
   set nocp
   set noerrorbells  " Silent
@@ -342,97 +311,61 @@ filetype plugin on
   endif
 
   colorscheme Monokai
-  " colorscheme 256-jungle
-  " colorscheme Mustang
-  " colorscheme symfony
-  " colorscheme anotherdark
-  " colorscheme molokai
-  " colorscheme railscasts
-  " colorscheme badwolf
-  " colorscheme scame
-  " colorscheme summerfruit256
-  " colorscheme softblue
-  " colorscheme jellybeans
-  " colorscheme 256-grayvim
-  " colorscheme zephyr
-
 
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
   endif
 
-
-"
-" ## GVim features
-" set guifont=DejaVu\ Sans\ Mono\ 9
-  set guifont=Inconsolata\ 13
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=L  "remove left-hand scroll bar
   set guioptions-=r  "remove right-hand scroll bar
 
-
-"
-" ## Coding features
   set encoding=utf8
-  set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
-  let c_space_errors = 1
-  let python_highlight_space_errors = 1
-  let python_highlight_all = 1
-  "utocmd FileType python set colorscheme= autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
-  " autocmd BufRead,BufNewFile *
-  "       \  if expand('%:p:h') =~# '.*/cookbooks/.*'
-  "       \|   setlocal makeprg=foodcritic\ $*\ %
-  "       \|   setlocal errorformat=%m:\ %f:%l
-  "       \| endif
+
   autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace " strip whitespaces
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType ruby compiler ruby
   autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
-  " au BufRead,BufNewFile {*.erb}     set ft=ruby,eruby.chef
-  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
-  autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
-  autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
-  au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
+  autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                     set ft=markdown
+  autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                            set ft=gitcommit
+  autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
   autocmd BufNewFile,BufRead *.json set ft=json
   autocmd BufNewFile,BufRead *.json set foldmethod=syntax
   autocmd BufNewFile,BufRead *.cfg set ft=nagios
+
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
 
-  " Words completion
   set complete-=k
   set complete+=k
   set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
-  " faster redrawing
+
   set ttyfast
   set nolazyredraw " don't redraw while executing macros"
   set magic " Set magic on, for regex"
   set mat=2 " how many tenths of a second to blink"
 
-
-  "autocmd FileType python set complete+=k~/.vim/syntax/python.vim
-  "
-  "au FileType python set omnifunc=pythoncomplete#Complete
-  "let g:SuperTabDefaultCompletionType = "context"
-  "isk+=.,(
-  "autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
   set tags=~/dev/tags
   au FocusLost * :wa
-  "
- " Always show line numbers, but only in current window.
-  " set number
-  " :au WinEnter * :setlocal number
-  " :au WinLeave * :setlocal nonumber "set tags=./tags;$HOME " walk directory tree upto $HOME looking for tags
 
-  " Automatically resize vertical splits.
-  " :au WinEnter * :set winfixheight
-  " :au WinEnter * :wincmd =
-
-" let g:load_doxygen_syntax=1
-
+"
+"
 " ## Mappings
+
+  let g:incsearch#auto_nohlsearch = 1
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
+  map n  <Plug>(incsearch-nohl-n)
+  map N  <Plug>(incsearch-nohl-N)
+  map *  <Plug>(incsearch-nohl-*)
+  map #  <Plug>(incsearch-nohl-#)
+  map g* <Plug>(incsearch-nohl-g*)
+  map g# <Plug>(incsearch-nohl-g#)
+  map z/ <Plug>(incsearch-fuzzy-/)
 
   let mapleader = "\<Space>"
   " nnoremap <Leader><Leader> :Goyo<CR>
@@ -441,10 +374,8 @@ filetype plugin on
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>
   nnoremap <Leader>wq :wq<CR>
-  " map <Leader>r :SmargfRefreshTags<CR>
   nnoremap <Leader>h :set cursorline!<CR>
 
-  " copy to clipboard
   vmap <Leader>y "+y
   vmap <Leader>d "+d
   nmap <Leader>p "+p
@@ -452,86 +383,43 @@ filetype plugin on
   vmap <Leader>p "+p
   vmap <Leader>P "+P
 
-  " Tabs
-  map <Leader>1 1gt
-  map <Leader>2 2gt
-  map <Leader>3 3gt
-  map <Leader>4 4gt
-  map <Leader>5 5gt
-  map <Leader>6 6gt
-  map <Leader>7 7gt
-  map <Leader>8 8gt
-  map <Leader>9 9gt
-  " map <Leader>0 :tablast<CR>
-  map <Leader>] :tabnext<CR>
-  map <Leader>[ :tabprevious<CR>
-  let g:lasttab = 1
-  nmap <Leader>0 :exe "tabn ".g:lasttab<CR>
-  autocmd TabLeave * let g:lasttab = tabpagenr()
-
-  " NerdTree
   map <Leader><Tab> :NERDTreeToggle<CR>
-  " Close vim if NerdTree is the only tab
-  " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-  " Start NerdTree if no files at start up
-  " autocmd StdinReadPre * let s:std_in=1
-  " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  " Tabs
-  " let g:nerdtree_tabs_open_on_console_startup=1
 
-  " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
   vmap <Enter> <Plug>(EasyAlign)
   xmap <Enter> <Plug>(EasyAlign)
 
-  "vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-  "    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-  "omap s :normal vs<CR>
-
-  " nmap <Leader><Leader> V
   map q: :q
-  " Shortcut to rapidly toggle `set list`
   nmap <leader>l :set list!<CR>
-  " Use the same symbols as TextMate for tabstops and EOLs
   set listchars=tab:▸\ ,eol:¬
 
   nmap <Leader>t :TagbarToggle<CR>
   nmap <Leader>b :CtrlPBuffer<CR>
   nmap <Leader>r :CtrlPMRU<CR>
 
-  " Buffers
   nmap <Leader>bn :bnext<CR>
   nmap <Leader>bp :bprevious<CR>
   noremap H :bprev<CR>
   noremap L :bnext<CR>
   nmap <Leader>d :bd<CR>
 
-  nnoremap <silent> <LocalLeader>rs :source ~/.vimrc<CR>
-
-  nnoremap <silent> <C-J> gEa<CR><ESC>ew " Split line(opposite to S-J joining line)
   nnoremap # :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
   nnoremap * #
-  " nnoremap - :Switch<cr>
-
-  " noremap  H ^
-  " noremap  L $
   nnoremap U <C-r>
 
-  " jk to leave insert mode
   inoremap jk <Esc>
   inoremap JK <Esc>
   inoremap Jk <Esc>
   inoremap jK <Esc>
 
-  " reselect visual block after indent
   vnoremap < <gv
   vnoremap > >gv"
+
   " Movement in insert mode
   inoremap <C-h> <C-o>h
   inoremap <C-l> <C-o>a
   inoremap <C-j> <C-o>j
   inoremap <C-k> <C-o>k
 
-  " make Y consistent with C and D. See :help Y.
   nnoremap Y y$
 
   " Hard mode
@@ -539,6 +427,7 @@ filetype plugin on
   map <DOWN> <NOP>
   map <LEFT> <NOP>
   map <RIGHT> <NOP>
+
   " Switching windows and close window
   map <C-j> <C-W>j
   map <C-k> <C-W>k
@@ -546,41 +435,20 @@ filetype plugin on
   map <C-l> <C-W>l
   map <C-q> <C-W>q " check this mapping
 
-  " folds
-  " let g:fold_cycle_default_mapping = 1 "disable default mappings
-  " nmap <Tab><Tab> <Plug>(fold-cycle-open)
-  " nmap <S-Tab><S-Tab> <Plug>(fold-cycle-close)
-
   let NERDTreeHijackNetrw=1
   let g:netrw_liststyle=3
-  "
+
   vmap v <Plug>(expand_region_expand)
   vmap <C-v> <Plug>(expand_region_shrink)
   let g:rainbow_active = 1
   let g:select_and_search_active = 1
 
-  " Git Gutter
-  "
   nmap <leader>gj <Plug>(signify-next-hunk)
   nmap <leader>gk <Plug>(signify-prev-hunk)
   omap ic <plug>(signify-motion-inner-pending)
   xmap ic <plug>(signify-motion-inner-visual)
   omap ac <plug>(signify-motion-outer-pending)
   xmap ac <plug>(signify-motion-outer-visual)
-  "
-  "
 
   nmap <Leader>gs :Gstatus<CR>
   nmap <Leader>gc :Gcommit<CR>
-  " nmap ]h <Plug>GitGutterNextHunk
-  " nmap [h <Plug>GitGutterPrevHunk
-  " nmap <Leader>ha <Plug>GitGutterStageHunk
-  " nmap <Leader>hu <Plug>GitGutterRevertHunk
-  " nmap <Leader>hv <Plug>GitGutterPreviewHunk
-
-  " set background=dark
-
-" Ugly hack to support both `.vimrc` syntax and `markdown`
-" ```
-" [//]: # vim: tabstop=2 softtabstop=2 shiftwidth=2
-" ```

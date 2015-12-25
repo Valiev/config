@@ -128,110 +128,12 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   `<Tab>` for all your insert completion needs
 - [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) adds
   filetype glyphs (icons) to other plugins
+= Configuration
 
-## Text
 
-Highlight >80 chars
-  "au! BufNewFile,BufRead * exec 'match Todo /\%>' . &textwidth . 'v.\+/'
-
-## Search
-
-## Folds
-set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
-set foldenable
-set foldmethod=manual
-
-## GUI features
-colorscheme 256-jungle
-colorscheme Mustang
-colorscheme symfony
-colorscheme anotherdark
-colorscheme molokai
-colorscheme railscasts
-colorscheme badwolf
-colorscheme scame
-colorscheme summerfruit256
-colorscheme softblue
-colorscheme jellybeans
-colorscheme 256-grayvim
-colorscheme zephyr
-
-## GVim features
-set guifont=DejaVu\ Sans\ Mono\ 9
-
-## Coding features
-  "utocmd FileType python set colorscheme= autocmd FileType python let g:pydiction_location ='~/.vim/bundle/Pydiction/complete-dict'
-autocmd BufRead,BufNewFile *
-      \  if expand('%:p:h') =~# '.*/cookbooks/.*'
-      \|   setlocal makeprg=foodcritic\ $*\ %
-      \|   setlocal errorformat=%m:\ %f:%l
-      \| endif
-au BufRead,BufNewFile {*.erb}     set ft=ruby,eruby.chef
-Words completion
-faster redrawing
-  "autocmd FileType python set complete+=k~/.vim/syntax/python.vim
-  "
-  "au FileType python set omnifunc=pythoncomplete#Complete
-  "let g:SuperTabDefaultCompletionType = "context"
-  "isk+=.,(
-  "autocmd FileType python au Syntax *    syn match Error /\s\+$/ | syn match Error /^\s* \t\s*/ | syn match Error /^\t*\zs \+/
-  "
-Always show line numbers, but only in current window.
-set number
-:au WinEnter * :setlocal number
-:au WinLeave * :setlocal nonumber "set tags=./tags;$HOME " walk directory tree upto $HOME looking for tags
-Automatically resize vertical splits.
-:au WinEnter * :set winfixheight
-:au WinEnter * :wincmd =
-let g:load_doxygen_syntax=1
 ## Mappings
 nnoremap <Leader><Leader> :Goyo<CR>
 save
-map <Leader>r :SmargfRefreshTags<CR>
-copy to clipboard
-Tabs
-map <Leader>0 :tablast<CR>
-NerdTree
-Close vim if NerdTree is the only tab
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-Start NerdTree if no files at start up
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-Tabs
-let g:nerdtree_tabs_open_on_console_startup=1
-Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-  "vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-   \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-  "omap s :normal vs<CR>
-nmap <Leader><Leader> V
-Shortcut to rapidly toggle `set list`
-Use the same symbols as TextMate for tabstops and EOLs
-Buffers
-nnoremap - :Switch<cr>
-noremap  H ^
-noremap  L $
-jk to leave insert mode
-reselect visual block after indent
 Movement in insert mode
-make Y consistent with C and D. See :help Y.
 Hard mode
 Switching windows and close window
-folds
-let g:fold_cycle_default_mapping = 1 "disable default mappings
-nmap <Tab><Tab> <Plug>(fold-cycle-open)
-nmap <S-Tab><S-Tab> <Plug>(fold-cycle-close)
-  "
-Git Gutter
-  "
-  "
-  "
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
-nmap <Leader>ha <Plug>GitGutterStageHunk
-nmap <Leader>hu <Plug>GitGutterRevertHunk
-nmap <Leader>hv <Plug>GitGutterPreviewHunk
-set background=dark
-Ugly hack to support both `.vimrc` syntax and `markdown`
-```
-[//]: # vim: tabstop=2 softtabstop=2 shiftwidth=2
-```

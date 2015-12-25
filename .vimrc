@@ -188,6 +188,7 @@ filetype plugin on
 "
 " ### Appearel
 "
+" - - [bling/vim-airline](https://github.com/bling/vim-airline) is a status bar, tabline
   Plug 'bling/vim-airline' " status bar
   set noshowmode
   set laststatus=2
@@ -195,74 +196,46 @@ filetype plugin on
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
 
-  " Plug 'jszakmeister/vim-togglecursor'
-" - [chrisbra/vim-diff-enhanced ] " enhanced dif(https://github.com/url_here)
-" pluginf
-  Plug 'chrisbra/vim-diff-enhanced' " enhanced diff
-
-" - [scrooloose/nerdtree](https://github.com/url_here) plugin
+" - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) is a file
+"   explorer for vim
   Plug 'scrooloose/nerdtree'
 
-" - [jistr/vim-nerdtree-tabs](https://github.com/url_here) plugin
+" - [jistr/vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) is an
+"   externsion for nerdtree to support tabs
   Plug 'jistr/vim-nerdtree-tabs'
 
-  " NeoBundle 'junegunn/limelight.vim' " Highlight only piece of code
-  " let g:limelight_conceal_ctermfg = 'gray'
-  " let g:limelight_conceal_guifg = 'DarkGray'
+" - [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature) highlights
+"   marks
+  Plug 'kshenoy/vim-signature'
 
-  " NeoBundle 'junegunn/goyo.vim' " Distraction-free
-  " let g:goyo_width = 100
-
-" - [kshenoy/vim-signature ] " highlight mars(https://github.com/url_here) plugink
-  Plug 'kshenoy/vim-signature' " highlight marks
-
-" - [mhinz/vim-signify ] "h(https://github.com/url_here) plugin
+" - [mhinz/vim-signify ] "h(https://github.com/url_here) highlights changes
   Plug 'mhinz/vim-signify' " h
 
-" - unsorted
 "
-" ```
-    " Plug 'vim-gitgutter' " Git diff
-
-  " set laststatus=2 " To show menubar
-  " set noshowmode
-  " let g:airline#extensions#tabline#enabled = 1
-
-  " NeoBundle 'reedes/vim-thematic'
-
-  " set hidden
-  " let g:airline_theme='light'
-  " let g:airline_exclude_preview = 1
-  " let g:airline#extensions#tabline#enabled = 0
-  " autocmd BufEnter, BufNewFile * silent! lcd %:p:h
-
-  " NeoBundle 'bling/vim-bufferline'
-  "
-" ```
-
 "
 "### Colors
 "
-" - [google/vim-colorscheme-primary](https://github.com/url_here) plugin
-  Plug 'google/vim-colorscheme-primary'
-
-" - [vim-scripts/ScrollColors](https://github.com/url_here) plugin
+" - [vim-scripts/ScrollColors](https://github.com/vim-scripts/ScrollColors) provides
+"   `:COLORSCROLL` command to walk thought colorschemes
   Plug 'vim-scripts/ScrollColors'
 
-  " Plug 'kien/rainbow_parentheses.vim'
-" - [luochen1990/rainbow](https://github.com/url_here) plugin
+" - [luochen1990/rainbow](https://github.com/luochen1990/rainbow) highlights
+"   brackets regaring nested levels
   Plug 'luochen1990/rainbow'
   let g:rainbow_conf = {
   \   'ctermfgs': ['blue', 'cyan', 'green', 'yellow', 'red']
   \ }
 
-" - [zefei/vim-colortuner](https://github.com/url_here) plugin
+" - [zefei/vim-colortuner](https://github.com/zefei/vim-colortuner) allows you
+"   tuning your color scheme using sliders
   Plug 'zefei/vim-colortuner'
 
-" - [flazz/vim-colorschemes](https://github.com/url_here) plugin
+" - [flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes) yet
+"   another colorschemes pack
   Plug 'flazz/vim-colorschemes'
 
-" - [godlygeek/csapprox](https://github.com/url_here) plugin
+" - [godlygeek/csapprox](https://github.com/url_here) makes GVim-only
+"   colorschemes Just Work in terminal Vim
   Plug 'godlygeek/csapprox'
   let g:CSApprox_hook_post = [
     \ 'highlight Normal            ctermbg=NONE',
@@ -281,96 +254,13 @@ filetype plugin on
     \ 'highlight clear LineNr'
   \]
 
-" - [ervandew/supertab](https://github.com/url_here) plugin
+" - [ervandew/supertab](https://github.com/ervandew/supertab) allows you to use
+"   `<Tab>` for all your insert completion needs
   Plug 'ervandew/supertab'
 
-" - Unsorted stuff
-" ```
-  " UNSORTED
-  " NeoBundle "noahfrederick/vim-noctu"
-  " let g:seoul256_background = 256
-  " NeoBundle 'junegunn/seoul256.vim'
-  " NeoBundle 'gorodinskiy/vim-coloresque'
-  " NeoBundle 'Colour-Sampler-Pack'
-  " NeoBundle 'flazz/vim-colorschemes'
-  " NeoBundle 'tpope/vim-vividchalk'
-  " NeoBundle 'tomasr/molokai'
-  " let g:molokai_original = 1
-  " let g:rehash256 = 1
-  " let g:rbpt_colorpairs = [
-    " \ ['brown',       'RoyalBlue3'],
-    " \ ['Darkblue',    'SeaGreen3'],
-    " \ ['darkgray',    'DarkOrchid3'],
-    " \ ['darkgreen',   'firebrick3'],
-    " \ ['darkcyan',    'RoyalBlue3'],
-    " \ ['darkred',     'SeaGreen3'],
-    " \ ['darkmagenta', 'DarkOrchid3'],
-    " \ ['brown',       'firebrick3'],
-    " \ ['gray',        'RoyalBlue3'],
-    " \ ['black',       'SeaGreen3'],
-    " \ ['darkmagenta', 'DarkOrchid3'],
-    " \ ['Darkblue',    'firebrick3'],
-    " \ ['darkgreen',   'RoyalBlue3'],
-    " \ ['darkcyan',    'SeaGreen3'],
-    " \ ['darkred',     'DarkOrchid3'],
-    " \ ['red',         'firebrick3'],
-    " \ ]
-      " \ ['black',       'SeaGreen3'],
-      " \ ['brown',       'RoyalBlue3'],
-      " \ ['Darkblue',    'SeaGreen3'],
-      " \ ['darkgray',    'DarkOrchid3'],
-      " \ ['darkgreen',   'firebrick3'],
-      " \ ['darkcyan',    'RoyalBlue3'],
-      " \ ['darkred',     'SeaGreen3'],
-      " \ ['darkmagenta', 'DarkOrchid3'],
-      " \ ['brown',       'firebrick3'],
-      " \ ['darkmagenta', 'DarkOrchid3'],
-      " \ ['darkred',     'DarkOrchid3'],
-      " \ ['gray',        'RoyalBlue3'],
-      " \ ['darkcyan',    'SeaGreen3'],
-      " \ ['Darkblue',    'firebrick3'],
-      " \ ['darkgreen',   'RoyalBlue3'],
-      " \ ['red',         'firebrick3']
-      " \ ]
-  " colorscheme zephyr
 
-  " au VimEnter * RainbowParenthesesToggle
-  " au Syntax * RainbowParenthesesLoadRound
-  " au Syntax * RainbowParenthesesLoadSquare
-  " au Syntax * RainbowParenthesesLoadBraces
-  " let g:rbpt_max = 16
-  " let g:rbpt_loadcmd_toggle = 0
-
-" - unsorted plugins
-  " NeoBundle 'Shougo/vimproc'
-  " NeoBundle 'Shougo/unite.vim'
-  " NeoBundle 'Lokaltog/vim-easymotion'
-  " NeoBundle 'taglist.vim'
-  " NeoBundle 'vim-ruby/vim-ruby'
-  " NeoBundle 'Keithbsmiley/rspec.vim'
-  " NeoBundle 'nelstrom/vim-textobj-rubyblock'
-  " NeoBundle 'nelstrom/vim-textobj-user'
-  " NeoBundle 'mbbill/undotree'
-  " NeoBundle 'Rykka/colorv.vim'
-  " NeoBundle "MarcWeber/vim-addon-mw-utils"
-  " NeoBundle "tomtom/tlib_vim"
-  " NeoBundle "vadv/vim-chef"
-  " NeoBundle "suan/vim-instant-markdown"
-  " NeoBundle "terryma/vim-expand-region"
-  " NeoBundle 'q335r49/microviche'
-  " NeoBundle 'vim-scripts/Align'
-  " NeoBundle 'vim-scripts/ZoomWin'
-  " NeoBundle 'ferranpm/vim-colorcode'
-  " let g:colorcode_global=0
-  " NeoBundle 'kbairak/TurboMark'
-  " NeoBundle 'szw/vim-ctrlspace'
-  " let g:syntastic_enable_signs=1
-  " let g:indent_guides_auto_colors=0
-  " hi IndentGuidesOdd  ctermbg=black
-  " hi IndentGuidesEven ctermbg=darkgrey
-" ```
-
-" - [ryanoasis/vim-devicons](https://github.com/url_here) plugin
+" - [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) adds
+"   filetype glyphs (icons) to other plugins
   Plug 'ryanoasis/vim-devicons'
 
   filetype plugin indent on

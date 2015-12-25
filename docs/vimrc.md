@@ -102,7 +102,7 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
 
 ### Appearel
 
-- - [bling/vim-airline](https://github.com/bling/vim-airline) is a status bar, tabline
+- [bling/vim-airline](https://github.com/bling/vim-airline) is a status bar, tabline
 - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) is a file
   explorer for vim
 - [jistr/vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) is an

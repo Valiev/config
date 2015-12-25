@@ -188,7 +188,7 @@ filetype plugin on
 "
 " ### Appearel
 "
-" - - [bling/vim-airline](https://github.com/bling/vim-airline) is a status bar, tabline
+" - [bling/vim-airline](https://github.com/bling/vim-airline) is a status bar, tabline
   Plug 'bling/vim-airline' " status bar
   set noshowmode
   set laststatus=2

@@ -128,8 +128,15 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   `<Tab>` for all your insert completion needs
 - [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) adds
   filetype glyphs (icons) to other plugins
-= Configuration
 
+## Configuration
+- `nowrap` disables word wrapping. Easily toggled with `cow` mapping
+- `smartindent` enables smart indentation after `{` and others
+- `showbreak=⁻` starts wrapped lines with this symbol
+- `breakindent` shows wrapped line will continue visually indented
+- `linebreak` wraps long lines at a character in `'breakat'`
+   rather than at the last character that fits on the screen.
+- `textwidth=80` sets maximum width of text that is being inserted to 80
 
 ## Mappings
 nnoremap <Leader><Leader> :Goyo<CR>

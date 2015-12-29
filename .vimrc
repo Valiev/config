@@ -266,13 +266,29 @@ filetype plugin on
   filetype plugin indent on
   call plug#end()
 
-"= Configuration
+"
+" ## Configuration
+
+" - `nowrap` disables word wrapping. Easily toggled with `cow` mapping
   set nowrap
+
+" - `smartindent` enables smart indentation after `{` and others
   set smartindent
+
+" - `showbreak=⁻` starts wrapped lines with this symbol
   set showbreak=⁻
+
+" - `breakindent` shows wrapped line will continue visually indented
   set breakindent
+
+" - `linebreak` wraps long lines at a character in `'breakat'`
+"    rather than at the last character that fits on the screen.
   set linebreak
-  set tw=80
+
+
+" - `textwidth=80` sets maximum width of text that is being inserted to 80
+  set textwidth=80
+
   set backspace=indent,eol,start
   set clipboard+=unnamed " Yanks go on clipboard instead.
   set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
@@ -351,7 +367,6 @@ filetype plugin on
   set tags=~/dev/tags
   au FocusLost * :wa
 
-"
 "
 " ## Mappings
 

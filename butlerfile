@@ -1,0 +1,2 @@
+hello: echo "Hello, World!"
+doc: ./tools/to_markdown.sh .vimrc > ./docs/vimrc.md && open ./docs/vimrc.md

@@ -130,6 +130,8 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   filetype glyphs (icons) to other plugins
 
 ## Configuration
+
+
 - `nowrap` disables word wrapping. Easily toggled with `cow` mapping
 - `smartindent` enables smart indentation after `{` and others
 - `showbreak=⁻` starts wrapped lines with this symbol
@@ -137,6 +139,10 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
 - `linebreak` wraps long lines at a character in `'breakat'`
    rather than at the last character that fits on the screen.
 - `textwidth=80` sets maximum width of text that is being inserted to 80
+- `backspace=indent,eol,start` enables `backspace`
+- `clipboard+=unnamed` yanks go on clipboard instead.
+- `fo+=o` automatically inserts the current comment leader after hitting 'o' or 'O' in Normal mode.
+- `fo-=r` disables automatically insertion of a comment leader after an enter
 
 ## Mappings
 nnoremap <Leader><Leader> :Goyo<CR>

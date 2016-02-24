@@ -153,6 +153,7 @@ filetype plugin on
 "   (N for prev one)
   Plug 'luochen1990/select-and-search'
 
+  Plug 'floobits/floobits-neovim'
 " - [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim) is fuzzy finder for
 "   files, buffers and MRUs
   Plug 'kien/ctrlp.vim'
@@ -268,6 +269,8 @@ filetype plugin on
 
 "
 " ## Configuration
+"
+"
 
 " - `nowrap` disables word wrapping. Easily toggled with `cow` mapping
   set nowrap
@@ -285,14 +288,20 @@ filetype plugin on
 "    rather than at the last character that fits on the screen.
   set linebreak
 
-
 " - `textwidth=80` sets maximum width of text that is being inserted to 80
   set textwidth=80
 
+" - `backspace=indent,eol,start` enables `backspace`
   set backspace=indent,eol,start
-  set clipboard+=unnamed " Yanks go on clipboard instead.
-  set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
-  set fo-=r " Do not automatically insert a comment leader after an enter
+
+" - `clipboard+=unnamed` yanks go on clipboard instead.
+  set clipboard+=unnamed "
+
+" - `fo+=o` automatically inserts the current comment leader after hitting 'o' or 'O' in Normal mode.
+  set fo+=o
+
+" - `fo-=r` disables automatically insertion of a comment leader after an enter
+  set fo-=r
 
   set noignorecase
   set incsearch       " Search during typing
@@ -300,7 +309,7 @@ filetype plugin on
   set history=500
   set undolevels=50
   set completeopt=longest,menuone     " IDE-like autocomplete
-  set hlsearch
+
 
   set nofoldenable
 

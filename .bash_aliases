@@ -79,18 +79,6 @@ function env_releases() {
   knife environment show $env -a default_attributes.releases
 }
 
-function env_e1() {
-  knife_env_fuzzy_search E1 $1
-}
-
-function env_s3() {
-  knife_env_fuzzy_search S3 $1
-}
-
-function env_et() {
-  knife_env_fuzzy_search ET $1
-}
-
 function topcmds() {
   LC_CTYPE=C
   LANG=C

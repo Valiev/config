@@ -14,6 +14,7 @@ strerror() {python -c "import os; print os.strerror($1)"}
 alias kitchen="chef exec kitchen"
 alias berks="chef exec berks"
 alias knife="chef exec knife"
+alias vim=" nvim"
 alias b="   butler"
 alias k="   kitchen"
 alias c="   colorize"

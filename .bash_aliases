@@ -67,7 +67,11 @@ function on_finish() {
 function knife_env_fuzzy_search() {
   local env=$1
   local search_term=$2
-  knife search "chef_environment:$env AND (recipe:*$search_term* OR role:*$search_term* OR name:*$search_term*)"
+  if [[ "X$search_term" == "X" ]]; then
+    knife search "chef_environment:$env"
+  else
+    knife search "chef_environment:$env AND (recipe:*$search_term* OR role:*$search_term* OR name:*$search_term*)"
+  fi
 }
 
 function env_releases() {

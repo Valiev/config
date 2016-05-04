@@ -392,6 +392,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 
   autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace " strip whitespaces
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType markdown setlocal spell
   autocmd FileType ruby compiler ruby
   autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby

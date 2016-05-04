@@ -274,6 +274,9 @@ highlight link SyntasticStyleWarningSign SignColumn
 "   another colorschemes pack
   Plug 'flazz/vim-colorschemes'
 
+" - FIXME
+  Plug 'gosukiwi/vim-atom-dark'
+
 " - [godlygeek/csapprox](https://github.com/url_here) makes GVim-only
 "   colorschemes Just Work in terminal Vim
   Plug 'godlygeek/csapprox'

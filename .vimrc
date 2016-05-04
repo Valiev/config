@@ -106,7 +106,7 @@ filetype plugin on
 "   plugin brings `ca=`/`da=` and other vim-motions.
   Plug 'junegunn/vim-after-object'
   silent! if has_key(g:plugs, 'vim-after-object')
-    autocmd VimEnter * silent! call after_object#enable('=', ':', '-', '#', ' ', '*', '.', '|')
+    autocmd VimEnter * silent! call after_object#enable('=', ':', '-', '#', ' ', '*', '.', '|', '/')
   endif
 
 " - [scrooloose/syntastic](https://github.com/scrooloose/syntastic) plugin

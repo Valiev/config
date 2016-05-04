@@ -468,6 +468,7 @@ highlight link SyntasticStyleWarningSign SignColumn
   noremap H :bprev<CR>
   noremap L :bnext<CR>
   nmap <Leader>d :bd<CR>
+  nmap <Leader>k <Plug>DashSearch
 
   nnoremap # :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
   nnoremap * #

@@ -375,6 +375,9 @@ highlight link SyntasticStyleWarningSign SignColumn
   endif
 
   colorscheme Monokai
+  colorscheme zephyr
+  " colorscheme atom-dark-256
+  " colorscheme camo
 
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange

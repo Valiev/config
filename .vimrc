@@ -99,6 +99,9 @@ filetype plugin on
 "   tagbar for vim.
   Plug 'majutsushi/tagbar'
 
+" - FIXME
+  Plug 'jaxbot/semantic-highlight.vim'
+
 " - [junegunn/vim-after-object](https://github.com/junegunn/vim-after-object)
 "   plugin brings `ca=`/`da=` and other vim-motions.
   Plug 'junegunn/vim-after-object'
@@ -125,6 +128,22 @@ filetype plugin on
 " - [tpope/vim-commentary](https://github.com/tpope/vim-commentary) plugin
 "   provides universal binding to manage comments for various filetypes
   Plug 'tpope/vim-commentary'
+
+  function! DoRemote(arg)
+    UpdateRemotePlugins
+  endfunction
+" - [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) plugin
+"   provides great auto-completion for most of the scripting languages.
+  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+  let g:deoplete#enable_at_startup = 1
+
+" - [osyo-manga/vim-monster](https://github.com/osyo-manga/vim-monster) plugin
+"   provides auto-completion ruby scripts.
+  Plug 'osyo-manga/vim-monster'
+
+" - [rizzatti/dash.vim](https://github.com/rizzatti/dash.vim) plugin
+"   provides documentation using Dash application.
+  Plug 'rizzatti/dash.vim'
 
 " - [tpope/vim-endwise](https://github.com/tpope/vim-endwise) plugin helps to end
 "   certain structures automatically

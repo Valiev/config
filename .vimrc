@@ -99,7 +99,8 @@ filetype plugin on
 "   tagbar for vim.
   Plug 'majutsushi/tagbar'
 
-" - FIXME
+" - [jaxbot/semantic-highlight](https://github.com/jaxbot/semantic-highlight.vim) plugin brings
+"   every variable is a different color;
   Plug 'jaxbot/semantic-highlight.vim'
 
 " - [junegunn/vim-after-object](https://github.com/junegunn/vim-after-object)

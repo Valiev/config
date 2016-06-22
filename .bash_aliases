@@ -1,6 +1,7 @@
 # VARIABLES {
 #NUMCPU=$(cat /proc/cpuinfo | grep processor | wc -l)
 
+source ./.github_token
 bash_aliases="  ~/.bash_aliases"
 vimrc="         ~/.vimrc"
 gvimrc="        ~/.gvimrc"

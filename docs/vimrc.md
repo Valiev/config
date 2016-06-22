@@ -153,6 +153,12 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
 - `clipboard+=unnamed` yanks go on clipboard instead.
 - `fo+=o` automatically inserts the current comment leader after hitting 'o' or 'O' in Normal mode.
 - `fo-=r` disables automatically insertion of a comment leader after an enter
+- `noignorecase` respects case in search
+- `incsearch` searchs during typing
+- `hlsearch` highlights found strings
+- `history=1000` keeps 1000 commands in history
+- `undolevels=500` handles 500 commands to undo
+- `completeopt=longest,menuone` show IDE-like autocomplete
 
 ## Mappings
 nnoremap <Leader><Leader> :Goyo<CR>

@@ -347,13 +347,23 @@ highlight link SyntasticStyleWarningSign SignColumn
 " - `fo-=r` disables automatically insertion of a comment leader after an enter
   set fo-=r
 
+" - `noignorecase` respects case in search
   set noignorecase
-  set incsearch       " Search during typing
-  set hlsearch        " Highlight found strings
-  set history=500
-  set undolevels=50
-  set completeopt=longest,menuone     " IDE-like autocomplete
 
+" - `incsearch` searchs during typing
+  set incsearch
+
+" - `hlsearch` highlights found strings
+  set hlsearch
+
+" - `history=1000` keeps 1000 commands in history
+  set history=1000
+
+" - `undolevels=500` handles 500 commands to undo
+  set undolevels=500
+
+" - `completeopt=longest,menuone` show IDE-like autocomplete
+  set completeopt=longest,menuone
 
   set nofoldenable
 

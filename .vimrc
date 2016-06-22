@@ -249,8 +249,8 @@ highlight link SyntasticStyleWarningSign SignColumn
 "   marks
   Plug 'kshenoy/vim-signature'
 
-" - [mhinz/vim-signify ] "h(https://github.com/url_here) highlights changes
-  Plug 'mhinz/vim-signify' " h
+" - [mhinz/vim-signify ](https://github.com/url_here) highlights changes
+  Plug 'mhinz/vim-signify'
 
 "
 "
@@ -275,7 +275,8 @@ highlight link SyntasticStyleWarningSign SignColumn
 "   another colorschemes pack
   Plug 'flazz/vim-colorschemes'
 
-" - FIXME
+" - [gosukiwi/vim-atom-dark](https://github.com/gosukiwi/vim-atom-dark) bring
+"   dark atom colorscheme
   Plug 'gosukiwi/vim-atom-dark'
 
 " - [godlygeek/csapprox](https://github.com/url_here) makes GVim-only
@@ -380,8 +381,6 @@ highlight link SyntasticStyleWarningSign SignColumn
 
   colorscheme Monokai
   colorscheme zephyr
-  " colorscheme atom-dark-256
-  " colorscheme camo
 
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange

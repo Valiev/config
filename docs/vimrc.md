@@ -117,7 +117,7 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   externsion for nerdtree to support tabs
 - [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature) highlights
   marks
-- [mhinz/vim-signify ] "h(https://github.com/url_here) highlights changes
+- [mhinz/vim-signify ](https://github.com/url_here) highlights changes
 
 
 ### Colors
@@ -130,7 +130,8 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   tuning your color scheme using sliders
 - [flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes) yet
   another colorschemes pack
-- FIXME
+- [gosukiwi/vim-atom-dark](https://github.com/gosukiwi/vim-atom-dark) bring
+  dark atom colorscheme
 - [godlygeek/csapprox](https://github.com/url_here) makes GVim-only
   colorschemes Just Work in terminal Vim
 - [ervandew/supertab](https://github.com/ervandew/supertab) allows you to use
@@ -152,8 +153,6 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
 - `clipboard+=unnamed` yanks go on clipboard instead.
 - `fo+=o` automatically inserts the current comment leader after hitting 'o' or 'O' in Normal mode.
 - `fo-=r` disables automatically insertion of a comment leader after an enter
-colorscheme atom-dark-256
-colorscheme camo
 
 ## Mappings
 nnoremap <Leader><Leader> :Goyo<CR>

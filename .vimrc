@@ -368,7 +368,6 @@ highlight link SyntasticStyleWarningSign SignColumn
   set nofoldenable
 
   set background=dark
-  set nocp
   set noerrorbells  " Silent
   set vb            " Even more silent
   set showmatch     " Highlight paired parentheses

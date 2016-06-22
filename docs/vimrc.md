@@ -61,6 +61,8 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   brings seamless and not irritating tags creation.
 - [majutsushi/tagbar](https://github.com/majutsushi/tagbar) plugin bring
   tagbar for vim.
+- [jaxbot/semantic-highlight](https://github.com/jaxbot/semantic-highlight.vim) plugin brings
+  every variable is a different color;
 - [junegunn/vim-after-object](https://github.com/junegunn/vim-after-object)
   plugin brings `ca=`/`da=` and other vim-motions.
 - [scrooloose/syntastic](https://github.com/scrooloose/syntastic) plugin
@@ -73,6 +75,12 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   parentheses, brackets, quotes, XML tags, and more.
 - [tpope/vim-commentary](https://github.com/tpope/vim-commentary) plugin
   provides universal binding to manage comments for various filetypes
+- [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) plugin
+  provides great auto-completion for most of the scripting languages.
+- [osyo-manga/vim-monster](https://github.com/osyo-manga/vim-monster) plugin
+  provides auto-completion ruby scripts.
+- [rizzatti/dash.vim](https://github.com/rizzatti/dash.vim) plugin
+  provides documentation using Dash application.
 - [tpope/vim-endwise](https://github.com/tpope/vim-endwise) plugin helps to end
   certain structures automatically
 - [tpope/vim-repeat](https://github.com/tpope/vim-repeat) plugin provides
@@ -122,6 +130,7 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   tuning your color scheme using sliders
 - [flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes) yet
   another colorschemes pack
+- FIXME
 - [godlygeek/csapprox](https://github.com/url_here) makes GVim-only
   colorschemes Just Work in terminal Vim
 - [ervandew/supertab](https://github.com/ervandew/supertab) allows you to use
@@ -143,6 +152,8 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
 - `clipboard+=unnamed` yanks go on clipboard instead.
 - `fo+=o` automatically inserts the current comment leader after hitting 'o' or 'O' in Normal mode.
 - `fo-=r` disables automatically insertion of a comment leader after an enter
+colorscheme atom-dark-256
+colorscheme camo
 
 ## Mappings
 nnoremap <Leader><Leader> :Goyo<CR>

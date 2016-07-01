@@ -28,9 +28,9 @@ filetype plugin on
 "   setting filetype explicitly with `:set filetype=nagios`.
   Plug 'tejr/vim-nagios', { 'for': 'nagios' }
 
-" - [wting/rust.vim](https://github.com/wting/rust.vim) plugin brings `rust`
-"   support to vim.
-  Plug 'wting/rust.vim', { 'for': 'rust' }
+" - [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim) plugin brings `rust`
+"   support to vim. Official one.
+  Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " - [vim-bamboo-log](https://github.com/Valiev/vim-bamboo-log) plugin provides
 "   syntax highlight for Bamboo CI build logs.

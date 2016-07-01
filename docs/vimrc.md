@@ -20,8 +20,8 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   files. `Plug 'tejr/vim-nagios', { 'for': 'nagios' }` line is used to provide
   this plugin to be enabled only for `nagios` files. Could be enabled by
   setting filetype explicitly with `:set filetype=nagios`.
-- [wting/rust.vim](https://github.com/wting/rust.vim) plugin brings `rust`
-  support to vim.
+- [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim) plugin brings `rust`
+  support to vim. Official one.
 - [vim-bamboo-log](https://github.com/Valiev/vim-bamboo-log) plugin provides
   syntax highlight for Bamboo CI build logs.
 - [bkad/vim-terraform](https://github.com/bkad/vim-terraform) plugin brings

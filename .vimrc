@@ -404,6 +404,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 
   autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace " strip whitespaces
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType rust setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType markdown setlocal spell
   autocmd FileType ruby compiler ruby
   autocmd FileType ruby,eruby set filetype=ruby.eruby.chef

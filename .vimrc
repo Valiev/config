@@ -377,7 +377,6 @@ highlight link SyntasticStyleWarningSign SignColumn
   set nonu          " Turn off line numeration. Really piss me off.
   set linespace=0
   set ruler         " Show cursor position info in the bottom if vim
-  set t_Co=256
   set shortmess=atI " Shortens messages
   function s:SetCursorLine()
     hi cursorline cterm=none ctermbg=darkblue ctermfg=white
@@ -424,7 +423,6 @@ highlight link SyntasticStyleWarningSign SignColumn
   set complete+=k
   set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
 
-  set ttyfast
   set nolazyredraw " don't redraw while executing macros"
   set magic " Set magic on, for regex"
   set mat=2 " how many tenths of a second to blink"

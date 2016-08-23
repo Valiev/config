@@ -387,8 +387,7 @@ highlight link SyntasticStyleWarningSign SignColumn
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   endif
 
-  colorscheme Monokai
-  colorscheme zephyr
+  colorscheme monokain
 
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange

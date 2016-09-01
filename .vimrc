@@ -76,9 +76,9 @@ filetype plugin on
 "   plugin highlights all whitespaces and moreover provides whitespace stripping.
   Plug 'ntpeters/vim-better-whitespace'
 
-" - [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) plugin
-"   provides auto-closing brackets
-  Plug 'https://github.com/jiangmiao/auto-pairs'
+" - [cohama/lexima-vim](https://github.com/cohama/lexima.vim) plugin
+"   provides auto-closing brackets and some other neat features
+  Plug 'cohama/lexima.vim'
 
 " - [terryma/vim-expand-region](https://github.com/erryma/vim-expand-region) plugin allows
 "   to visually select increasingly larger regions of text using the same key
@@ -382,6 +382,11 @@ highlight link SyntasticStyleWarningSign SignColumn
     hi cursorline cterm=none ctermbg=darkblue ctermfg=white
   endfunction
   autocmd VimEnter * call s:SetCursorLine()
+
+  " Embrace words with auto-pairing
+  call lexima#add_rule({'at': '\%#\<\h', 'char': '"', 'input': '<Esc>ea"<Esc>bi"'})
+  call lexima#add_rule({'at': '\%#\<\h', 'char': '(', 'input': '<Esc>ea)<Esc>bi('})
+  call lexima#add_rule({'at': '\%#\<\h', 'char': '[', 'input': '<Esc>ea]<Esc>bi['})
 
   if has("autocmd") " resume last position in file
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

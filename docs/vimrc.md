@@ -48,8 +48,8 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
   types of dates
 - [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
   plugin highlights all whitespaces and moreover provides whitespace stripping.
-- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) plugin
-  provides auto-closing brackets
+- [cohama/lexima-vim](https://github.com/cohama/lexima.vim) plugin
+  provides auto-closing brackets and some other neat features
 - [terryma/vim-expand-region](https://github.com/erryma/vim-expand-region) plugin allows
   to visually select increasingly larger regions of text using the same key
   combination
@@ -159,6 +159,7 @@ To enable plugin-manager it requires to add `call plug#begin('~/.vim/plugged')` 
 - `history=1000` keeps 1000 commands in history
 - `undolevels=500` handles 500 commands to undo
 - `completeopt=longest,menuone` show IDE-like autocomplete
+Embrace words with auto-pairing
 
 ## Mappings
 nnoremap <Leader><Leader> :Goyo<CR>

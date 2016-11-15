@@ -80,7 +80,8 @@ plugins=(
   themes
   tmux
   vagrant
-  zsh-syntax-highlighting
+  zsh-navigation-tools
+  # zsh-syntax-highlighting
 )
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
@@ -98,6 +99,9 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down]]
+
+zle -N znt-kill-widget
+bindkey "^K" znt-kill-widget
 
 COMPLETION_WAITING_DOTS="true"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";

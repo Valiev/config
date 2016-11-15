@@ -264,7 +264,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 "   brackets regaring nested levels
   Plug 'luochen1990/rainbow'
   let g:rainbow_conf = {
-  \   'ctermfgs': ['blue', 'cyan', 'green', 'yellow', 'red']
+  \   'ctermfgs': ['cyan', 'blue', 'lightblue', 'lightcyan', 'green', 'lightyellow', 'yellow', 'red']
   \ }
 
 " - [zefei/vim-colortuner](https://github.com/zefei/vim-colortuner) allows you

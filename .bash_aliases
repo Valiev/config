@@ -8,7 +8,9 @@ gvimrc="        ~/.gvimrc"
 
 export EDITOR=vim
 
-strerror() {python -c "import os; print os.strerror($1)"}
+strerror() {
+  python -c "import os; print os.strerror($1)"
+}
 # }
 
 # STUFF {

@@ -384,9 +384,9 @@ highlight link SyntasticStyleWarningSign SignColumn
   autocmd VimEnter * call s:SetCursorLine()
 
   " Embrace words with auto-pairing
-  call lexima#add_rule({'at': '\%#\<\h', 'char': '"', 'input': '<Esc>ea"<Esc>bi"'})
-  call lexima#add_rule({'at': '\%#\<\h', 'char': '(', 'input': '<Esc>ea)<Esc>bi('})
-  call lexima#add_rule({'at': '\%#\<\h', 'char': '[', 'input': '<Esc>ea]<Esc>bi['})
+ " call lexima#add_rule({'at': '\%#\<\h', 'char': '"', 'input': '<Esc>ea"<Esc>bi"'})
+  " call lexima#add_rule({'at': '\%#\<\h', 'char': '(', 'input': '<Esc>ea)<Esc>bi('})
+  " call lexima#add_rule({'at': '\%#\<\h', 'char': '[', 'input': '<Esc>ea]<Esc>bi['})
 
   if has("autocmd") " resume last position in file
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

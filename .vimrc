@@ -86,6 +86,9 @@ filetype plugin on
   Plug 'terryma/vim-expand-region'
 
 
+  Plug 'kassio/neoterm'
+
+
 "
 "
 " ### Coding features
@@ -307,6 +310,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 " - [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) adds
 "   filetype glyphs (icons) to other plugins
   Plug 'ryanoasis/vim-devicons'
+  Plug 'arakashic/chromatica.nvim'
 
   filetype plugin indent on
   call plug#end()
@@ -433,6 +437,9 @@ highlight link SyntasticStyleWarningSign SignColumn
 
   set tags=~/dev/tags
   au FocusLost * :wa
+
+  let g:neoterm_repl_ruby = "pry"
+  nnoremap <Leader>ff :TREPLSendFile<CR>
 
 "
 " ## Mappings

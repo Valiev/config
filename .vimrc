@@ -85,8 +85,8 @@ filetype plugin on
 "   combination
   Plug 'terryma/vim-expand-region'
 
-
-  Plug 'kassio/neoterm'
+" - TODO: add documentation here
+" Plug 'kassio/neoterm'
 
 
 "
@@ -167,7 +167,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 
 " - [rizzatti/dash.vim](https://github.com/rizzatti/dash.vim) plugin
 "   provides documentation using Dash application.
-  Plug 'rizzatti/dash.vim'
+  " Plug 'rizzatti/dash.vim'
 
 " - [tpope/vim-endwise](https://github.com/tpope/vim-endwise) plugin helps to end
 "   certain structures automatically
@@ -196,7 +196,6 @@ highlight link SyntasticStyleWarningSign SignColumn
 "   (N for prev one)
   Plug 'luochen1990/select-and-search'
 
-  Plug 'floobits/floobits-neovim'
 " - [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim) is fuzzy finder for
 "   files, buffers and MRUs
   Plug 'kien/ctrlp.vim'

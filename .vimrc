@@ -363,29 +363,52 @@ highlight link SyntasticStyleWarningSign SignColumn
 " - `undolevels=500` handles 500 commands to undo
   set undolevels=500
 
-" - `completeopt=longest,menuone` show IDE-like autocomplete
+" - `completeopt=longest,menuone` shows IDE-like autocomplete
   set completeopt=longest,menuone
 
+" - `set nofoldenable` makes all folds are open
   set nofoldenable
 
+" `set background=dark` to use colors that look good on a dark background
   set background=dark
-  set noerrorbells  " Silent
-  set vb            " Even more silent
-  set showmatch     " Highlight paired parentheses
+
+" `set noerrorbells` for no terminal beeps
+  set noerrorbells
+
+" `set vb` to use visual bell instead of beeping.
+  set visualbell
+
+" `set showmatch` highlights paired parentheses
+  set showmatch
+
+" `set matchtime=5`   " Bracket blinking.
   set matchtime=5   " Bracket blinking.
-  set et            " Spaces instead of tabs
+
+" set expandtab            " Spaces instead of tabs
+  set expandtab            " Spaces instead of tabs
+
+" set scrolloff=2
   set scrolloff=2
-  set nonu          " Turn off line numeration. Really piss me off.
+
+" set nonumber          " Turn off line numeration. Really piss me off.
+  set nonumber
+
+" set linespace=0
   set linespace=0
-  set ruler         " Show cursor position info in the bottom if vim
+
+" `set ruler`shows cursor position info in the bottom if vim
+  set ruler
+
+" set shortmess=atI " Shortens messages
   set shortmess=atI " Shortens messages
+
   function s:SetCursorLine()
     hi cursorline cterm=none ctermbg=darkblue ctermfg=white
   endfunction
   autocmd VimEnter * call s:SetCursorLine()
 
-  " Embrace words with auto-pairing
- " call lexima#add_rule({'at': '\%#\<\h', 'char': '"', 'input': '<Esc>ea"<Esc>bi"'})
+  " FIXME: Embrace words with auto-pairing
+  " call lexima#add_rule({'at': '\%#\<\h', 'char': '"', 'input': '<Esc>ea"<Esc>bi"'})
   " call lexima#add_rule({'at': '\%#\<\h', 'char': '(', 'input': '<Esc>ea)<Esc>bi('})
   " call lexima#add_rule({'at': '\%#\<\h', 'char': '[', 'input': '<Esc>ea]<Esc>bi['})
 
@@ -406,20 +429,6 @@ highlight link SyntasticStyleWarningSign SignColumn
 
   set encoding=utf8
 
-  autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace " strip whitespaces
-  autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
-  autocmd FileType rust setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd FileType markdown setlocal spell
-  autocmd FileType ruby compiler ruby
-  autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
-  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
-  autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                     set ft=markdown
-  autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                            set ft=gitcommit
-  autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
-  autocmd BufNewFile,BufRead *.json set ft=json
-  autocmd BufNewFile,BufRead *.json set foldmethod=syntax
-  autocmd BufNewFile,BufRead *.cfg set ft=nagios
-
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
@@ -433,6 +442,21 @@ highlight link SyntasticStyleWarningSign SignColumn
   set mat=2 " how many tenths of a second to blink"
 
   set tags=~/dev/tags
+
+  autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace " strip whitespaces
+  autocmd FileType * setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType rust setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType markdown setlocal spell
+  autocmd FileType ruby compiler ruby
+  autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
+  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
+  autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                     set ft=markdown
+  autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                            set ft=gitcommit
+  autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+  autocmd BufNewFile,BufRead *.json set filetype=json
+  autocmd BufNewFile,BufRead *.json set foldmethod=syntax
+  autocmd BufNewFile,BufRead *.cfg  set filetype=nagios
   au FocusLost * :wa
 
   let g:neoterm_repl_ruby = "pry"

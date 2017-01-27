@@ -19,3 +19,4 @@ lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen
 	email = svaliev@aligntech.com
 [push]
 	default = simple
+	followTags = true

@@ -219,7 +219,7 @@ highlight link SyntasticStyleWarningSign SignColumn
   Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
 
 
-" - [elzr/vim-json ](https://github.com/elzr/vim-json) brings better `json`
+" - [elzr/vim-json](https://github.com/elzr/vim-json) brings better `json`
 "   highlighting
   Plug 'elzr/vim-json', { 'for': 'json' }
   hi! def link jsonKeyword Identifier
@@ -227,7 +227,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 "
 "
 " ### Appearel
-"
+
 " - [bling/vim-airline](https://github.com/bling/vim-airline) is a status bar, tabline
   Plug 'bling/vim-airline' " status bar
   set noshowmode

@@ -49,7 +49,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   almostontop
-  autojump
+  fasd
   battery
   brew
   bundle
@@ -122,6 +122,7 @@ mac_lock_screen () {
   pmset displaysleepnow
 }
 
+alias j=z
 # Setup zsh-autosuggestions
 # source ~/.zsh-autosuggestions/autosuggestions.zsh
 # Enable autosuggestions automatically

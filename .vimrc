@@ -306,6 +306,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 " - [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) adds
 "   filetype glyphs (icons) to other plugins
   Plug 'ryanoasis/vim-devicons'
+  Plug 'sunaku/vim-dasht'
   Plug 'arakashic/chromatica.nvim'
 
   filetype plugin indent on
@@ -461,6 +462,8 @@ highlight link SyntasticStyleWarningSign SignColumn
   nnoremap <Leader>wq :wq<CR>
   nnoremap <Leader>h :set cursorline!<CR>
 
+  " search related docsets
+  nnoremap <Leader>k :Dasht<Space>
   vmap <Leader>y "+y
   vmap <Leader>d "+d
   nmap <Leader>p "+p

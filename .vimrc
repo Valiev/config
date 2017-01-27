@@ -214,12 +214,9 @@ highlight link SyntasticStyleWarningSign SignColumn
   Plug 'neco-ghc', { 'for' : 'haskell' }
   setlocal omnifunc=necoghc#omnifunc
 
-" - [davidhalter/jedi-vim ](https://github.com/davidhalter/jedi-vim) is
+" - [zchee/deoplete-jedi](https://github.com/zchee/deoplete-jedi) is
 "   autocompletion for `python`
-  Plug 'davidhalter/jedi-vim', { 'for' : 'python' }
-  let g:pylint_cwindow = 0 " Disable pylint window
-  let g:jedi#auto_vim_configuration = 0
-  let g:jedi#use_splits_not_buffers = "right"
+  Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
 
 
 " - [elzr/vim-json ](https://github.com/elzr/vim-json) brings better `json`

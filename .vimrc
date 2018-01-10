@@ -31,6 +31,10 @@ filetype plugin on
 " - [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim) plugin brings `rust`
 "   support to vim. Official one.
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+  Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+  " set hidden
+  let g:racer_cmd = "/Users/valiev/.cargo/bin/racer"
+  let g:racer_experimental_completer = 1
 
 " - [vim-bamboo-log](https://github.com/Valiev/vim-bamboo-log) plugin provides
 "   syntax highlight for Bamboo CI build logs.

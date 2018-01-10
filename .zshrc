@@ -121,6 +121,12 @@ bindkey '^Z' fancy-ctrl-z
 mac_lock_screen () {
   pmset displaysleepnow
 }
+function ec2() {
+  aws ec2 describe-instances \
+    --filters "Name=tag:Name,Values=*$1*" "Name=tag:Environment,Values=*$2*" \
+    --output text \
+    --query 'Reservations[].Instances[].[Tags[?Key==`Name`] | [0].Value, InstanceId, Tags[?Key==`Environment`] | [0].Value, NetworkInterfaces[*].PrivateIpAddresses[*].PrivateIpAddress]'
+}
 
 alias j=z
 # Setup zsh-autosuggestions

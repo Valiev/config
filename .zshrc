@@ -145,6 +145,6 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/
 export PATH=/usr/local/Cellar/ruby/2.3.0/bin:$PATH
 export PATH=/Users/valiev/.cabal/bin:$PATH
 #export DYLD_INSERT_LIBRARIES="/Users/valiev/dev/opensource/stderred/build/libstderred.dylib${DYLD_INSERT_LIBRARIES:+:$DYLD_INSERT_LIBRARIES}"
-
-
+source /usr/local/share/zsh/site-functions/_awless
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

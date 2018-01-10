@@ -240,6 +240,11 @@ highlight link SyntasticStyleWarningSign SignColumn
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
 
+" - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+"   is the set of themes for `vim-airline`
+  Plug 'vim-airline/vim-airline-themes'
+  let g:airline_theme='badwolf'
+
 " - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) is a file
 "   explorer for vim
   Plug 'scrooloose/nerdtree'

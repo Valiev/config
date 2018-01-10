@@ -379,7 +379,7 @@ highlight link SyntasticStyleWarningSign SignColumn
   set nofoldenable
 
 " `set background=dark` to use colors that look good on a dark background
-  set background=dark
+  set background=light
 
 " `set noerrorbells` for no terminal beeps
   set noerrorbells
@@ -443,6 +443,10 @@ highlight link SyntasticStyleWarningSign SignColumn
     highlight SpellBad term=underline gui=undercurl guisp=Orange
   endif
 
+  colorscheme Monokai
+  " colorscheme solarized8_light_high
+
+  set undodir=~/.vim/undodir
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=L  "remove left-hand scroll bar
@@ -470,7 +474,7 @@ highlight link SyntasticStyleWarningSign SignColumn
   autocmd FileType rust setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType markdown setlocal spell
   autocmd FileType ruby compiler ruby
-  autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
+  " autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
   autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                     set ft=markdown
   autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                            set ft=gitcommit

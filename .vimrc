@@ -162,7 +162,7 @@ highlight link SyntasticStyleWarningSign SignColumn
   endfunction
 " - [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) plugin
 "   provides great auto-completion for most of the scripting languages.
-  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
 
 " - [osyo-manga/vim-monster](https://github.com/osyo-manga/vim-monster) plugin

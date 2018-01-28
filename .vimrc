@@ -453,6 +453,9 @@ nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], 
      return s:word_count
   endfunction
 
+  " colorscheme monokain
+  colorscheme CandyPaper
+
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
   endif

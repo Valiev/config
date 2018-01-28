@@ -60,7 +60,6 @@ plugins=(
   dircycle
   dirhistory
   docker
-  docker-machine
   emoji
   emoji-clock
   extract
@@ -68,7 +67,6 @@ plugins=(
   gem
   git
   git-extras
-  golang
   jsontools
   kitchen
   knife
@@ -78,12 +76,9 @@ plugins=(
   sprunge
   sublime
   terraform
-  thefuck
   themes
   tmux
-  vagrant
   zsh-navigation-tools
-  # zsh-syntax-highlighting
 )
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

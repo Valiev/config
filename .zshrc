@@ -20,9 +20,6 @@ zstyle ":completion:*:commands" rehash 1
 # autoload -U +X bashcompinit && bashcompinit
 # eval "$(stack --bash-completion-script stack)"
 
-# Colors
-eval `gdircolors dev/opensource/dircolors-solarized/dircolors.ansi-dark`
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 

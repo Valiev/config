@@ -495,7 +495,6 @@ nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], 
   autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
   autocmd BufNewFile,BufRead *.json set filetype=json
   autocmd BufNewFile,BufRead *.json set foldmethod=syntax
-  autocmd BufNewFile,BufRead *.cfg  set filetype=nagios
   au FocusLost * :wa
 
   let g:neoterm_repl_ruby = "pry"

@@ -207,7 +207,14 @@ highlight link SyntasticStyleWarningSign SignColumn
 "   (N for prev one)
   Plug 'luochen1990/select-and-search'
 
+  Plug 'sunaku/vim-dasht'
+" search related docsets
+nnoremap <silent> <Leader>k :call Dasht([expand('<cword>'), expand('<cWORD>')])<Return>
 " - [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim) is fuzzy finder for
+
+" search ALL the docsets
+nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], '!')<Return>
+
 "   files, buffers and MRUs
   Plug 'kien/ctrlp.vim'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*

@@ -126,6 +126,7 @@ function ec2() {
 }
 
 alias j=z
+. /usr/local/etc/profile.d/z.sh
 # Setup zsh-autosuggestions
 # source ~/.zsh-autosuggestions/autosuggestions.zsh
 # Enable autosuggestions automatically
@@ -145,3 +146,6 @@ export PATH=/Users/valiev/.cabal/bin:$PATH
 source /usr/local/share/zsh/site-functions/_awless
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Python magic
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+source $HOME/.cargo/env

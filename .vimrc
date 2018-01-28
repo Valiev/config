@@ -28,7 +28,10 @@ filetype plugin on
 "   setting filetype explicitly with `:set filetype=nagios`.
   Plug 'tejr/vim-nagios', { 'for': 'nagios' }
 
-" - [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim) plugin brings `rust`
+
+
+"
+"- [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim) plugin brings `rust`
 "   support to vim. Official one.
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'racer-rust/vim-racer', { 'for': 'rust' }
@@ -105,6 +108,10 @@ filetype plugin on
 " - [majutsushi/tagbar](https://github.com/majutsushi/tagbar) plugin bring
 "   tagbar for vim.
   Plug 'majutsushi/tagbar'
+
+" - vimux plugin. FIXME
+  Plug 'benmills/vimux'
+  Plug 'jtdowney/vimux-cargo'
 
 " - [jaxbot/semantic-highlight](https://github.com/jaxbot/semantic-highlight.vim) plugin brings
 "   every variable is a different color;
@@ -522,6 +529,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 
   map <Leader><Tab> :NERDTreeToggle<CR>
 
+  map <Leader>. :wa<CR> :VimuxRunLastCommand<CR>
   vmap <Enter> <Plug>(EasyAlign)
   xmap <Enter> <Plug>(EasyAlign)
 
@@ -530,8 +538,8 @@ highlight link SyntasticStyleWarningSign SignColumn
   set listchars=tab:▸\ ,eol:¬
 
   nmap <Leader>t :TagbarToggle<CR>
-  nmap <Leader>b :CtrlPBuffer<CR>
-  nmap <Leader>r :CtrlPMRU<CR>
+  " nmap <Leader>b :CtrlPBuffer<CR>
+  " nmap <Leader>r :CtrlPMRU<CR>
 
   nmap <Leader>bn :bnext<CR>
   nmap <Leader>bp :bprevious<CR>

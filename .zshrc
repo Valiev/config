@@ -1,15 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="wezm"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias - -='cd -'
 
 zstyle ":completion:*:commands" rehash 1
@@ -20,20 +12,6 @@ zstyle ":completion:*:commands" rehash 1
 # autoload -U +X bashcompinit && bashcompinit
 # eval "$(stack --bash-completion-script stack)"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
 DISABLE_CORRECTION="true"
@@ -87,7 +65,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 source ~/.bash_aliases
 source $ZSH/oh-my-zsh.sh
-source "$(butler --init-completion)"
 
 # Better history search
 autoload -U up-line-or-beginning-search
@@ -127,25 +104,15 @@ function ec2() {
 
 alias j=z
 . /usr/local/etc/profile.d/z.sh
-# Setup zsh-autosuggestions
-# source ~/.zsh-autosuggestions/autosuggestions.zsh
-# Enable autosuggestions automatically
-# zle-line-init() {
-#     zle autosuggest-start
-# }
-# zle -N zle-line-init
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-# bindkey '^T' autosuggest-toggle
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/valiev/.rvm/bin
 export PATH=/usr/local/Cellar/ruby/2.3.0/bin:$PATH
 export PATH=/Users/valiev/.cabal/bin:$PATH
-#export DYLD_INSERT_LIBRARIES="/Users/valiev/dev/opensource/stderred/build/libstderred.dylib${DYLD_INSERT_LIBRARIES:+:$DYLD_INSERT_LIBRARIES}"
-source /usr/local/share/zsh/site-functions/_awless
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+source /usr/local/share/zsh/site-functions/_awless
 # Python magic
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 source $HOME/.cargo/env

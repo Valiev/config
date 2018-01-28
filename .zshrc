@@ -14,6 +14,11 @@ alias - -='cd -'
 
 zstyle ":completion:*:commands" rehash 1
 
+# Haskell Stack completion
+# uncomment for haskell development
+# autoload -U +X compinit && compinit
+# autoload -U +X bashcompinit && bashcompinit
+# eval "$(stack --bash-completion-script stack)"
 
 # Colors
 eval `gdircolors dev/opensource/dircolors-solarized/dircolors.ansi-dark`

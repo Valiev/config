@@ -37,6 +37,8 @@ alias la="ls -A"
 alias repo="cat .git/config | grep url | cut -d= -f2"
 alias rm="rm -v"
 alias mv="mv -v"
+alias wb="whalebrew"
+
 alias gitinfo='ssh gitolite@git.aligntech.com'
 alias pyjs='python -m json.tool'
 alias toLower='tr "[[:upper:]]" "[[:lower:]]" '

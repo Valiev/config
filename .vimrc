@@ -200,7 +200,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 
 " - [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) a collection
 "   on language packs
-  Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'python', 'haskell'] }
+  Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'haskell'] }
 
 " - [luochen1990/select-and-search](https://github.com/luochen1990/select-and-search)
 "   plugin's feature is to select text in v mode, then press n to search next one
@@ -229,8 +229,8 @@ nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], 
 
 " - [neco-ghc](https://github.com/eagletmt/neco-ghc) is nice autocompletion for
 "   `haskell`
-  Plug 'neco-ghc', { 'for' : 'haskell' }
-  setlocal omnifunc=necoghc#omnifunc
+  " Plug 'neco-ghc', { 'for' : 'haskell' }
+  " setlocal omnifunc=necoghc#omnifunc
 
 " - [zchee/deoplete-jedi](https://github.com/zchee/deoplete-jedi) is
 "   autocompletion for `python`

@@ -29,34 +29,36 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   almostontop
-  fasd
-  battery
+  autojump
+  # fasd
+  # battery
   brew
-  bundle
-  colorize
-  command-not-found
+  # bundle
+  # colorize
+  # command-not-found
   dircycle
   dirhistory
   docker
   emoji
   emoji-clock
   extract
-  fzf
+  # fzf
   gem
   git
   git-extras
-  jsontools
-  kitchen
+  # jsontools
+  # kitchen
   knife
-  lol
-  npm
+  # lol
+  # npm
   osx
   sprunge
   sublime
-  terraform
+  # terraform
   themes
   tmux
   zsh-navigation-tools
+  z
 )
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

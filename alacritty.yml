@@ -315,6 +315,9 @@ key_bindings:
   - { key: B,        mods: Alt,       chars: "\x1b\x62" }
   - { key: F,        mods: Alt,       chars: "\x1b\x66" }
   - { key: Period,   mods: Alt,       chars: "\x1b\x2e" }
+    # Session List
+  - { key: G,        mods: Command,       chars: "\x06\x67" }
+
     # Other
   - { key: Key1,     mods: Command,       chars: "\x06\x31" }
   - { key: Key2,     mods: Command,       chars: "\x06\x32" }

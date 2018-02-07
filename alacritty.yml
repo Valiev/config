@@ -24,8 +24,8 @@ window:
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 2
-    y: 2
+    x: 5
+    y: 5
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
@@ -310,6 +310,12 @@ key_bindings:
   - { key: RBracket, mods: Command|Shift, chars: "\x06\x6e" }
     # New tmux tab
   - { key: T,        mods: Command,       chars: "\x06\x63" }
+    # Alt behaviour
+  - { key: D,        mods: Alt,       chars: "\x1b\x64" }
+  - { key: B,        mods: Alt,       chars: "\x1b\x62" }
+  - { key: F,        mods: Alt,       chars: "\x1b\x66" }
+  - { key: Period,   mods: Alt,       chars: "\x1b\x2e" }
+    # Other
   - { key: Key1,     mods: Command,       chars: "\x06\x31" }
   - { key: Key2,     mods: Command,       chars: "\x06\x32" }
   - { key: Key3,     mods: Command,       chars: "\x06\x33" }

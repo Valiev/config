@@ -10,6 +10,8 @@ bash_aliases="  ~/.bash_aliases"
 vimrc="         ~/.vimrc"
 gvimrc="        ~/.gvimrc"
 
+export LC_ALL=ru_RU.UTF-8
+export LANG=ru_RU.UTF-8
 export EDITOR=vim
 
 strerror() {

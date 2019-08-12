@@ -219,6 +219,47 @@ nnoremap <silent> <Leader>k :call Dasht([expand('<cword>'), expand('<cWORD>')])<
 " search ALL the docsets
 nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], '!')<Return>
 
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
+
+" In Neovim, you can set up fzf window using a Vim command
+let g:fzf_layout = { 'window': 'enew' }
+let g:fzf_layout = { 'window': '-tabnew' }
+let g:fzf_layout = { 'window': '10new' }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
+" [Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 "   files, buffers and MRUs
   Plug 'kien/ctrlp.vim'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*
@@ -228,7 +269,7 @@ nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], 
     \ 'file': '\v\.(exe|so|dll)$',
     \ 'link': 'some_bad_symbolic_links',
     \ }
-  set hidden
+  " set hidden
 
 
 " - [neco-ghc](https://github.com/eagletmt/neco-ghc) is nice autocompletion for
@@ -258,6 +299,7 @@ nnoremap <silent> <Leader>K :call Dasht([expand('<cword>'), expand('<cWORD>')], 
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
 
+  set hidden
 " - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 "   is the set of themes for `vim-airline`
   Plug 'vim-airline/vim-airline-themes'

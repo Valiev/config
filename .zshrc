@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="wezm"
+ZSH_THEME="bunnyruni"
 
 alias - -='cd -'
 
@@ -29,7 +29,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   almostontop
-  autojump
+  # autojump
   # fasd
   # battery
   brew
@@ -75,6 +75,9 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down]]
+#
+# V for Vim
+# bindkey -v
 
 zle -N znt-kill-widget
 bindkey "^K" znt-kill-widget
@@ -113,6 +116,8 @@ export PATH=/usr/local/Cellar/ruby/2.3.0/bin:$PATH
 export PATH=/Users/valiev/.cabal/bin:$PATH
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 source /usr/local/share/zsh/site-functions/_awless
 # Python magic

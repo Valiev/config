@@ -26,9 +26,11 @@ filetype plugin on
 "   files. `Plug 'tejr/vim-nagios', { 'for': 'nagios' }` line is used to provide
 "   this plugin to be enabled only for `nagios` files. Could be enabled by
 "   setting filetype explicitly with `:set filetype=nagios`.
-  Plug 'tejr/vim-nagios', { 'for': 'nagios' }
-
-
+  " Plug 'tejr/vim-nagios', { 'for': 'nagios' }
+  Plug 'alvan/vim-closetag', { 'for': 'html' }
+  let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+	let g:closetag_shortcut = '>'
+  let g:closetag_filetypes = 'html,xhtml,phtml'
 
 "
 "- [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim) plugin brings `rust`

@@ -581,6 +581,9 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   nmap <Leader>P "+P
   vmap <Leader>p "+p
   vmap <Leader>P "+P
+  noremap <Leader>' ciW''<Esc>P
+  noremap <Leader>" ciW""<Esc>P
+  noremap <Leader>` ciW``<Esc>P
 
   map <Leader><Tab> :NERDTreeToggle<CR>
 

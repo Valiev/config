@@ -12,7 +12,7 @@ gvimrc="        ~/.gvimrc"
 
 export LC_ALL=ru_RU.UTF-8
 export LANG=ru_RU.UTF-8
-export EDITOR=vim
+export EDITOR=nvim
 
 strerror() {
   python -c "import os; print os.strerror($1)"
@@ -20,15 +20,15 @@ strerror() {
 # }
 
 # STUFF {
-alias kitchen="chef exec kitchen"
-alias berks="chef exec berks"
-alias knife="chef exec knife"
+# alias kitchen="chef exec kitchen"
+# alias berks="chef exec berks"
+# alias knife="chef exec knife"
 alias vim="nvim"
 alias b="butler"
-alias k="kitchen"
-alias kconverge="kitchen converge"
-alias kdestroy="kitchen destroy"
-alias kcreate="kitchen create"
+alias k="LC_ALL=en_US.UTF-8 bundle exec kitchen"
+alias kconverge="k converge"
+alias kdestroy="k destroy"
+alias kcreate="k create"
 alias c="colorize"
 alias g="git"
 alias n="on_finish"
@@ -45,6 +45,26 @@ alias gitinfo='ssh gitolite@git.aligntech.com'
 alias pyjs='python -m json.tool'
 alias toLower='tr "[[:upper:]]" "[[:lower:]]" '
 alias toUpper='tr "[[:lower:]]" "[[:upper:]]" '
+
+alias aws_login_py="docker run --rm -it -e USER=$USER -v $HOME/.aws:/root/.aws joom-aws-saml-login"
+alias zappa="pipenv run zappa"
+alias epoch="date +%s"
+
+function _pipenv() {
+  local DOCKER_IMAGE=$1; shift
+  local DIRNAME=$(basename $PWD)
+  local VENVPATH=".local/share/virtualenvs"
+  docker run -it --rm \
+    -v $HOME/$VENVPATH:/root/$VENVPATH  \
+    -v ${PWD}:"/workdir/$DIRNAME":rw \
+    -v $HOME/.aws:/root/.aws:ro \
+    -w "/workdir/$DIRNAME" \
+    pipenv-python3.6 $@
+}
+
+alias pipenv36="_pipenv pipenv-python3.6"
+alias pipenv37="_pipenv pipenv-python3.7"
+# alias pipenv=pipenv36
 # }
 
 # List only directories

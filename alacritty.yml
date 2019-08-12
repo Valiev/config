@@ -29,7 +29,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: true
+  decorations: full
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -41,9 +41,9 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Menlo
+    family: Fira Code
+    style: Light
     # Style can be specified to pick a specific face.
-    # style: Regular
 
   # The bold font face
   bold:
@@ -63,15 +63,15 @@ font:
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -79,89 +79,40 @@ font:
   use_thin_strokes: true
 
 # Should display the render timer
-render_timer: false
+# render_timer: false
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# Colors (Gruvbox dark)
+# Colors (Monokai Pro)
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '0x1d2021'
-    background: '0x282828'
-    # soft contrast: background = '0x32302f'
-    foreground: '0xebdbb2'
+    background: '0x2D2A2E'
+    foreground: '0xFCFCFA'
 
   # Normal colors
   normal:
-    black:   '0x282828'
-    red:     '0xcc241d'
-    green:   '0x98971a'
-    yellow:  '0xd79921'
-    blue:    '0x458588'
-    magenta: '0xb16286'
-    cyan:    '0x689d6a'
-    white:   '0xa89984'
+    black:   '0x403E41'
+    red:     '0xFF6188'
+    green:   '0xA9DC76'
+    yellow:  '0xFFD866'
+    blue:    '0xFC9867'
+    magenta: '0xAB9DF2'
+    cyan:    '0x78DCE8'
+    white:   '0xFCFCFA'
 
   # Bright colors
   bright:
-    black:   '0x928374'
-    red:     '0xfb4934'
-    green:   '0xb8bb26'
-    yellow:  '0xfabd2f'
-    blue:    '0x83a598'
-    magenta: '0xd3869b'
-    cyan:    '0x8ec07c'
-    white:   '0xebdbb2'
-
-    ## Colors (Tomorrow Night Bright)
-    #colors:
-    #  #
-    #  # Default colors
-    #  primary:
-    #    background: '0x000000'
-    #    foreground: '0xeaeaea'
-    #
-    #  # Colors the cursor will use if `custom_cursor_colors` is true
-    #  cursor:
-    #    text: '0x000000'
-    #    cursor: '0xffffff'
-    #
-    #  # Normal colors
-    #  normal:
-    #    black:   '0x000000'
-    #    red:     '0xd54e53'
-    #    green:   '0xb9ca4a'
-    #    yellow:  '0xe6c547'
-    #    blue:    '0x7aa6da'
-    #    magenta: '0xc397d8'
-    #    cyan:    '0x70c0ba'
-    #    white:   '0xffffff'
-    #
-    #  # Bright colors
-    #  bright:
-    #    black:   '0x666666'
-    #    red:     '0xff3334'
-    #    green:   '0x9ec400'
-    #    yellow:  '0xe7c547'
-    #    blue:    '0x7aa6da'
-    #    magenta: '0xb77ee0'
-    #    cyan:    '0x54ced6'
-    #    white:   '0xffffff'
-    #
-    #  # Dim colors (Optional)
-    #  dim:
-    #    black:   '0x333333'
-    #    red:     '0xf2777a'
-    #    green:   '0x99cc99'
-    #    yellow:  '0xffcc66'
-    #    blue:    '0x6699cc'
-    #    magenta: '0xcc99cc'
-    #    cyan:    '0x66cccc'
-    #    white:   '0xdddddd'
-
+    black:   '0x727072'
+    red:     '0xFF6188'
+    green:   '0xA9DC76'
+    yellow:  '0xFFD866'
+    blue:    '0xFC9867'
+    magenta: '0xAB9DF2'
+    cyan:    '0x78DCE8'
+    white:   '0xFCFCFA'
 
 # Visual Bell
 #
@@ -301,13 +252,18 @@ key_bindings:
   - { key: LBracket, mods: Command,       chars: "\x06\x68" }
     # Move to left tab
   - { key: LBracket, mods: Command|Shift, chars: "\x06\x70" }
-  - { key: J,        mods: Command,       chars: "\x06\x6a" }
+  - { key: J,        mods: Command|Shift, chars: "\x06\x70" }
+  - { key: H,        mods: Command|Shift, chars: "\x06\x70" }
+    # Move to up pane
   - { key: K,        mods: Command,       chars: "\x06\x6b" }
+    # Move to down pane
+  - { key: J,        mods: Command,       chars: "\x06\x6a" }
     # Move to right pane in tmux
   - { key: L,        mods: Command,       chars: "\x06\x6c" }
   - { key: RBracket, mods: Command,       chars: "\x06\x6c" }
     # Move to right tab
   - { key: RBracket, mods: Command|Shift, chars: "\x06\x6e" }
+  - { key: L,        mods: Command|Shift, chars: "\x06\x6e" }
     # New tmux tab
   - { key: T,        mods: Command,       chars: "\x06\x63" }
     # Alt behaviour

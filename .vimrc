@@ -153,6 +153,8 @@ highlight link SyntasticStyleWarningSign SignColumn
 " - [tmux-plugins/vim-tmux](https://github.com/tmux-plugins/vim-tmux) plugin
 "   provides tmux configuration files syntax highlighting
   Plug 'tmux-plugins/vim-tmux'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'tpope/vim-dispatch'
 
 " - [benmills/vimux](https://github.com/benmills/vimux) plugin provides
 "   integration between `vim` and `tmux`

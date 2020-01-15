@@ -11,7 +11,8 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  TERM: xterm-256color
+  # TERM: xterm-256color
+  TERM: xterm
 
 window:
   # Window dimensions in character columns and lines
@@ -29,10 +30,10 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: full
+  decorations: "full"
 
 # Display tabs using this many cells (changes require restart)
-tabspaces: 8
+tabspaces: 4
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
@@ -41,15 +42,17 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Fira Code
+    # family: Fira Code
+    family: Source Code Pro
+    # family: IMB Plex Mono Light
     style: Light
     # Style can be specified to pick a specific face.
 
   # The bold font face
   bold:
-    family: Menlo
+    family: Fira Code
     # Style can be specified to pick a specific face.
-    # style: Bold
+    style: Light
 
   # The italic font face
   italic:
@@ -78,41 +81,155 @@ font:
   # false.
   use_thin_strokes: true
 
+# # Colors (Material Theme)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x1e282d'
+#     foreground: '0xc4c7d1'
+
+#   # Normal colors
+#   normal:
+#     # black:   '0x666666'
+#     black: '0x232323'
+#     black: '0x243239'
+#     # black:   '0xff262b'
+#     red:     '0xeb606b'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x80cbc4'
+#     magenta: '0xff2f90'
+#     cyan:    '0xaeddff'
+#     white:   '0xffffff'
+
+#   # Bright colors
+#   bright:
+#     black:   '0xff262b'
+#     red:     '0xeb606b'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x7dc6bf'
+#     magenta: '0x6c71c4'
+#     cyan:    '0x35434d'
+#     white:   '0xffffff'
 # Should display the render timer
 # render_timer: false
+#
+# Colors (New Moon)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x2D2D2D'
+#     foreground: '0xB3B9C5'
+#   # Normal colors
+#   normal:
+#     black: '0x2D2D2D'
+#     red: '0xF2777A'
+#     green: '0x92D192'
+#     yellow: '0xFFD479'
+#     blue: '0x6AB0F3'
+#     magenta: '0xE1A6F2'
+#     cyan: '0x76D4D6'
+#     white: '0xB3B9C5'
+#   # Bright colors
+#   bright:
+#     black: '0x777C85'
+#     red: '0xF2777A'
+#     green: '0x76D4D6'
+#     yellow: '0xFFEEA6'
+#     blue: '0x6AB0F3'
+#     magenta: '0xE1A6F2'
+#     cyan: '0x76D4D6'
+#     white: '0xFFFFFF'
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
+# custom_cursor_colors: true
+# cursor:
+#   # text: '0x010101'
+#   text: '0xFFFFFF'
+#   cursor: '0xFFFFFF'
 
-# Colors (Monokai Pro)
+# Colors (One Half Light)
+# colors:
+#   primary:
+#     background: '0xfafafa'
+#     foreground: '0x383a42'
+
+#   normal:
+#     black: '0x383a42'
+#     red: '0xe45649'
+#     green: '0x50a14f'
+#     yellow: '0xc18401'
+#     blue: '0x0184bc'
+#     magenta: '0xa626a4'
+#     cyan: '0x0997b3'
+#     white: '0xfafafa'
+
+#   bright:
+#     black: '0x383a42'
+#     red: '0xe45649'
+#     green: '0x50a14f'
+#     yellow: '0xc18401'
+#     blue: '0x0184bc'
+#     magenta: '0xa626a4'
+#     cyan: '0x0997b3'
+#     white: '0xfafafa'
+
+# Colors (One Half Dark)
 colors:
-  # Default colors
   primary:
-    background: '0x2D2A2E'
-    foreground: '0xFCFCFA'
+    background: '0x282c34'
+    foreground: '0xdcdfe4'
 
-  # Normal colors
   normal:
-    black:   '0x403E41'
-    red:     '0xFF6188'
-    green:   '0xA9DC76'
-    yellow:  '0xFFD866'
-    blue:    '0xFC9867'
-    magenta: '0xAB9DF2'
-    cyan:    '0x78DCE8'
-    white:   '0xFCFCFA'
+    black: '0x282c34'
+    red: '0xe06c75'
+    green: '0x98c379'
+    yellow: '0xe5c07b'
+    blue: '0x61afef'
+    magenta: '0xc678dd'
+    cyan: '0x56b6c2'
+    white: '0xdcdfe4'
 
-  # Bright colors
   bright:
-    black:   '0x727072'
-    red:     '0xFF6188'
-    green:   '0xA9DC76'
-    yellow:  '0xFFD866'
-    blue:    '0xFC9867'
-    magenta: '0xAB9DF2'
-    cyan:    '0x78DCE8'
-    white:   '0xFCFCFA'
+    black: '0x282c34'
+    red: '0xe06c75'
+    green: '0x98c379'
+    yellow: '0xe5c07b'
+    blue: '0x61afef'
+    magenta: '0xc678dd'
+    cyan: '0x56b6c2'
+    white: '0xdcdfe4'
+
+  # ## Colors (Monokai Pro)
+  # colors:
+  # # Default colors
+  #   primary:
+  #     background: '0x2D2A2E'
+  #     foreground: '0xFCFCFA'
+  #
+  #   # Normal colors
+  #   normal:
+  #     black:   '0x403E41'
+  #     red:     '0xFF6188'
+  #     green:   '0xA9DC76'
+  #     yellow:  '0xFFD866'
+  #     blue:    '0xFC9867'
+  #     magenta: '0xAB9DF2'
+  #     cyan:    '0x78DCE8'
+  #     white:   '0xFCFCFA'
+  #
+  #   # Bright colors
+  #   bright:
+  #     black:   '0x727072'
+  #     red:     '0xFF6188'
+  #     green:   '0xA9DC76'
+  #     yellow:  '0xFFD866'
+  #     blue:    '0xFC9867'
+  #     magenta: '0xAB9DF2'
+  #     cyan:    '0x78DCE8'
+  #     white:   '0xFCFCFA'
 
 # Visual Bell
 #
@@ -138,7 +255,8 @@ colors:
 #
 visual_bell:
   animation: EaseOutExpo
-  duration: 0
+  duration: 1
+  color: '0xffffff'
 
 # Background opacity
 background_opacity: 1.0
@@ -185,7 +303,7 @@ selection:
 
 dynamic_title: true
 
-hide_cursor_when_typing: false
+hide_cursor_when_typing: true
 
 # Style of the cursor
 #
@@ -193,7 +311,7 @@ hide_cursor_when_typing: false
 # - Block
 # - Underline
 # - Beam
-cursor_style: Block
+cursor_style: Underline
 
 # Live config reload (changes require restart)
 live_config_reload: true

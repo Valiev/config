@@ -24,6 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 # much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# source /Users/svaliev/.oh-my-zsh/custom/plugins/auto-ls/auto-ls.zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -36,32 +37,33 @@ plugins=(
   # bundle
   # colorize
   # command-not-found
-  dircycle
-  dirhistory
+  # dircycle
+  # dirhistory
   docker
-  emoji
-  emoji-clock
+  # emoji
+  # emoji-clock
   extract
   # fzf
-  gem
+  # gem
   git
   git-extras
   # jsontools
   # kitchen
-  knife
+  # knife
   # lol
   # npm
   osx
-  sprunge
-  sublime
+  # sprunge
+  # sublime
   # terraform
   themes
   tmux
   zsh-navigation-tools
+  zsh-syntax-highlighting
   z
 )
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # ZSH_HIGHLIGHT_STYLES[cursor]='bg=blue'
 
@@ -119,7 +121,10 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
+# eval "$(pyenv init -)"
 source /usr/local/share/zsh/site-functions/_awless
 # Python magic
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# export PATH="$(pyenv root)/shims:$PATH"
 source $HOME/.cargo/env
+export PATH="/usr/local/opt/openjdk@12/bin:$PATH"

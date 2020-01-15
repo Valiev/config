@@ -36,7 +36,7 @@ alias c="colorize"
 alias g="git"
 alias n="on_finish"
 alias t="terraform"
-alias ls="ls "
+alias ls="lsd"
 alias ll="ls -l -h"
 alias la="ls -A"
 alias repo="cat .git/config | grep url | cut -d= -f2"
@@ -50,7 +50,7 @@ alias toLower='tr "[[:upper:]]" "[[:lower:]]" '
 alias toUpper='tr "[[:lower:]]" "[[:upper:]]" '
 
 alias aws_login_py="docker run --rm -it -e USER=$USER -v $HOME/.aws:/root/.aws joom-aws-saml-login"
-alias zappa="pipenv run zappa"
+# alias zappa="pipenv run zappa"
 alias epoch="date +%s"
 
 function _pipenv() {
@@ -69,9 +69,9 @@ alias pipenv36="_pipenv pipenv-python3.6"
 alias pipenv37="_pipenv pipenv-python3.7"
 # alias pipenv=pipenv36
 # }
-
+alias ack="rg"
 # List only directories
-alias lsd='ls -l | grep "^d"'
+# alias lsd='ls -l | grep "^d"'
 
 # List with permissions
 alias lp="ls -l | awk '
@@ -89,6 +89,8 @@ alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
+
+alias pip='python3 -m pip'
 
 function bak() {
   local filepath=$(basename "$1")
@@ -142,7 +144,7 @@ function topcmds() {
   cat $HISTFILE | cut -d';' -f2 | awk '{ print $1 }' | grep -Ev '^#' | tr -d '|' | sort | uniq -c | sort -n -r | head -n $n
 }
 
-alias knife_env="knife_env_fuzzy_search"
+# alias knife_env="knife_env_fuzzy_search"
 # VIM {
 alias vimba="   vim $bash_aliases"
 alias zshrc="   vim ~/.zshrc"

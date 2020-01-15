@@ -55,14 +55,14 @@ alias epoch="date +%s"
 
 function _pipenv() {
   local DOCKER_IMAGE=$1; shift
-  local DIRNAME=$(basename $PWD)
-  local VENVPATH=".local/share/virtualenvs"
+  local CUR_DIRNAME=$(basename $PWD)
+  # local VENVPATH=".local/share/virtualenvs"
+    # -v $HOME/$VENVPATH:/root/$VENVPATH  \
   docker run -it --rm \
-    -v $HOME/$VENVPATH:/root/$VENVPATH  \
-    -v ${PWD}:"/workdir/$DIRNAME":rw \
+    -v ${PWD}:"/workdir/${CUR_DIRNAME}":rw \
     -v $HOME/.aws:/root/.aws:ro \
-    -w "/workdir/$DIRNAME" \
-    pipenv-python3.6 $@
+    -w "/workdir/${CUR_DIRNAME}" \
+    $DOCKER_IMAGE -- $@
 }
 
 alias pipenv36="_pipenv pipenv-python3.6"

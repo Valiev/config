@@ -340,7 +340,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 "   is the set of themes for `vim-airline`
   Plug 'vim-airline/vim-airline-themes'
   " let g:airline_theme='gruvbox'
-  let g:airline_theme='luna'
+  let g:airline_theme='seagull'
 
 " - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) is a file
 "   explorer for vim

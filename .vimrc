@@ -107,10 +107,11 @@ filetype plugin on
 "
 " ### Coding features
 "
-" - [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags) plugin
-"   brings seamless and not irritating tags creation.
-  Plug 'ludovicchabant/vim-gutentags'
-  let g:gutentags_cache_dir = '~/dev/tags'
+  Plug 'c0r73x/neotags.nvim'
+  let g:neotags_recursive = 1
+  let g:neotags_find_tool = 'rg --files'
+  let g:neotags_ctags_bin = 'ctags'
+
 
 " - [majutsushi/tagbar](https://github.com/majutsushi/tagbar) plugin bring
 "   tagbar for vim.

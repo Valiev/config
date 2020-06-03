@@ -82,6 +82,9 @@ font:
   # false.
   use_thin_strokes: true
 
+# color_start
+# color_end
+
 # # Colors (Material Theme)
 # colors:
 #   # Default colors

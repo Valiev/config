@@ -177,6 +177,11 @@ highlight link SyntasticStyleWarningSign SignColumn
 "   provides great auto-completion for most of the scripting languages.
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
+  " call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+
+  let g:deoplete#sources = {'rust': ['ale', 'racer']}
+
+
 
 " - [osyo-manga/vim-monster](https://github.com/osyo-manga/vim-monster) plugin
 "   provides auto-completion ruby scripts.

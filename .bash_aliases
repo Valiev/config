@@ -6,6 +6,11 @@ if [ -f $github_token ]; then
   source $github_token
 fi
 
+joom_bashrc="$HOME/.joom_bashrc"
+if [ -f $joom_bashrc ]; then
+  source $joom_bashrc
+fi
+
 bash_aliases="  ~/.bash_aliases"
 vimrc="         ~/.vimrc"
 gvimrc="        ~/.gvimrc"

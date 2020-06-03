@@ -25,7 +25,7 @@ export PIPENV_VENV_IN_PROJECT=1
 export BAT_THEME=GitHub
 
 strerror() {
-  python -c "import os; print os.strerror($1)"
+  python -c "import os; print(os.strerror($1))"
 }
 # }
 

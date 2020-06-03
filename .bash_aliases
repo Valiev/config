@@ -21,6 +21,8 @@ export TERM=screen-256color
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
+export PIPENV_VENV_IN_PROJECT=1
+export BAT_THEME=GitHub
 
 strerror() {
   python -c "import os; print os.strerror($1)"

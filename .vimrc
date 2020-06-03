@@ -121,6 +121,7 @@ filetype plugin on
   Plug 'benmills/vimux'
   Plug 'jtdowney/vimux-cargo'
 
+  Plug 'mhinz/vim-startify'
 " - [jaxbot/semantic-highlight](https://github.com/jaxbot/semantic-highlight.vim) plugin brings
 "   every variable is a different color;
   Plug 'jaxbot/semantic-highlight.vim'

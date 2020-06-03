@@ -32,6 +32,9 @@ filetype plugin on
 	let g:closetag_shortcut = '>'
   let g:closetag_filetypes = 'html,xhtml,phtml'
 
+  Plug 'psliwka/vim-smoothie'
+  Plug 'martinda/Jenkinsfile-vim-syntax'
+
 "
 "- [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim) plugin brings `rust`
 "   support to vim. Official one.
@@ -80,6 +83,8 @@ filetype plugin on
 "   bring `<C-A>`/`<C-X>` increment/decrement combinations work for various
 "   types of dates
   Plug 'tpope/vim-speeddating'
+
+  Plug 'tpope/vim-abolish'
 
 " - [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
 "   plugin highlights all whitespaces and moreover provides whitespace stripping.

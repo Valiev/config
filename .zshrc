@@ -30,6 +30,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   almostontop
+  vi-mode
   # autojump
   # fasd
   # battery

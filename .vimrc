@@ -365,6 +365,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 "   `:COLORSCROLL` command to walk thought colorschemes
   Plug 'vim-scripts/ScrollColors'
   Plug 'morhetz/gruvbox'
+  Plug 'ayu-theme/ayu-vim'
 
 " - [luochen1990/rainbow](https://github.com/luochen1990/rainbow) highlights
 "   brackets regaring nested levels
@@ -484,7 +485,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " `set background=dark` to use colors that look good on a dark background
   " set term=screen-256color
   " set background=light
-  set background=dark
+  set background=light
 
 " `set noerrorbells` for no terminal beeps
   set noerrorbells
@@ -544,6 +545,9 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
      return s:word_count
   endfunction
 
+  if has('termguicolors')
+    set termguicolors
+  endif
   "@color flag
   " set termguicolors
   " colorscheme mod8
@@ -555,13 +559,18 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   " colorscheme luna
   " colorscheme madeofcode
   " colorscheme gruvbox
-  colorscheme greygull
+  " colorscheme greygull
   " colorscheme onehalfdark
   " colorscheme onehalflight
   " colorscheme nightshade_print
   " colorscheme nightVision
   " colorscheme reliable
   " colorscheme orange
+
+  let ayucolor="light"  " for light version of theme
+  colorscheme ayu
+  " let ayucolor="mirage" " for mirage version of theme
+  " let ayucolor="dark"   " for dark version of theme
 
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange

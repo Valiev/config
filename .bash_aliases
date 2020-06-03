@@ -36,20 +36,23 @@ strerror() {
 alias vim="nvim"
 alias b="butler"
 alias k="LC_ALL=en_US.UTF-8 bundle exec kitchen"
-alias kconverge="k converge"
-alias kdestroy="k destroy"
-alias kcreate="k create"
+# alias kconverge="k converge"
+# alias kdestroy="k destroy"
+# alias kcreate="k create"
 alias c="colorize"
 alias g="git"
 alias n="on_finish"
 alias t="terraform"
-alias ls="lsd"
+alias ls="ls"
 alias ll="ls -l -h"
 alias la="ls -A"
 alias repo="cat .git/config | grep url | cut -d= -f2"
 alias rm="rm -v"
 alias mv="mv -v"
 alias wb="whalebrew"
+alias pt="parquet-tools"
+alias uniq_awk="awk '!seen[\$0]++'"
+alias athemes="alacritty-colorscheme -C ~/dev/opensource/alacritty-theme/themes"
 
 alias gitinfo='ssh gitolite@git.aligntech.com'
 alias pyjs='python -m json.tool'
@@ -98,6 +101,7 @@ alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
 
 alias pip='python3 -m pip'
+alias pip3='python3 -m pip'
 
 function bak() {
   local filepath=$(basename "$1")

@@ -185,7 +185,11 @@ highlight link SyntasticStyleWarningSign SignColumn
 
 " - [osyo-manga/vim-monster](https://github.com/osyo-manga/vim-monster) plugin
 "   provides auto-completion ruby scripts.
-  Plug 'osyo-manga/vim-monster'
+  Plug 'osyo-manga/vim-monster', { 'for': ['ruby'] }
+
+  Plug 'jreybert/vimagit'
+
+
 
 " - [rizzatti/dash.vim](https://github.com/rizzatti/dash.vim) plugin
 "   provides documentation using Dash application.
@@ -217,6 +221,8 @@ highlight link SyntasticStyleWarningSign SignColumn
 "   plugin's feature is to select text in v mode, then press n to search next one
 "   (N for prev one)
   Plug 'luochen1990/select-and-search'
+
+  Plug 'ycm-core/YouCompleteMe'
 
   Plug 'sunaku/vim-dasht'
 " search related docsets
@@ -261,9 +267,10 @@ let g:fzf_buffers_jump = 1
 
 " [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
 " [Tags] Command to generate tags file
-let g:fzf_tags_command = 'ctags -R'
+" let g:fzf_tags_command = 'ctags -R'
 
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
@@ -288,6 +295,26 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 "   autocompletion for `python`
   Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
 
+  Plug 'dense-analysis/ale'
+  Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+  " Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+  "
+  let g:ale_fixers = {
+        \   'rust': ['rustfmt'],
+        \}
+
+  let g:ale_linters = {
+        \'rust': ['rls'],
+        \}
+
+  let g:ale_rust_rls_toolchain = 'nightly-2020-03-15'
+
+  let g:ale_fix_on_save = 1
+  let g:airline#extensions#ale#enabled = 1
+  let g:ale_completion_enabled = 1
+  let g:airline#extensions#ale#enabled = 1
+
+
 
 " - [elzr/vim-json](https://github.com/elzr/vim-json) brings better `json`
 "   highlighting
@@ -305,12 +332,15 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
+" show current function
+  let g:airline#extensions#tagbar#flags = 'f'
 
   set hidden
 " - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 "   is the set of themes for `vim-airline`
   Plug 'vim-airline/vim-airline-themes'
-  let g:airline_theme='badwolf'
+  " let g:airline_theme='gruvbox'
+  let g:airline_theme='luna'
 
 " - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) is a file
 "   explorer for vim
@@ -334,17 +364,20 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " - [vim-scripts/ScrollColors](https://github.com/vim-scripts/ScrollColors) provides
 "   `:COLORSCROLL` command to walk thought colorschemes
   Plug 'vim-scripts/ScrollColors'
+  Plug 'morhetz/gruvbox'
 
 " - [luochen1990/rainbow](https://github.com/luochen1990/rainbow) highlights
 "   brackets regaring nested levels
   Plug 'luochen1990/rainbow'
+  " \   'ctermfgs': ['cyan', 'blue', 'lightblue', 'lightcyan', 'green', 'lightyellow', 'yellow', 'red']
   let g:rainbow_conf = {
-  \   'ctermfgs': ['cyan', 'blue', 'lightblue', 'lightcyan', 'green', 'lightyellow', 'yellow', 'red']
+  \   'ctermfgs': ['red', 'green', 'blue']
   \ }
 
 " - [zefei/vim-colortuner](https://github.com/zefei/vim-colortuner) allows you
 "   tuning your color scheme using sliders
   Plug 'zefei/vim-colortuner'
+  Plug 'sonph/onehalf'
 
 " - [flazz/vim-colorschemes](https://github.com/flazz/vim-colorschemes) yet
 "   another colorschemes pack
@@ -376,7 +409,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 " - [ervandew/supertab](https://github.com/ervandew/supertab) allows you to use
 "   `<Tab>` for all your insert completion needs
-  Plug 'ervandew/supertab'
+  " Plug 'ervandew/supertab'
 
 
 " - [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) adds
@@ -440,13 +473,18 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   set undolevels=500
 
 " - `completeopt=longest,menuone` shows IDE-like autocomplete
-  set completeopt=longest,menuone
+  " set completeopt=longest,menuone
+  set completeopt=menuone,noinsert
+  " set wildmode=longest:list,full
+  " set wildmenu
 
 " - `set nofoldenable` makes all folds are open
   set nofoldenable
 
 " `set background=dark` to use colors that look good on a dark background
-  set background=light
+  " set term=screen-256color
+  " set background=light
+  set background=dark
 
 " `set noerrorbells` for no terminal beeps
   set noerrorbells
@@ -488,7 +526,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   " call lexima#add_rule({'at': '\%#\<\h', 'char': '(', 'input': '<Esc>ea)<Esc>bi('})
   " call lexima#add_rule({'at': '\%#\<\h', 'char': '[', 'input': '<Esc>ea]<Esc>bi['})
 
-  if has("autocmd") " resume last position in file
+  if has('autocmd') " resume last position in file
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   endif
 
@@ -506,16 +544,32 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
      return s:word_count
   endfunction
 
+  "@color flag
+  " set termguicolors
+  " colorscheme mod8
+  "
   " colorscheme monokain
-  colorscheme CandyPaper
+  " colorscheme birds-of-paradise
+  " colorscheme monokai-phoenix
+  " colorscheme materialtheme
+  " colorscheme luna
+  " colorscheme madeofcode
+  " colorscheme gruvbox
+  colorscheme greygull
+  " colorscheme onehalfdark
+  " colorscheme onehalflight
+  " colorscheme nightshade_print
+  " colorscheme nightVision
+  " colorscheme reliable
+  " colorscheme orange
 
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
   endif
 
-  colorscheme Monokai
+  " colorscheme Monokai
   " colorscheme solarized8_light_high
-
+  " set t_ut=
   set undodir=~/.vim/undodir
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -530,7 +584,8 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
   set complete-=k
   set complete+=k
-  set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+  set dictionary-=/usr/share/dict/words
+  set dictionary+=/usr/share/dict/words
 
   set nolazyredraw " don't redraw while executing macros"
   set magic " Set magic on, for regex"
@@ -573,7 +628,8 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
   let mapleader = "\<Space>"
   " nnoremap <Leader><Leader> :Goyo<CR>
-  nnoremap <Leader><Leader> :CtrlP<CR>
+  nnoremap <Leader><Leader> :CtrlPCurWD<CR>
+  nnoremap <Leader>p :CtrlP<CR>
   " save
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>
@@ -632,6 +688,16 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   inoremap <C-k> <C-o>k
 
   nnoremap Y y$
+
+
+  " <TAB>: completion.
+  " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+  " <Shift+TAB>: completion.
+  " inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+  " Disable 'Enterig Ex mode'
+  nnoremap Q <Nop>
 
   " Hard mode
   map <UP> <NOP>

@@ -155,6 +155,22 @@ function topcmds() {
   cat $HISTFILE | cut -d';' -f2 | awk '{ print $1 }' | grep -Ev '^#' | tr -d '|' | sort | uniq -c | sort -n -r | head -n $n
 }
 
+function yaml2json() {
+  python3 -c 'import sys, yaml, json; print(json.dumps(yaml.safe_load(sys.stdin.read())))'
+}
+
+function yaml2json_pretty() {
+  python3 -c 'import sys, yaml, json; print(json.dumps(yaml.safe_load(sys.stdin.read()), indent=2, sort_keys=False))'
+}
+
+function json_validate() {
+  python3 -c 'import sys, yaml, json; json.loads(sys.stdin.read())'
+}
+
+function json2yaml() {
+  python3 -c 'import sys, yaml, json; print(yaml.dump(json.loads(sys.stdin.read())))'
+}
+
 # alias knife_env="knife_env_fuzzy_search"
 # VIM {
 alias vimba="   vim $bash_aliases"

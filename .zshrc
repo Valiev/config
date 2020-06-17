@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bunnyruni"
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin
 
 alias - -='cd -'
 
@@ -114,11 +115,7 @@ alias j=z
 . /usr/local/etc/profile.d/z.sh
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/valiev/.rvm/bin
-export PATH=/usr/local/Cellar/ruby/2.3.0/bin:$PATH
-export PATH=/Users/valiev/.cabal/bin:$PATH
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 

@@ -66,6 +66,7 @@ plugins=(
 )
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+ZSH_TMUX_AUTOSTART=true
 
 # ZSH_HIGHLIGHT_STYLES[cursor]='bg=blue'
 

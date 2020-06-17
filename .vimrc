@@ -568,9 +568,9 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   " colorscheme orange
 
   let ayucolor="light"  " for light version of theme
-  colorscheme ayu
   " let ayucolor="mirage" " for mirage version of theme
   " let ayucolor="dark"   " for dark version of theme
+  colorscheme ayu
 
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange

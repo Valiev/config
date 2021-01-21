@@ -45,11 +45,12 @@ plugins=(
   # emoji
   # emoji-clock
   extract
-  # fzf
+  fzf
   # gem
   git
   git-extras
   # jsontools
+  kubectl
   # kitchen
   # knife
   # lol
@@ -59,8 +60,7 @@ plugins=(
   # sublime
   # terraform
   themes
-  tmux
-  zsh-navigation-tools
+  # tmux
   zsh-syntax-highlighting
   z
 )

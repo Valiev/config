@@ -7,6 +7,11 @@ if [ -f $github_token ]; then
   source $github_token
 fi
 
+function git_check_out_fzf() {
+  git checkout "$(git branch --all | fzf | tr -d '[:space:]')"
+}
+alias b="git_check_out_fzf"
+
 joom_bashrc="$HOME/.joom_bashrc"
 if [ -f $joom_bashrc ]; then
   source $joom_bashrc

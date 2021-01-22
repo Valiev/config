@@ -60,9 +60,6 @@ plugins=(
 )
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-ZSH_TMUX_AUTOSTART=true
-
-# ZSH_HIGHLIGHT_STYLES[cursor]='bg=blue'
 
 source ~/.bash_aliases
 source $ZSH/oh-my-zsh.sh
@@ -74,12 +71,6 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down]]
-#
-# V for Vim
-# bindkey -v
-
-zle -N znt-kill-widget
-bindkey "^K" znt-kill-widget
 
 COMPLETION_WAITING_DOTS="true"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
@@ -107,17 +98,9 @@ function ec2() {
 }
 
 alias j=z
-. /usr/local/etc/profile.d/z.sh
 
 # Customize to your needs...
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
-
-# eval "$(pyenv init -)"
-source /usr/local/share/zsh/site-functions/_awless
-# Python magic
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-# export PATH="$(pyenv root)/shims:$PATH"
-source $HOME/.cargo/env
-export PATH="/usr/local/opt/openjdk@12/bin:$PATH"
+export FZF_COMPLETION_TRIGGER='...'
+export FZF_CTRL_T_OPTS="--select-1 --exit-0"

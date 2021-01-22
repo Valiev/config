@@ -1,6 +1,7 @@
 # VARIABLES {
 #NUMCPU=$(cat /proc/cpuinfo | grep processor | wc -l)
 
+export COLORTERM="truecolor"
 github_token="./.github_token"
 if [ -f $github_token ]; then
   source $github_token

@@ -8,13 +8,6 @@ alias - -='cd -'
 
 zstyle ":completion:*:commands" rehash 1
 
-# Haskell Stack completion
-# uncomment for haskell development
-# autoload -U +X compinit && compinit
-# autoload -U +X bashcompinit && bashcompinit
-# eval "$(stack --bash-completion-script stack)"
-
-
 # Uncomment following line if you want to disable command autocorrection
 DISABLE_CORRECTION="true"
 

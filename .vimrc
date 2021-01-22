@@ -107,10 +107,10 @@ filetype plugin on
 "
 " ### Coding features
 "
-  Plug 'c0r73x/neotags.nvim'
-  let g:neotags_recursive = 1
-  let g:neotags_find_tool = 'rg --files'
-  let g:neotags_ctags_bin = 'ctags'
+  " Plug 'c0r73x/neotags.nvim'
+  " let g:neotags_recursive = 1
+  " let g:neotags_find_tool = 'rg --files'
+  " let g:neotags_ctags_bin = 'ctags'
 
 
 " - [majutsushi/tagbar](https://github.com/majutsushi/tagbar) plugin bring
@@ -175,11 +175,11 @@ highlight link SyntasticStyleWarningSign SignColumn
   endfunction
 " - [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim) plugin
 "   provides great auto-completion for most of the scripting languages.
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " let g:deoplete#enable_at_startup = 1
   " call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 
-  let g:deoplete#sources = {'rust': ['ale', 'racer']}
+  " let g:deoplete#sources = {'rust': ['ale', 'racer']}
 
 
 
@@ -212,17 +212,21 @@ highlight link SyntasticStyleWarningSign SignColumn
 "     * `cow` to toggle word wrapping
 "     * `con` to toggle line numbering
   Plug 'tpope/vim-unimpaired'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 " - [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) a collection
 "   on language packs
-  Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'haskell'] }
+  " Plug 'sheerun/vim-polyglot', { 'for': ['ruby', 'haskell'] }
 
 " - [luochen1990/select-and-search](https://github.com/luochen1990/select-and-search)
 "   plugin's feature is to select text in v mode, then press n to search next one
 "   (N for prev one)
   Plug 'luochen1990/select-and-search'
 
-  Plug 'ycm-core/YouCompleteMe'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  " Plug 'ycm-core/YouCompleteMe'
 
   Plug 'sunaku/vim-dasht'
 " search related docsets
@@ -293,7 +297,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 " - [zchee/deoplete-jedi](https://github.com/zchee/deoplete-jedi) is
 "   autocompletion for `python`
-  Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
+  " Plug 'zchee/deoplete-jedi', { 'for' : 'python' }
 
   Plug 'dense-analysis/ale'
   Plug 'racer-rust/vim-racer', { 'for': 'rust' }
@@ -476,8 +480,8 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " - `completeopt=longest,menuone` shows IDE-like autocomplete
   " set completeopt=longest,menuone
   set completeopt=menuone,noinsert
-  " set wildmode=longest:list,full
-  " set wildmenu
+  set wildmode=longest:list,full
+  set wildmenu
 
 " - `set nofoldenable` makes all folds are open
   set nofoldenable
@@ -485,7 +489,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " `set background=dark` to use colors that look good on a dark background
   " set term=screen-256color
   " set background=light
-  set background=light
+  set background=dark
 
 " `set noerrorbells` for no terminal beeps
   set noerrorbells
@@ -567,8 +571,8 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   " colorscheme reliable
   " colorscheme orange
 
-  let ayucolor="light"  " for light version of theme
-  " let ayucolor="mirage" " for mirage version of theme
+  " let ayucolor="light"  " for light version of theme
+  let ayucolor="mirage" " for mirage version of theme
   " let ayucolor="dark"   " for dark version of theme
   colorscheme ayu
 
@@ -637,9 +641,27 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
   let mapleader = "\<Space>"
   " nnoremap <Leader><Leader> :Goyo<CR>
-  nnoremap <Leader><Leader> :CtrlPCurWD<CR>
-  nnoremap <Leader>p :CtrlP<CR>
+  " nnoremap <Leader><Leader> :CtrlPCurWD<CR>
+  " nnoremap <Leader>p :CtrlP<CR>
   " save
+  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+  " nnoremap <Leader><Leader> :Files %:p:h<CR>
+  nnoremap <Leader><Leader> :Files<CR>
+  nnoremap <Leader>p :GFiles<CR>
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>
   nnoremap <Leader>wq :wq<CR>
@@ -649,10 +671,10 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   nnoremap <Leader>k :Dasht<Space>
   vmap <Leader>y "+y
   vmap <Leader>d "+d
-  nmap <Leader>p "+p
-  nmap <Leader>P "+P
-  vmap <Leader>p "+p
-  vmap <Leader>P "+P
+  " nmap <Leader>p "+p
+  " nmap <Leader>P "+P
+  " vmap <Leader>p "+p
+  " vmap <Leader>P "+P
   noremap <Leader>' ciW''<Esc>P
   noremap <Leader>" ciW""<Esc>P
   noremap <Leader>` ciW``<Esc>P

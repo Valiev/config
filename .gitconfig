@@ -18,8 +18,8 @@ lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen
 
 [user]
 	name = Sergey Valiev
-	mail = svaliev@aligntech.com
-	email = svaliev@aligntech.com
+	mail = svaliev@joom.com
+	email = svaliev@joom.com
 
 [push]
 	default = simple

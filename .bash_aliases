@@ -12,6 +12,11 @@ function git_check_out_fzf() {
 }
 alias b="git_check_out_fzf"
 
+function cd_fzf() {
+  cd "$(fd --type directory | fzf)"
+}
+alias jj="cd_fzf"
+
 joom_bashrc="$HOME/.joom_bashrc"
 if [ -f $joom_bashrc ]; then
   source $joom_bashrc
@@ -33,6 +38,8 @@ export BAT_THEME=zenburn
 # }
 
 # STUFF {
+alias nocolor='sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g"'
+alias grep_tf="grep -E '^\W+[~+\-].*'"
 alias vim="nvim"
 alias b="git_check_out_fzf"
 alias k="LC_ALL=en_US.UTF-8 bundle exec kitchen"
@@ -40,6 +47,7 @@ alias c="colorize"
 alias g="git"
 alias n="on_finish"
 alias t="terraform"
+alias tg="terragrunt"
 alias ls="ls"
 alias ll="ls -l -h"
 alias la="ls -A"
@@ -56,7 +64,7 @@ alias pyjs='python -m json.tool'
 alias toLower='tr "[[:upper:]]" "[[:lower:]]" '
 alias toUpper='tr "[[:lower:]]" "[[:upper:]]" '
 
-alias aws_login_py="docker run --rm -it -e USER=$USER -v $HOME/.aws:/root/.aws joom-aws-saml-login"
+alias aws_profiles="cat ~/.aws/credentials | grep '^\[' | tr -d '\[' | tr -d '\]'"
 alias epoch="date +%s"
 
 function _pipenv() {

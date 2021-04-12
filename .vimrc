@@ -188,6 +188,8 @@ highlight link SyntasticStyleWarningSign SignColumn
   Plug 'osyo-manga/vim-monster', { 'for': ['ruby'] }
 
   Plug 'jreybert/vimagit'
+  Plug 'tpope/vim-fugitive'
+
 
 
 
@@ -699,6 +701,7 @@ let g:fzf_colors =
   noremap L :bnext<CR>
   nmap <Leader>d :bd<CR>
   nmap <Leader>k <Plug>DashSearch
+  nmap <Leader>gg :G<CR>
 
   nnoremap # :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
   nnoremap * #

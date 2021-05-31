@@ -1,6 +1,7 @@
 # VARIABLES {
 #NUMCPU=$(cat /proc/cpuinfo | grep processor | wc -l)
 
+source ~/dev/joom/docker-images/docker_images_aliases.sh
 export COLORTERM="truecolor"
 github_token="./.github_token"
 if [ -f $github_token ]; then

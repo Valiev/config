@@ -34,7 +34,11 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export PIPENV_VENV_IN_PROJECT=1
+
 export BAT_THEME=zenburn
+if [ "$ITERM_PROFILE" = "Light" ]; then
+  export BAT_THEME="Monokai Extended Light"
+fi
 
 # }
 

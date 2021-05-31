@@ -124,7 +124,7 @@ function json_validate() {
 function json2yaml() {
   python3 -c 'import sys, yaml, json; print(yaml.dump(json.loads(sys.stdin.read())))'
 }
-
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # VIM {
 alias vimba="   vim $bash_aliases"
 alias zshrc="   vim ~/.zshrc"

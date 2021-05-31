@@ -60,7 +60,7 @@ filetype plugin on
 "   extremlly useful bindings for quick search in project with `:Ack`
 "   command: `<Leader>a` starts search, `<Leader>s` searches for the word under
 "   cursor
-  Plug 'wincent/ferret'
+  " Plug 'wincent/ferret'
 
 " - [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim)
 "   plugin incrementally highlights **all** pattern matches unlike
@@ -568,17 +568,22 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   " colorscheme reliable
   " colorscheme orange
 
-  " let ayucolor="light"  " for light version of theme
-  let ayucolor="mirage" " for mirage version of theme
-  " let ayucolor="dark"   " for dark version of theme
-  colorscheme ayu
+  if $ITERM_PROFILE == 'Light'
+    let ayucolor="light"  " for light version of theme
+  endif
 
+  if $ITERM_PROFILE == 'Default'
+    let ayucolor="mirage" " for mirage version of theme
+  endif
+  " let ayucolor="dark"   " for dark version of theme
+
+  " colorscheme ayu
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
   endif
 
   " colorscheme Monokai
-  " colorscheme solarized8_light_high
+  colorscheme solarized8_light_high
   " set t_ut=
   set undodir=~/.vim/undodir
   set guioptions-=m  "remove menu bar
@@ -606,6 +611,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace " strip whitespaces
   autocmd FileType * setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType python let b:dispatch = 'python3 %'
   autocmd FileType rust setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd FileType markdown setlocal spell
   autocmd FileType ruby compiler ruby
@@ -657,13 +663,21 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
   " nnoremap <Leader><Leader> :Files %:p:h<CR>
+  command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
   nnoremap <Leader><Leader> :Files<CR>
   nnoremap <Leader>p :GFiles<CR>
+  nnoremap <Leader>r :Rg<CR>
+  nnoremap <Leader>g :GGrep<CR>
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>
   nnoremap <Leader>wq :wq<CR>
   nnoremap <Leader>h :set cursorline!<CR>
-
+  " nnoremap <silent> <Leader>a :Rg <C-R><C-W><CR>
+  "
   " search related docsets
   nnoremap <Leader>k :Dasht<Space>
   vmap <Leader>y "+y

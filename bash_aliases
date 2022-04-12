@@ -43,6 +43,7 @@ export EDITOR=nvim
 export PIPENV_VENV_IN_PROJECT=1
 
 export BAT_THEME=zenburn
+export BAT_THEME="Monokai Extended Light"
 if [ "$ITERM_PROFILE" = "Light" ]; then
   export BAT_THEME="Monokai Extended Light"
 fi
@@ -57,7 +58,6 @@ alias g="git"
 alias n="on_finish"
 alias t="terraform"
 alias tg="terragrunt"
-# alias ls="ls"
 alias ll="ls -l -h"
 alias la="ls -A"
 alias repo="cat .git/config | grep url | cut -d= -f2"

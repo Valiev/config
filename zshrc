@@ -26,7 +26,7 @@ plugins=(
   # knife
   # lol
   # npm
-  osx
+  macos
   # sprunge
   # sublime
   terraform
@@ -117,3 +117,6 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export FZF_COMPLETION_TRIGGER='...'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+# source /Users/svaliev/.config/broot/launcher/bash/br

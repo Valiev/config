@@ -33,7 +33,8 @@ plugins=(
   themes
   # tmux
   zsh-syntax-highlighting
-  z
+  # z
+  fasd
 )
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bunnyruni"
@@ -99,7 +100,17 @@ function ec2() {
     --query 'Reservations[].Instances[].[Tags[?Key==`Name`] | [0].Value, InstanceId, Tags[?Key==`Environment`] | [0].Value, NetworkInterfaces[*].PrivateIpAddresses[*].PrivateIpAddress]'
 }
 
-alias j=z
+function fasd_cd_fzf() {
+  local cd_paths=$(echo "$*" | xargs fasd -ldR)
+  local cd_path=$(echo "$cd_paths" | fzf --reverse -0 -1 -q "$*")
+  if [ -d "$cd_path" ]; then
+    cd "$cd_path"
+  else
+    cd $(fd -t=d . ~ | fzf --reverse -0 -1 -q "$*")
+  fi
+}
+
+alias j=fasd_cd_fzf
 
 # Customize to your needs...
 export GOPATH="$HOME/go"

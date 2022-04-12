@@ -34,6 +34,7 @@ filetype plugin on
 
   Plug 'psliwka/vim-smoothie'
   Plug 'martinda/Jenkinsfile-vim-syntax'
+  Plug 'Glench/Vim-Jinja2-Syntax'
 
 "
 "- [rust-lang/rust.vim](https://github.com/rust-lang/rust.vim) plugin brings `rust`
@@ -93,7 +94,6 @@ filetype plugin on
 " - [cohama/lexima-vim](https://github.com/cohama/lexima.vim) plugin
 "   provides auto-closing brackets and some other neat features
   Plug 'cohama/lexima.vim'
-
 " - [terryma/vim-expand-region](https://github.com/erryma/vim-expand-region) plugin allows
 "   to visually select increasingly larger regions of text using the same key
 "   combination
@@ -215,6 +215,12 @@ highlight link SyntasticStyleWarningSign SignColumn
 "     * `con` to toggle line numbering
   Plug 'tpope/vim-unimpaired'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+  au BufEnter github.com_*.txt set filetype=markdown
+
+  " set guifont=Monaco:h20
+  set guifont=FiraCode_Nerd_Font_Mono:h23
 
 
 " - [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) a collection
@@ -568,22 +574,24 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   " colorscheme reliable
   " colorscheme orange
 
-  if $ITERM_PROFILE == 'Light'
-    let ayucolor="light"  " for light version of theme
-  endif
+  " if $ITERM_PROFILE == 'Light'
+  let ayucolor="light"  " for light version of theme
+  " endif
 
-  if $ITERM_PROFILE == 'Default'
-    let ayucolor="mirage" " for mirage version of theme
-  endif
+  " if $ITERM_PROFILE == 'Default'
+  "   let ayucolor="mirage" " for mirage version of theme
+  " endif
   " let ayucolor="dark"   " for dark version of theme
 
   " colorscheme ayu
+  " colorscheme solarized8_light
+  colorscheme soda
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
   endif
 
   " colorscheme Monokai
-  colorscheme solarized8_light_high
+  " colorscheme solarized8_light_high
   " set t_ut=
   set undodir=~/.vim/undodir
   set guioptions-=m  "remove menu bar
@@ -618,6 +626,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   " autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
   autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                     set ft=markdown
+  autocmd BufRead,BufNewFile {*.hcl}                                     set ft=terraform
   autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                            set ft=gitcommit
   autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
   autocmd BufNewFile,BufRead *.json set filetype=json
@@ -671,7 +680,8 @@ let g:fzf_colors =
   nnoremap <Leader><Leader> :Files<CR>
   nnoremap <Leader>p :GFiles<CR>
   nnoremap <Leader>r :Rg<CR>
-  nnoremap <Leader>g :GGrep<CR>
+  " nnoremap <Leader>g :GGrep<CR>
+  " nnoremap <Leader>g :call fzf#vim#ag(expand('<cword>'))<kEnter>
   nnoremap <Leader>ww :w<CR>
   nnoremap <Leader>q :q<CR>
   nnoremap <Leader>wq :wq<CR>

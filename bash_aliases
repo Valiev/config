@@ -10,6 +10,7 @@ function git_check_out_fzf() {
 }
 
 alias b="git_check_out_fzf"
+alias e="nvim"
 alias to_vim="xargs nvim"
 alias to="xargs"
 
@@ -28,9 +29,9 @@ function process_fzf() {
 
 alias jj="process_fzf"
 
-joom_bashrc="$HOME/.joom_bashrc"
-if [ -f $joom_bashrc ]; then
-  source $joom_bashrc
+k8s_bashrc="$HOME/.k8s_bashrc"
+if [ -f $k8s_bashrc ]; then
+  source $k8s_bashrc
 fi
 
 bash_aliases="~/.bash_aliases"

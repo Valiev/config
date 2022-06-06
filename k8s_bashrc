@@ -1,0 +1,31 @@
+#!/bin/bash
+
+function stderr_echo() {
+  echo $@ 1>&2
+}
+
+function generate_k8s_aliases() {
+  stderr_echo "Generating bash aliases for K8S..."
+  echo "# Auto-generated aliases on $(date)"
+  echo "# Remove this file to regenerate aliases from scratch"
+  for cluster in $(kubectl config get-contexts -o name); do
+    stderr_echo "- processing $cluster cluster"
+    echo "alias k-$cluster=\"kubectl --context=$cluster\""
+    for ns in $(kubectl --context $cluster get ns | grep -v NAME | awk '{ print $1 }'); do
+      echo "alias k-$cluster-n-$ns=\"kubectl --context=$cluster -n $ns\""
+    done
+  done
+}
+
+K8S_ALIASES="$HOME/.k8s_aliases"
+
+if ! [[ -f "$K8S_ALIASES" ]]; then
+  # create in past
+  touch -am -t 202001010101 "$K8S_ALIASES"
+fi
+
+if (find "$K8S_ALIASES" -mtime +7d | grep -q "$K8S_ALIASES"); then
+  generate_k8s_aliases > $K8S_ALIASES
+fi
+
+source "$K8S_ALIASES"

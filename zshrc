@@ -112,8 +112,13 @@ alias j=fasd_cd_fzf
 # Customize to your needs...
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$HOME/.local/bin:$PATH"
 export FZF_COMPLETION_TRIGGER='...'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # source /Users/svaliev/.config/broot/launcher/bash/br

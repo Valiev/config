@@ -1,8 +1,10 @@
 export COLORTERM="truecolor"
+# Terraform
+export GODEBUG=asyncpreemptoff=1
 
-github_token="./.github_token"
-if [ -f $github_token ]; then
-  source $github_token
+GITHUB_TOKEN_PATH="./.github_token"
+if [ -f $GITHUB_TOKEN_PATH ]; then
+  export HOMEBREW_GITHUB_API_TOKEN=$(< $GITHUB_TOKEN_PATH)
 fi
 
 function git_check_out_fzf() {

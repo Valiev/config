@@ -103,7 +103,7 @@ function fasd_cd_fzf() {
   if [ -d "$cd_path" ]; then
     cd "$cd_path"
   else
-    cd $(fd -t=d . ~ | fzf --reverse -0 -1 -q "$*")
+    cd $(fd -t=d . ~ -E /Library/ -E /Documents/ | fzf --reverse -0 -1 -q "$*")
   fi
 }
 

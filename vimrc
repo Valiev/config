@@ -48,6 +48,8 @@ filetype plugin on
 " - [vim-bamboo-log](https://github.com/Valiev/vim-bamboo-log) plugin provides
 "   syntax highlight for Bamboo CI build logs.
   Plug 'Valiev/vim-bamboo-log'
+  Plug 'hashivim/vim-terraform'
+
 
 " - [bkad/vim-terraform](https://github.com/bkad/vim-terraform) plugin brings
 "   `terraform` support for vim
@@ -377,6 +379,7 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " - [luochen1990/rainbow](https://github.com/luochen1990/rainbow) highlights
 "   brackets regaring nested levels
   Plug 'luochen1990/rainbow'
+
   " \   'ctermfgs': ['cyan', 'blue', 'lightblue', 'lightcyan', 'green', 'lightyellow', 'yellow', 'red']
   let g:rainbow_conf = {
   \   'ctermfgs': ['red', 'green', 'blue']
@@ -578,14 +581,14 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   let ayucolor="light"  " for light version of theme
   " endif
 
-  " if $ITERM_PROFILE == 'Default'
-  "   let ayucolor="mirage" " for mirage version of theme
-  " endif
-  " let ayucolor="dark"   " for dark version of theme
+  if $ITERM_PROFILE == 'Default'
+    let ayucolor="mirage" " for mirage version of theme
+  endif
+  let ayucolor="dark"   " for dark version of theme
 
   " colorscheme ayu
   " colorscheme solarized8_light
-  colorscheme soda
+  " colorscheme soda
   if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
   endif
@@ -621,8 +624,10 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
   autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType python let b:dispatch = 'python3 %'
   autocmd FileType rust setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType yaml setlocal cuc
   autocmd FileType markdown setlocal spell
   autocmd FileType ruby compiler ruby
+
   " autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
   autocmd BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
   autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                     set ft=markdown

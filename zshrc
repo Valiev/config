@@ -36,7 +36,7 @@ plugins=(
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bunnyruni"
 ZSH_DISABLE_COMPFIX=true
-export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin
 
 alias - -='cd -'
 

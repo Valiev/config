@@ -4,7 +4,6 @@ plugins=(
   almostontop
   vi-mode
   # autojump
-  # fasd
   # battery
   brew
   # bundle
@@ -23,7 +22,6 @@ plugins=(
   # jsontools
   kubectl
   # kitchen
-  # knife
   # lol
   # npm
   macos
@@ -34,7 +32,6 @@ plugins=(
   # tmux
   zsh-syntax-highlighting
   # z
-  fasd
 )
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bunnyruni"

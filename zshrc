@@ -43,22 +43,9 @@ alias - -='cd -'
 AUTO_NOTIFY_IGNORE+=("git")
 zstyle ":completion:*:commands" rehash 1
 
-# Uncomment following line if you want to disable command autocorrection
 DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# source /Users/svaliev/.oh-my-zsh/custom/plugins/auto-ls/auto-ls.zsh
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 source ~/.bash_aliases
@@ -120,5 +107,3 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
-# source /Users/svaliev/.config/broot/launcher/bash/br

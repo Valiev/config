@@ -79,6 +79,8 @@ alias j=fasd_cd_fzf
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export FZF_COMPLETION_TRIGGER='...'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 export HOMEBREW_NO_AUTO_UPDATE=1

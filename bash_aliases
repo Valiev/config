@@ -1,5 +1,4 @@
 export COLORTERM="truecolor"
-# Terraform
 export GODEBUG=asyncpreemptoff=1
 
 GITHUB_TOKEN_PATH="./.github_token"
@@ -26,7 +25,6 @@ function process_fzf() {
   else
     echo "nothing found :("
   fi
-
 }
 
 alias jj="process_fzf"

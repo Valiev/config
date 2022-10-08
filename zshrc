@@ -16,6 +16,7 @@ plugins=(
   # emoji-clock
   extract
   fzf
+  fancy-ctrl-z
   # gem
   git
   git-extras
@@ -61,28 +62,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down]]
 
 COMPLETION_WAITING_DOTS="true"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
-
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
-
-mac_lock_screen () {
-  pmset displaysleepnow
-}
-function ec2() {
-  aws ec2 describe-instances \
-    --filters "Name=tag:Name,Values=*$1*" "Name=tag:Environment,Values=*$2*" \
-    --output text \
-    --query 'Reservations[].Instances[].[Tags[?Key==`Name`] | [0].Value, InstanceId, Tags[?Key==`Environment`] | [0].Value, NetworkInterfaces[*].PrivateIpAddresses[*].PrivateIpAddress]'
-}
 
 function fasd_cd_fzf() {
   local cd_paths=$(echo "$*" | xargs fasd -ldR)

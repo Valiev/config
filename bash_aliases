@@ -43,11 +43,11 @@ export LANG=en_US.UTF-8
 export EDITOR=nvim
 export PIPENV_VENV_IN_PROJECT=1
 
-export BAT_THEME=zenburn
-export BAT_THEME="Monokai Extended Light"
+# export BAT_THEME="Monokai Extended Light"
 if [ "$ITERM_PROFILE" = "Light" ]; then
   export BAT_THEME="Monokai Extended Light"
 fi
+export BAT_THEME=DarkNeon
 
 alias nocolor='sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g"'
 alias grep_tf="grep -E '^\W+[~+\-].*'"

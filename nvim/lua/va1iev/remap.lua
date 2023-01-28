@@ -93,3 +93,5 @@ vim.keymap.set("n", "<leader>u" , vim.cmd.UndotreeToggle, {})
 -- Toggler
 nmap('-', ":ToggleAlternate<CR>")
 
+-- Wildfire
+nmap('<leader>v', "<Plug>(wildfire-fuel)")

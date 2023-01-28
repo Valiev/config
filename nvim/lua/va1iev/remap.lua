@@ -90,3 +90,6 @@ nmap('<Leader>j', ":HopVerticalAC<CR>")
 -- Undo
 vim.keymap.set("n", "<leader>u" , vim.cmd.UndotreeToggle, {})
 
+-- Toggler
+nmap('-', ":ToggleAlternate<CR>")
+

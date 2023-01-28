@@ -14,11 +14,16 @@ mason_lspconfig.setup({
 
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
--- lsp.set_preferences({
---   configure_diagnostics = false,
---   configure_diagnostics2 = false
--- })
 lsp.setup()
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = false,
+  float = true,
+})
 
 local lspconfig = require('lspconfig')
 lspconfig["sumneko_lua"].setup({
@@ -48,20 +53,6 @@ lspconfig["yamlls"].setup({
   }
 })
 
--- vim.diagnostic.config({
---   virtual_text = true,
---   signs = false,
---   update_in_insert = false,
---   underline = false,
---   severity_sort = false,
---   float = true,
--- })
-
--- vim.diagnostic.config({
---   signs = true,
--- })
-
-
 -- local saga = require('lspsaga')
 -- -- TODO
 -- saga.setup({
@@ -80,27 +71,7 @@ lspconfig["yamlls"].setup({
 --   preset = 'codicons',
 -- })
 
-
--- vim.diagnostic.config({
-  -- virtual_text = true
--- })
--- vim.diagnostic.config({
-  -- virtual_text = true,
-  -- signs = false,
---   update_in_insert = false,
---   underline = false,
---   severity_sort = false,
---   float = true,
--- })
-
 -- local util = require('lspconfig.util')
-
-
--- local warn = {}
--- lsp.preset('recommended')
--- })
-
-
 -- lsp.nvim_workspace()
 -- lsp.setup()
 -- require('lspconfig').terraformls.setup({

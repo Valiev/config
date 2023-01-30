@@ -32,6 +32,9 @@ local config = {
   incsearch = true,
   showmatch = true,
 
+  --
+  clipboard = "unnamed",
+
   -- gui
   termguicolors = true,
 

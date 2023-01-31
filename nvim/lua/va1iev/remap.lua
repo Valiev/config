@@ -48,11 +48,13 @@ nmap("<UP>", "<Nop>")
 nmap("<DOWN>", "<Nop>")
 nmap("<LEFT>", "<Nop>")
 nmap("<RIGHT>", "<Nop>")
+
+-- Leader mappings
 nmap("<Leader>ww", ":w<CR>")
 nmap("<Leader>wq", ":wq<CR>")
 nmap("<Leader>q", ":q<CR>")
 nmap("<Leader>hh", ":set cursorline!<CR>")
-nmap("<Tab>", ":NvimTreeToggle<CR>")
+nmap("<Leader><Tab>", ":NvimTreeToggle<CR>")
 nmap("<Leader>t", ":TroubleToggle<CR>")
 
 -- buffers

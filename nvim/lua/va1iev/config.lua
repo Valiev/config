@@ -58,7 +58,7 @@ vim.opt.iskeyword:append("-")
 
 local Buffers = {"BufNewFile", "BufRead"}
 
-
+vim.g.strip_whitespace_confirm = 0
 autocmd("FileType", {
   pattern = "*" ,
   command = "EnableStripWhitespaceOnSave"

@@ -84,14 +84,23 @@ lspconfig["yamlls"].setup({
 --   preset = 'codicons',
 -- })
 
--- local util = require('lspconfig.util')
 -- lsp.nvim_workspace()
 -- lsp.setup()
--- require('lspconfig').terraformls.setup({
+
+-- local util = require('lspconfig.util')
+lspconfig["terraform_lsp"].setup({
+  capabilities = capabilities,
   -- root_dir = util.root_pattern('terragrunt.hcl')
+})
+
+-- lspconfig["terraformls"].setup({
+--   capabilities = capabilities,
+--   root_dir = util.root_pattern('terragrunt.hcl')
+-- })
+
+-- require('lspconfig').terraformls.setup({
 -- })
 -- require('lspconfig').tflint.setup({
-  -- root_dir = util.root_pattern('terragrunt.hcl')
 -- })
 --
 -- require('lspconfig').tflint.setup()

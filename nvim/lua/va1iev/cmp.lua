@@ -7,7 +7,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'fuzzy_buffer' },
+    -- { name = 'fuzzy_buffer' },
     { name = 'buffer' },
     { name = 'path' },
   }),

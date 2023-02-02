@@ -35,7 +35,6 @@ if [ -f $k8s_bashrc ]; then
 fi
 
 bash_aliases="~/.bash_aliases"
-vimrc="~/.vimrc"
 
 export TERM=screen-256color
 export LC_ALL=en_US.UTF-8
@@ -121,4 +120,4 @@ alias bat_json="bat -l json"
 alias bat_yaml="bat -l yaml"
 alias vimba="   vim $bash_aliases"
 alias zshrc="   vim ~/.zshrc"
-alias vimrc="   vim $vimrc"
+alias vimrc="   vim $HOME/.config/nvim/"

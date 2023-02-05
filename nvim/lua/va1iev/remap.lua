@@ -76,9 +76,17 @@ vim.keymap.set("n", "<leader><leader>", telescope.find_files, {})
 vim.keymap.set("n", "<leader>fg", telescope.live_grep, {})
 vim.keymap.set("n", "<leader>gg", telescope.git_files, {})
 vim.keymap.set("n", "<leader>gb", telescope.git_branches, {})
-vim.keymap.set("n", "<leader>gc", telescope.git_commits, {})
+-- vim.keymap.set("n", "<leader>gc", telescope.git_commits, {})
 vim.keymap.set("n", "<leader>gs", telescope.git_status, {})
 vim.keymap.set("n", "<leader>bb", telescope.buffers, {})
+
+-- Git hunks
+nmap('<Leader>ll', ":Gitsigns next_hunk<CR>")
+nmap('<Leader>hh', ":Gitsigns prev_hunk<CR>")
+nmap('<Leader>ga', ":Gitsigns stage_hunk<CR>")
+nmap('<Leader>gr', ":Git reset<CR>")
+nmap('<Leader>gc', ":Git commit<CR>")
+
 
 -- Diagnostic
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})

@@ -62,7 +62,13 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('mbbill/undotree')
   use('tpope/undotree')
+
+  -- Git
   use('lewis6991/gitsigns.nvim')
+  use('tpope/vim-fugitive')
+  use('tpope/vim-rhubarb')
+  use('junegunn/gv.vim')
+
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {

@@ -81,8 +81,8 @@ vim.keymap.set("n", "<leader>gs", telescope.git_status, {})
 vim.keymap.set("n", "<leader>bb", telescope.buffers, {})
 
 -- Git hunks
-nmap('<Leader>ll', ":Gitsigns next_hunk<CR>")
-nmap('<Leader>hh', ":Gitsigns prev_hunk<CR>")
+nmap('<C-j>', ":Gitsigns next_hunk<CR>")
+nmap('<C-k>', ":Gitsigns prev_hunk<CR>")
 nmap('<Leader>ga', ":Gitsigns stage_hunk<CR>")
 nmap('<Leader>gr', ":Git reset<CR>")
 nmap('<Leader>gc', ":Git commit<CR>")
@@ -92,10 +92,12 @@ nmap('<Leader>gc', ":Git commit<CR>")
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})
 
 -- Happy Hopping
-nmap('<Leader>hw', ":HopWord<CR>")
-nmap('<Leader>hl', ":HopLine<CR>")
-nmap('<Leader>k', ":HopVerticalBC<CR>")
-nmap('<Leader>j', ":HopVerticalAC<CR>")
+nmap('<Leader>hw', ":HopWordBC<CR>")
+nmap('<Leader>lw', ":HopWordAC<CR>")
+nmap('<Leader>kk', ":HopVerticalBC<CR>")
+nmap('<Leader>kl', ":HopLineBC<CR>")
+nmap('<Leader>jj', ":HopVerticalAC<CR>")
+nmap('<Leader>jl', ":HopLineAC<CR>")
 
 -- Undo
 vim.keymap.set("n", "<leader>u" , vim.cmd.UndotreeToggle, {})

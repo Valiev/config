@@ -87,6 +87,9 @@ nmap('<Leader>ga', ":Gitsigns stage_hunk<CR>")
 nmap('<Leader>gr', ":Git reset<CR>")
 nmap('<Leader>gc', ":Git commit<CR>")
 
+-- Align
+nmap('ga', "<Plug>(EasyAlign)")
+xmap('<Enter>', "<Plug>(EasyAlign)")
 
 -- Diagnostic
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})

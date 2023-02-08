@@ -63,6 +63,7 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/undotree')
 
+  use('junegunn/vim-easy-align')
   -- Git
   use('lewis6991/gitsigns.nvim')
   use('tpope/vim-fugitive')

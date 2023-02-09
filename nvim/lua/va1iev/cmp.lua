@@ -8,7 +8,14 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     -- { name = 'fuzzy_buffer' },
-    { name = 'buffer' },
+    {
+      name = 'buffer',
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end
+      }
+    },
     { name = 'path' },
   }),
   mapping = M.preset.insert({

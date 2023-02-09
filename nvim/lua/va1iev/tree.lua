@@ -1,5 +1,6 @@
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
+  update_cwd = true,
   view = {
     adaptive_size = true,
     mappings = {

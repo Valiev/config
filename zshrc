@@ -41,6 +41,7 @@ export PATH=/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin
 export PATH="/opt/homebrew/opt/kubernetes-cli@1.22/bin:$PATH"
 
 alias - -='cd -'
+alias -g VIM='| xargs nvim'
 
 AUTO_NOTIFY_IGNORE+=("git")
 zstyle ":completion:*:commands" rehash 1

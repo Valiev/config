@@ -61,6 +61,10 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   }
+  use({'nvim-telescope/telescope-project.nvim',
+    requires = { "nvim-telescope/telescope-file-browser.nvim" }
+  })
+
 
 
   -- TODO play around with treesetter playground

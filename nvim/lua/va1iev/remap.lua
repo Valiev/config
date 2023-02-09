@@ -1,4 +1,5 @@
 local telescope = require("telescope.builtin")
+local telescope_ext = require("telescope").extensions
 local Func = require('va1iev.func')
 -- local map = Func.map
 local nmap = Func.nmap
@@ -67,7 +68,7 @@ nmap("*", "#")
 
 -- Telescope
 vim.keymap.set("n", "<leader>pf", telescope.find_files, {})
-vim.keymap.set("n", "<C-p>", telescope.git_files, {})
+vim.keymap.set("n", "<C-p>", telescope_ext.project.project, {})
 vim.keymap.set("n", "<leader>ps", function()
 	telescope.grep_string({ search = vim.fn.input("Grep > ") });
 end)

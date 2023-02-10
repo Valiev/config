@@ -71,6 +71,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('mbbill/undotree')
   use('tpope/undotree')
+  use('tpope/vim-repeat')
 
   use('junegunn/vim-easy-align')
   use('junegunn/vim-after-object')

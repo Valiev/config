@@ -87,6 +87,7 @@ nmap('<C-k>', ":Gitsigns prev_hunk<CR>")
 nmap('<Leader>ga', ":Gitsigns stage_hunk<CR>")
 nmap('<Leader>gr', ":Git reset<CR>")
 nmap('<Leader>gc', ":Git commit<CR>")
+nmap('<Leader>gp', ":Git push<CR>")
 
 -- Align
 nmap('ga', "<Plug>(EasyAlign)")

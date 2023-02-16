@@ -88,6 +88,7 @@ return require('packer').startup(function(use)
   use('tpope/vim-rhubarb')
   use('junegunn/gv.vim')
 
+  use {"jose-elias-alvarez/null-ls.nvim"}
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {

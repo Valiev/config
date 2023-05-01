@@ -6,22 +6,23 @@ vim.cmd("packadd packer.nvim")
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
+
+  -- COLORS
+  use('christoomey/vim-tmux-navigator')
   use('nyoom-engineering/oxocarbon.nvim')
   use('Shatur/neovim-ayu')
-  -- use({"juliosueiras/vim-terraform-completion",
-  --   requires = {
-  --     'hashivim/vim-terraform',
-  --     'vim-syntastic/syntastic'
-  --   }
-  -- })
-  use("tpope/vim-surround")
+  use('shaunsingh/solarized.nvim')
+  use('savq/melange-nvim')
+  use("EdenEast/nightfox.nvim")
+  use('folke/tokyonight.nvim')
+
+  -- PRETTY VIM ENHANCEMENTS
   use({
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   })
   use({'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'})
   use('kyazdani42/nvim-web-devicons')
-
   use({
     "folke/noice.nvim",
     requires = {
@@ -29,66 +30,79 @@ return require('packer').startup(function(use)
       "rcarriga/nvim-notify",
     }
   })
-  use('ntpeters/vim-better-whitespace')
-
-  use('rmagatti/alternate-toggler')
-
   use({
-    "phaazon/hop.nvim",
-    branch = "v2"
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  })
+  use({
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
   })
 
-  use {
-    "windwp/nvim-autopairs",
-  }
+  -- use({"juliosueiras/vim-terraform-completion",
+  --   requires = {
+  --     'hashivim/vim-terraform',
+  --     'vim-syntastic/syntastic'
+  --   }
+  -- })
 
-  use('gcmt/wildfire.vim')
-  -- use {
-  --   "folke/todo-comments.nvim",
-  --   requires = "nvim-lua/plenary.nvim"
-  -- }
+  -- GENERAL EDITOR FEATURES
+  use("tpope/vim-surround")
+  use('ntpeters/vim-better-whitespace')
+  use('rmagatti/alternate-toggler')
+  use('windwp/nvim-autopairs')
   use {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
     end
   }
+  use('karb94/neoscroll.nvim')
+  use('mbbill/undotree')
+  use('tpope/vim-repeat')
+  use('junegunn/vim-easy-align')
+  use('junegunn/vim-after-object')
+  -- use {
+  --   "folke/todo-comments.nvim",
+  --   requires = "nvim-lua/plenary.nvim"
+  -- }
 
+  -- MOVEMENTS
+  use({
+    "phaazon/hop.nvim",
+    branch = "v2"
+  })
 
-  use('savq/melange-nvim')
-  use("EdenEast/nightfox.nvim")
-  use('folke/tokyonight.nvim')
-
-  use {
+  -- TELESCOPE
+  use({
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  use {
+  })
+  use({
     'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-  }
+    run = 'make'
+    -- run = 'make -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && make --build build --config Release && make --install build --prefix build'
+  })
   use({'nvim-telescope/telescope-project.nvim',
     requires = { "nvim-telescope/telescope-file-browser.nvim" }
   })
 
-
-
   -- TODO play around with treesetter playground
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('mbbill/undotree')
-  use('tpope/undotree')
-  use('tpope/vim-repeat')
+  use('HiPhish/nvim-ts-rainbow2')
+  use {"akinsho/toggleterm.nvim", tag = '*'}
 
-  use('junegunn/vim-easy-align')
-  use('junegunn/vim-after-object')
-
-  -- Git
+  -- GIT
   use('lewis6991/gitsigns.nvim')
   use('tpope/vim-fugitive')
   use('tpope/vim-rhubarb')
   use('junegunn/gv.vim')
 
-  use {"jose-elias-alvarez/null-ls.nvim"}
+  -- LSP
+  use("jose-elias-alvarez/null-ls.nvim")
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
@@ -116,16 +130,12 @@ return require('packer').startup(function(use)
   use("hrsh7th/nvim-cmp")
   use {'tzachar/cmp-fuzzy-buffer', requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}}
 
-  use {
-    'nvim-tree/nvim-tree.lua',
+  -- CODING: PY
+  use({
+    'linux-cultist/venv-selector.nvim',
     requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+      "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim"
+    }
+  })
 
-  use {
-    "folke/trouble.nvim",
-    requires = "nvim-tree/nvim-web-devicons",
-  }
 end)

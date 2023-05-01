@@ -3,36 +3,20 @@ plugins=(
   auto-notify
   almostontop
   vi-mode
-  # autojump
-  # battery
   brew
-  # bundle
-  # colorize
-  # command-not-found
-  # dircycle
-  # dirhistory
   docker
-  # emoji
-  # emoji-clock
   extract
   fzf
+  fasd
   fancy-ctrl-z
-  # gem
   git
   git-extras
-  # jsontools
   kubectl
-  # kitchen
-  # lol
-  # npm
   macos
-  # sprunge
-  # sublime
   terraform
   themes
   # tmux
   zsh-syntax-highlighting
-  # z
 )
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bunnyruni"
@@ -62,13 +46,13 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down]]
 bindkey '^J' fzf-history-widget
-
+bindkey '^[j' fzf-history-widget
 
 COMPLETION_WAITING_DOTS="true"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 
 function fasd_cd_fzf() {
-  local cd_paths=$(echo "$*" | xargs fasd -ldR)
+  local cd_paths=$(echo "$*" | tr '-' ' ' | tr '_' ' ' | xargs fasd -ldR)
   local cd_path=$(echo "$cd_paths" | fzf --reverse -0 -1 -q "$*")
   if [ -d "$cd_path" ]; then
     cd "$cd_path"
@@ -84,6 +68,8 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export TGENV_ARCH=arm64
+export TFENV_ARCH=arm64
 
 export FZF_COMPLETION_TRIGGER='...'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
@@ -92,3 +78,4 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"

@@ -1,6 +1,8 @@
 -- local builtin = require("telescope.builtin")
 local actions = require('telescope.actions')
 local telescope = require('telescope')
+-- telescope.load_extension('file_browser')
+
 
 telescope.setup{
   defaults = {
@@ -30,9 +32,11 @@ telescope.setup{
     project = {
       base_dirs = {
         "~/dev/",
+	{"~/dev/joom", max_depth = 5}
       },
       order_by = "recent",
       search_by = "title",
+      sync_with_nvim_tree = true,
     }
   }
 }

@@ -4,7 +4,7 @@ local Func = require('va1iev.func')
 -- local map = Func.map
 local nmap = Func.nmap
 local imap = Func.imap
-local vmap = Func.imap
+-- local vmap = Func.imap
 local xmap = Func.xmap
 
 
@@ -84,10 +84,11 @@ vim.keymap.set("n", "<leader>gb", telescope.git_branches, {})
 -- vim.keymap.set("n", "<leader>gc", telescope.git_commits, {})
 vim.keymap.set("n", "<leader>gs", telescope.git_status, {})
 vim.keymap.set("n", "<leader>bb", telescope.buffers, {})
+vim.keymap.set("n", '<C-">', telescope.buffers, {})
 
 -- Git hunks
-nmap('<C-j>', ":Gitsigns next_hunk<CR>")
-nmap('<C-k>', ":Gitsigns prev_hunk<CR>")
+nmap('<Leader>gj', ":Gitsigns next_hunk<CR>")
+nmap('<Leader>gk', ":Gitsigns prev_hunk<CR>")
 nmap('<Leader>ga', ":Gitsigns stage_hunk<CR>")
 nmap('<Leader>gr', ":Git reset<CR>")
 nmap('<Leader>gc', ":Git commit<CR>")
@@ -98,21 +99,18 @@ nmap('ga', "<Plug>(EasyAlign)")
 xmap('<Enter>', "<Plug>(EasyAlign)")
 
 -- Diagnostic
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})
+vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, {})
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {})
+vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, {})
+-- si
 
 -- Happy Hopping
-nmap('<Leader>hw', ":HopWordBC<CR>")
-nmap('<Leader>lw', ":HopWordAC<CR>")
-nmap('<Leader>kk', ":HopVerticalBC<CR>")
-nmap('<Leader>kl', ":HopLineBC<CR>")
-nmap('<Leader>jj', ":HopVerticalAC<CR>")
-nmap('<Leader>jl', ":HopLineAC<CR>")
+nmap('<Leader>hw', ":HopWord<CR>")
+nmap('<Leader>hl', ":HopLine<CR>")
+nmap('<Leader>hv', ":HopVertical<CR>")
 
 -- Undo
 vim.keymap.set("n", "<leader>u" , vim.cmd.UndotreeToggle, {})
 
 -- Toggler
 nmap('-', ":ToggleAlternate<CR>")
-
--- Wildfire
-nmap('<leader>v', "<Plug>(wildfire-fuel)")

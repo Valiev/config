@@ -10,13 +10,17 @@ function git_check_out_fzf() {
   git checkout "$(git branch --all | fzf | tr -d '[:space:]')"
 }
 
+alias cdr='cd $(git rev-parse --show-toplevel)'
 alias b="git_check_out_fzf"
 alias e="nvim"
 alias to_vim="xargs nvim"
 alias to="xargs"
 
+TMUX_FZF_OPTIONS="-p -w 62% -h 71% -m"
+
 function process_fzf() {
   local dest
+  # dest=$(fasd -d -l | fzf -q "$*")
   dest=$(fd "$@" | fzf -q "$*")
   if [ -d "$dest" ]; then
     cd "$dest"
@@ -27,7 +31,7 @@ function process_fzf() {
   fi
 }
 
-alias jj="process_fzf"
+# alias jj="process_fzf"
 
 k8s_bashrc="$HOME/.k8s_bashrc"
 if [ -f $k8s_bashrc ]; then
@@ -40,7 +44,6 @@ export TERM=screen-256color
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
-export PIPENV_VENV_IN_PROJECT=1
 
 # export BAT_THEME="Monokai Extended Light"
 if [ "$ITERM_PROFILE" = "Light" ]; then
@@ -51,7 +54,6 @@ export BAT_THEME=DarkNeon
 alias nocolor='sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g"'
 alias grep_tf="grep -E '^\W+[~+\-].*'"
 alias vim="nvim"
-alias b="git_check_out_fzf"
 alias k="LC_ALL=en_US.UTF-8 bundle exec kitchen"
 alias c="colorize"
 alias g="git"
@@ -68,7 +70,6 @@ alias pt="parquet-tools"
 alias uniq_awk="awk '!seen[\$0]++'"
 alias athemes="alacritty-colorscheme -C ~/dev/opensource/alacritty-theme/themes"
 
-alias gitinfo='ssh gitolite@git.aligntech.com'
 alias co="git co"
 alias co-="git co -"
 alias master="git co master"
@@ -79,6 +80,7 @@ alias skip1="sed -E 's|^[^ ]+ ||'"
 alias trim_leading="sed -E 's|(\ )*||'"
 alias trim_trailing="sed -E 's|(\ )*$||'"
 alias trim="trim_leading | trim_trailing"
+
 
 
 alias aws_profiles="cat ~/.aws/credentials | grep '^\[' | tr -d '\[' | tr -d '\]'"
@@ -118,6 +120,7 @@ function json2yaml() {
 export MANPAGER="sh -c 'col -bx | bat -l man -p '"
 alias bat_json="bat -l json"
 alias bat_yaml="bat -l yaml"
-alias vimba="   vim $bash_aliases"
-alias zshrc="   vim ~/.zshrc"
-alias vimrc="   vim $HOME/.config/nvim/"
+alias vimba="vim $bash_aliases"
+alias zshrc="vim $HOME/.zshrc"
+alias vimrc="vim $HOME/.config/nvim/"
+alias tmuxrc="vim $HOME/.tmux.conf"

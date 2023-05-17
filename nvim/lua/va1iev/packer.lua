@@ -50,7 +50,15 @@ return require('packer').startup(function(use)
   -- })
 
   -- GENERAL EDITOR FEATURES
-  use("tpope/vim-surround")
+  use({
+    "kylechui/nvim-surround",
+    tag = "*",
+    config = function()
+      require("nvim-surround").setup({})
+      -- todo: check integration with
+      -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+    end
+    })
   use('ntpeters/vim-better-whitespace')
   use('rmagatti/alternate-toggler')
   use('windwp/nvim-autopairs')

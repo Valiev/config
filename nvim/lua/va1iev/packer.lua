@@ -62,12 +62,12 @@ return require('packer').startup(function(use)
   use('ntpeters/vim-better-whitespace')
   use('rmagatti/alternate-toggler')
   use('windwp/nvim-autopairs')
-  use {
+  use({
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
     end
-  }
+  })
   use('karb94/neoscroll.nvim')
   use('mbbill/undotree')
   use('tpope/vim-repeat')
@@ -135,9 +135,15 @@ return require('packer').startup(function(use)
       {'rafamadriz/friendly-snippets'},
     }
   }
-  use {'romgrk/fzy-lua-native', run = 'make'}
+  use({'romgrk/fzy-lua-native', run = 'make'})
   use("hrsh7th/nvim-cmp")
-  use {'tzachar/cmp-fuzzy-buffer', requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}}
+  use({
+    'tzachar/cmp-fuzzy-buffer',
+    requires = {
+      'hrsh7th/nvim-cmp',
+      'tzachar/fuzzy.nvim'
+    }
+  })
 
   -- CODING: PY
   use({

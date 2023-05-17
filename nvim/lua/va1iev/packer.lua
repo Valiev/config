@@ -71,6 +71,7 @@ return require('packer').startup(function(use)
   use('karb94/neoscroll.nvim')
   use('mbbill/undotree')
   use('tpope/vim-repeat')
+  use('tpope/vim-obsession')
   use('junegunn/vim-easy-align')
   use('junegunn/vim-after-object')
   -- use {

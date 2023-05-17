@@ -7,6 +7,7 @@ local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
   sources = {
+    null_ls.builtins.code_actions.gitsigns,
     -- Terraform
     formatting.terraform_fmt,
     -- JS

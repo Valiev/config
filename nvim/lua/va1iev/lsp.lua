@@ -115,12 +115,15 @@ lspconfig["yamlls"].setup({
 
 -- local util = require('lspconfig.util')
 lspconfig["terraform_lsp"].setup({
-  capabilities = capabilities,
-  -- root_dir = util.root_pattern('terragrunt.hcl')
+  on_attach = on_attach,
+  capabilities = capabilities
 })
+  -- root_dir = util.root_pattern('terragrunt.hcl')
 
--- lspconfig["terraformls"].setup({
---   capabilities = capabilities,
+lspconfig["terraformls"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities
+})
 --   root_dir = util.root_pattern('terragrunt.hcl')
 -- })
 

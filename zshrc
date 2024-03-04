@@ -19,7 +19,9 @@ plugins=(
   zsh-syntax-highlighting
 )
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="bunnyruni"
+# ZSH_THEME="bunnyruni"
+# ZSH_THEME="ys"
+ZSH_THEME="tjkirch"
 ZSH_DISABLE_COMPFIX=true
 export PATH=/opt/homebrew/bin:/usr/local/sbin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="/opt/homebrew/opt/kubernetes-cli@1.22/bin:$PATH"
@@ -51,23 +53,24 @@ bindkey '^[j' fzf-history-widget
 COMPLETION_WAITING_DOTS="true"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 
-function fasd_cd_fzf() {
-  local cd_paths=$(echo "$*" | tr '-' ' ' | tr '_' ' ' | xargs fasd -ldR)
-  local cd_path=$(echo "$cd_paths" | fzf --reverse -0 -1 -q "$*")
-  if [ -d "$cd_path" ]; then
-    cd "$cd_path"
-  else
-    cd $(fd -t=d . ~ -E /Library/ -E /Documents/ | fzf --reverse -0 -1 -q "$*")
-  fi
-}
+# function fasd_cd_fzf() {
+#   local cd_paths=$(echo "$*" | tr '-' ' ' | tr '_' ' ' | xargs fasd -ldR)
+#   local cd_path=$(echo "$cd_paths" | fzf --reverse -0 -1 -q "$*")
+#   if [ -d "$cd_path" ]; then
+#     cd "$cd_path"
+#   else
+#     cd $(fd -t=d . ~ -E /Library/ -E /Documents/ | fzf --reverse -0 -1 -q "$*")
+#   fi
+# }
 
-alias j=fasd_cd_fzf
+# alias j=fasd_cd_fzf
 
 # Customize to your needs...
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
 export TGENV_ARCH=arm64
 export TFENV_ARCH=arm64
 
@@ -78,4 +81,6 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(zoxide init --cmd j zsh)"
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+. "/Users/svaliev/.acme.sh/acme.sh.env"

@@ -1,12 +1,18 @@
--- local colorscheme = "nordfox"
+local colorscheme = "ayu-mirage"
+vim.opt.background = "dark"
+
+vim.cmd.colorscheme(colorscheme)
 -- local colorscheme = "oxocarbon"
 
-vim.g.solarized_italic_comments = true
-vim.g.solarized_contrast = true
-require('solarized').set()
+-- vim.g.solarized_italic_comments = true
+-- vim.g.solarized_contrast = true
+
+-- require('solarized').set()
+
+-- vim.g.werewolf_day_themes = {"solarized"}
+-- vim.g.werewolf_night_themes = {"ayu-mirage"}
 
 vim.g.solarized_termcolors = 256
-vim.opt.background = "light"
 -- vim.opt.background = "dark"
 -- local colorscheme = "ayu-light"
 -- local colorscheme = "ayu-mirage"
@@ -15,7 +21,6 @@ vim.opt.background = "light"
 -- local colorscheme = "tokyonight-night"
 -- local colorscheme = "tokyonight-storm"
 -- local colorscheme = "tokyonight-moon"
--- vim.cmd.colorscheme(colorscheme)
--- require('ayu').setup({
---   mirage = false
--- })
+require('ayu').setup({
+  mirage = true
+})

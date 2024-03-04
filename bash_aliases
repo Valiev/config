@@ -22,7 +22,7 @@ alias e="nvim"
 alias to_vim="xargs nvim"
 alias to="xargs"
 
-TMUX_FZF_OPTIONS="-p -w 62% -h 71% -m"
+TMUX_FZF_OPTIONS="-p -w 80% -h 80% -m"
 
 function process_fzf() {
   local dest

@@ -2,8 +2,14 @@ export COLORTERM="truecolor"
 export GODEBUG=asyncpreemptoff=1
 
 GITHUB_TOKEN_PATH="./.github_token"
+JIRA_TOKEN_PATH="./.jira_token"
+
 if [ -f $GITHUB_TOKEN_PATH ]; then
   export HOMEBREW_GITHUB_API_TOKEN=$(< $GITHUB_TOKEN_PATH)
+fi
+
+if [ -f $JIRA_TOKEN_PATH ]; then
+  export JIRA_API_TOKEN=$(< $JIRA_TOKEN_PATH)
 fi
 
 function git_check_out_fzf() {

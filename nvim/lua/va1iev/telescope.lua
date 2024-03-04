@@ -1,11 +1,13 @@
 -- local builtin = require("telescope.builtin")
 local actions = require('telescope.actions')
 local telescope = require('telescope')
+-- local trouble = require("trouble.providers.telescope")
 -- telescope.load_extension('file_browser')
 
 
 telescope.setup{
   defaults = {
+    wrap_results = true,
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
@@ -19,6 +21,9 @@ telescope.setup{
     },
     live_grep = {
       theme = "ivy"
+    },
+    git_files = {
+      theme = "dropdown"
     }
   },
   extensions = {
@@ -32,7 +37,7 @@ telescope.setup{
     project = {
       base_dirs = {
         "~/dev/",
-	{"~/dev/joom", max_depth = 5}
+	      {"~/dev/joom", max_depth = 5}
       },
       order_by = "recent",
       search_by = "title",

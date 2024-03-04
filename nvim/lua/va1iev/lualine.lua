@@ -1,5 +1,10 @@
 require('lualine').setup({
   options = {
-    theme = 'solarized'
+    theme = 'ayu_mirage',
+    disabled_filetypes = {
+      packer = {},
+      NVimTree = {},
+    }
+    -- theme = 'solarized'
   }
 })

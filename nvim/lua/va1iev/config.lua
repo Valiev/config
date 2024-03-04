@@ -58,10 +58,10 @@ vim.opt.iskeyword:append("-")
 
 local Buffers = {"BufNewFile", "BufRead"}
 
-autocmd("CursorHold", {
-  pattern = "*",
-  command = "lua vim.diagnostic.open_float()"
-})
+-- autocmd("CursorHold", {
+  -- pattern = "*",
+  -- command = "lua vim.diagnostic.show_line_diagnostics()"
+-- })
 
 vim.g.strip_whitespace_confirm = 0
 autocmd("FileType", {

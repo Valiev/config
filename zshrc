@@ -7,7 +7,7 @@ plugins=(
   docker
   extract
   fzf
-  fasd
+  # fasd
   fancy-ctrl-z
   git
   git-extras

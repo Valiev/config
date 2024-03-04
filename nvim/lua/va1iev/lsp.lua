@@ -7,7 +7,7 @@ local mason_lspconfig = require('mason-lspconfig')
 
 mason_lspconfig.setup({
   ensure_installed = {
-    "terraformls",
+    -- "terraformls",
     "tflint",
     "lua_ls"
   }
@@ -32,7 +32,6 @@ vim.diagnostic.config({
   update_in_insert = true,
   underline = true,
   severity_sort = true,
-  -- float = true,
   float = {
     source = "always"
   },
@@ -113,18 +112,18 @@ lspconfig["yamlls"].setup({
 -- lsp.nvim_workspace()
 -- lsp.setup()
 
--- local util = require('lspconfig.util')
-lspconfig["terraform_lsp"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities
-})
+local util = require('lspconfig.util')
+-- lspconfig["terraform_lsp"].setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities
+-- })
   -- root_dir = util.root_pattern('terragrunt.hcl')
 
 lspconfig["terraformls"].setup({
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  -- root_dir = util.root_pattern('terragrunt.hcl')
 })
---   root_dir = util.root_pattern('terragrunt.hcl')
 -- })
 
 -- require('lspconfig').terraformls.setup({

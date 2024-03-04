@@ -15,8 +15,11 @@ return require('packer').startup(function(use)
   use('savq/melange-nvim')
   use("EdenEast/nightfox.nvim")
   use('folke/tokyonight.nvim')
+  use('jonstoler/werewolf.vim')
+
 
   -- PRETTY VIM ENHANCEMENTS
+  -- use({'mhinz/vim-startify'})
   use({
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -41,6 +44,7 @@ return require('packer').startup(function(use)
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
   })
+  -- use({'kevinhwang91/nvim-bqf'})
 
   -- use({"juliosueiras/vim-terraform-completion",
   --   requires = {
@@ -87,7 +91,7 @@ return require('packer').startup(function(use)
 
   -- TELESCOPE
   use({
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { {'nvim-lua/plenary.nvim'} }
   })
   use({
@@ -98,9 +102,20 @@ return require('packer').startup(function(use)
   use({'nvim-telescope/telescope-project.nvim',
     requires = { "nvim-telescope/telescope-file-browser.nvim" }
   })
+  use "stevearc/dressing.nvim"
+  use({
+    "ziontee113/icon-picker.nvim",
+    config = function()
+      require("icon-picker").setup({
+        disable_legacy_commands = true
+      })
+    end,
+  })
+  use{'jvgrootveld/telescope-zoxide'}
 
   -- TODO play around with treesetter playground
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/playground')
   use('HiPhish/nvim-ts-rainbow2')
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
@@ -145,6 +160,26 @@ return require('packer').startup(function(use)
     }
   })
 
+
+  use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+  use {'junegunn/fzf',
+    run = function()
+      vim.fn['fzf#install']()
+    end
+  }
+  use({
+    "stevearc/oil.nvim",
+    -- config = function()
+    --   require("oil").setup()
+    -- end,
+  })
+
+  -- use({"ten3roberts/qf.nvim",
+  --   config = function()
+  --     require'qf'.setup{}
+  --   end
+  -- })
+
   -- CODING: PY
   use({
     'linux-cultist/venv-selector.nvim',
@@ -152,5 +187,31 @@ return require('packer').startup(function(use)
       "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim"
     }
   })
+  use {
+    "klen/nvim-test",
+    config = function()
+      require('nvim-test').setup()
+    end
+  }
+  -- AI
+
+  use { "David-Kunz/gen.nvim" }
+
+  -- SESSION
+  use {
+  'rmagatti/auto-session',
+  config = function()
+    require("auto-session").setup {
+      log_level = "error",
+      auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+      session_lens = {
+        buftypes_to_ignore = {},
+        load_on_setup = true,
+        theme_conf = { border = true },
+        previewer = false
+      }
+    }
+  end
+}
 
 end)

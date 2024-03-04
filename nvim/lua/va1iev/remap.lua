@@ -1,5 +1,7 @@
 local telescope = require("telescope.builtin")
 local telescope_ext = require("telescope").extensions
+local ts_jump = require('va1iev.ts_jump')
+-- local IconPicker = require('icon-picker')
 local Func = require('va1iev.func')
 -- local map = Func.map
 local nmap = Func.nmap
@@ -53,14 +55,15 @@ nmap("<RIGHT>", "<Nop>")
 -- Leader mappings
 nmap("<Leader>ww", ":w<CR>")
 nmap("<Leader>wq", ":wq<CR>")
-nmap("<Leader>qd", ":bd<CR>")
+nmap("<Leader>bd", ":bd<CR>")
 nmap("<Leader>qq", ":q<CR>")
 nmap("<Leader>hh", ":set cursorline!<CR>")
 nmap("<Leader><Tab>", ":NvimTreeToggle<CR>")
-nmap("<Leader>t", ":TroubleToggle<CR>")
+nmap("<Leader>tt", ":TroubleToggle document_diagnostics<CR>")
+nmap("<Leader>ta", ":TroubleToggle<CR>")
 
 -- buffers
-nmap("<Leader>d", ":bdelete<CR>")
+-- nmap("<Leader>d", ":bdelete<CR>")
 nmap("H", ":bprev<CR>")
 nmap("L", ":bnext<CR>")
 -- Change search order
@@ -68,12 +71,15 @@ nmap("#", "*")
 nmap("*", "#")
 
 -- Telescope
-vim.keymap.set("n", "<leader>pf", telescope.find_files, {})
 vim.keymap.set("n", "<C-p>", telescope_ext.project.project, {})
+vim.keymap.set("n", "<leader>cd", telescope_ext.zoxide.list, {})
 vim.keymap.set("n", "<leader>ps", function()
 	telescope.grep_string({ search = vim.fn.input("Grep > ") });
 end)
 vim.keymap.set("n", "<leader>ff", telescope.find_files, {})
+-- vim.keymap.set("n", "<leader>fl", telescope.find_files, {
+--   cwd = vim.fn.expand('%:p')
+-- })
 vim.keymap.set("n", "<leader><leader>", telescope.find_files, {})
 vim.keymap.set("n", "<leader>fg", telescope.live_grep, {})
 vim.keymap.set("n", "<leader>dd", telescope.diagnostics, {})
@@ -86,6 +92,9 @@ vim.keymap.set("n", "<leader>gb", telescope.git_branches, {})
 vim.keymap.set("n", "<leader>gs", telescope.git_status, {})
 vim.keymap.set("n", "<leader>bb", telescope.buffers, {})
 vim.keymap.set("n", '<C-">', telescope.buffers, {})
+
+-- AI
+vim.keymap.set({ 'n', 'v'}, '<leader>aa', ':Gen<CR>')
 
 -- Git hunks
 nmap('<Leader>gj', ":Gitsigns next_hunk<CR>")
@@ -110,8 +119,21 @@ nmap('<Leader>hw', ":HopWord<CR>")
 nmap('<Leader>hl', ":HopLine<CR>")
 nmap('<Leader>hv', ":HopVertical<CR>")
 
+-- Sessions
+vim.keymap.set("n", "<Leader>ss",
+  require("auto-session.session-lens").search_session, { noremap = true }
+)
+
 -- Undo
 vim.keymap.set("n", "<leader>u" , vim.cmd.UndotreeToggle, {})
 
 -- Toggler
 nmap('-', ":ToggleAlternate<CR>")
+vim.keymap.set("n", "gj", ts_jump.next, {})
+vim.keymap.set("n", "gk", ts_jump.prev, {})
+vim.keymap.set("n", "gh", ts_jump.prev, {})
+-- vim.keymap.set("n", "gj", ts_jump.test, {})
+
+-- icons
+vim.keymap.set("n", "<Leader>i", "<cmd>IconPickerNormal emoji symbols nerd_font alt_font<cr>", opts)
+vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<bufferscr>", opts)

@@ -9,6 +9,7 @@ command -v stow || brew install stow
 for package in \
   zsh \
   alacritty \
+  nvim \
   git;
   do stow $package -t ~ -vv;
 done

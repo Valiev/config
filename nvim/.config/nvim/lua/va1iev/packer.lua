@@ -16,6 +16,14 @@ return require('packer').startup(function(use)
   use("EdenEast/nightfox.nvim")
   use('folke/tokyonight.nvim')
   use('jonstoler/werewolf.vim')
+  use {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require("monokai-pro").setup({
+       filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+      })
+    end
+  }
 
 
   -- PRETTY VIM ENHANCEMENTS
@@ -107,7 +115,7 @@ return require('packer').startup(function(use)
     "ziontee113/icon-picker.nvim",
     config = function()
       require("icon-picker").setup({
-        disable_legacy_commands = true
+        -- disable_legac_commands = true
       })
     end,
   })
@@ -181,12 +189,12 @@ return require('packer').startup(function(use)
   -- })
 
   -- CODING: PY
-  use({
-    'linux-cultist/venv-selector.nvim',
-    requires = {
-      "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim"
-    }
-  })
+  -- use({
+  --   'linux-cultist/venv-selector.nvim',
+  --   requires = {
+  --     "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim"
+  --   }
+  -- })
   use {
     "klen/nvim-test",
     config = function()

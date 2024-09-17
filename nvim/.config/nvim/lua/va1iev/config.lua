@@ -69,6 +69,11 @@ autocmd("FileType", {
   command = "EnableStripWhitespaceOnSave"
 })
 
+autocmd("FileType", {
+  pattern="python",
+  command = "setlocal tabstop=4"
+})
+
 -- Enabled spell checker for commit messages
 autocmd(Buffers, {
   pattern = "COMMIT_EDITMSG" ,

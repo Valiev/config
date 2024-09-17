@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh configuration.
 plugins=(
   auto-notify
@@ -28,6 +35,8 @@ export PATH="/opt/homebrew/opt/kubernetes-cli@1.22/bin:$PATH"
 
 alias - -='cd -'
 alias -g VIM='| xargs nvim'
+alias -g JQ='| jq'
+alias -g FLUX='-n flux logs deploy/flux -c flux'
 
 AUTO_NOTIFY_IGNORE+=("git")
 zstyle ":completion:*:commands" rehash 1
@@ -78,9 +87,14 @@ export FZF_COMPLETION_TRIGGER='...'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+source $HOME/.cargo/env
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(zoxide init --cmd j zsh)"
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-. "/Users/svaliev/.acme.sh/acme.sh.env"
+
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

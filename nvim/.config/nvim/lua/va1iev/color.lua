@@ -1,4 +1,5 @@
-local colorscheme = "ayu-mirage"
+-- local colorscheme = "ayu-mirage"
+local colorscheme = "monokai-pro"
 vim.opt.background = "dark"
 
 vim.cmd.colorscheme(colorscheme)

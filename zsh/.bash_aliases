@@ -3,6 +3,7 @@ export GODEBUG=asyncpreemptoff=1
 
 GITHUB_TOKEN_PATH="./.github_token"
 JIRA_TOKEN_PATH="./.jira_token"
+export TERRAGRUNT_FETCH_DEPENDENCY_OUTPUT_FROM_STATE='true'
 
 if [ -f $GITHUB_TOKEN_PATH ]; then
   export HOMEBREW_GITHUB_API_TOKEN=$(< $GITHUB_TOKEN_PATH)
@@ -23,21 +24,6 @@ alias to_vim="xargs nvim"
 alias to="xargs"
 
 TMUX_FZF_OPTIONS="-p -w 80% -h 80% -m"
-
-function process_fzf() {
-  local dest
-  # dest=$(fasd -d -l | fzf -q "$*")
-  dest=$(fd "$@" | fzf -q "$*")
-  if [ -d "$dest" ]; then
-    cd "$dest"
-  elif [ -f "$dest" ]; then
-    nvim "$dest"
-  else
-    echo "nothing found :("
-  fi
-}
-
-# alias jj="process_fzf"
 
 k8s_bashrc="$HOME/.k8s_bashrc"
 if [ -f $k8s_bashrc ]; then
@@ -65,7 +51,7 @@ alias c="colorize"
 alias g="git"
 alias n="on_finish"
 alias t="terraform"
-alias tg="terragrunt"
+alias tg=terragrunt_with_aws_profile
 alias ll="ls -l -h"
 alias la="ls -A"
 alias repo="cat .git/config | grep url | cut -d= -f2"
@@ -96,6 +82,12 @@ alias ack="rg"
 alias pip='python3 -m pip'
 alias pip3='python3 -m pip'
 
+function terragrunt_with_aws_profile() {
+  if [[ -z "${AWS_PROFILE}" ]]; then
+    export AWS_PROFILE=$(aws configure list-profiles | fzf)
+  fi
+  terragrunt $@
+}
 function bak() {
   local filepath=$(basename "$1")
   local extension="${filepath##*.}"

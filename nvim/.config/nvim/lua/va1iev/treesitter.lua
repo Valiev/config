@@ -2,6 +2,15 @@
 require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "lua", "rust", "python", "hcl", "json"},
+  -- ensure_installed = "maintained",
+
+  enable = true,
+  line_number = true,
+  mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+  indent = {
+    enable = false,
+  },
+
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

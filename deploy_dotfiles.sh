@@ -10,6 +10,7 @@ for package in \
   zsh \
   alacritty \
   nvim \
+  tmux \
   git;
   do stow $package -t ~ -vv;
 done

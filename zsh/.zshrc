@@ -4,11 +4,13 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 
 # Path to your oh-my-zsh configuration.
 plugins=(
   auto-notify
-  almostontop
+  #almostontop
   vi-mode
   brew
   docker
@@ -25,6 +27,7 @@ plugins=(
   # tmux
   zsh-syntax-highlighting
 )
+
 ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="bunnyruni"
 # ZSH_THEME="ys"
@@ -75,11 +78,13 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 # alias j=fasd_cd_fzf
 
 # Customize to your needs...
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-source "$HOME/.cargo/env"
+# export PATH="$HOME/.cargo/bin:$PATH"
+#source "$HOME/.cargo/env"
 export TGENV_ARCH=arm64
 export TFENV_ARCH=arm64
 
@@ -87,7 +92,7 @@ export FZF_COMPLETION_TRIGGER='...'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"

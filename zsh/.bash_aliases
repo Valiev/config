@@ -37,12 +37,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 
-# export BAT_THEME="Monokai Extended Light"
-if [ "$ITERM_PROFILE" = "Light" ]; then
-  export BAT_THEME="Monokai Extended Light"
-fi
-export BAT_THEME=DarkNeon
-
 alias nocolor='sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g"'
 alias grep_tf="grep -E '^\W+[~+\-].*'"
 alias vim="nvim"
@@ -72,8 +66,6 @@ alias skip1="sed -E 's|^[^ ]+ ||'"
 alias trim_leading="sed -E 's|(\ )*||'"
 alias trim_trailing="sed -E 's|(\ )*$||'"
 alias trim="trim_leading | trim_trailing"
-
-
 
 alias aws_profiles="cat ~/.aws/credentials | grep '^\[' | tr -d '\[' | tr -d '\]'"
 alias epoch="date +%s"
@@ -115,7 +107,40 @@ function json2yaml() {
   python3 -c 'import sys, yaml, json; print(yaml.dump(json.loads(sys.stdin.read())))'
 }
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p '"
+fuction apple_interface_style() {
+  (defaults read -g AppleInterfaceStyle 2>/dev/null || echo 'light' ) \
+    | tr '[:upper:]' '[:lower:]'
+}
+
+# Bat themes
+# Light:
+# - Monokai Extended Light
+# - OneHalfLight
+# - Solarized (dark)
+# - Solarized (light)
+# Dark:
+# - 1337
+# - Dracula
+# - Monokai Extended
+# - Monokai Extended Origin
+# export BAT_LIGHT_THEME="OneHalfLight"
+export BAT_LIGHT_THEME="Solarized (dark)"
+export BAT_DARK_THEME="Monokai Extended"
+
+function bat_theme() {
+  local bat_theme="$BAT_DARK_THEME"
+  if [[ "$(apple_interface_style)" == "light" ]]; then
+    bat_theme="$BAT_LIGHT_THEME"
+  fi
+  echo "$bat_theme"
+}
+
+function bat_color() {
+  bat --theme="$(bat_theme)" $@
+}
+
+alias bat=bat_color
+export MANPAGER="sh -c 'col -bx | bat_color -l man -p '"
 alias bat_json="bat -l json"
 alias bat_yaml="bat -l yaml"
 alias vimba="vim $bash_aliases"

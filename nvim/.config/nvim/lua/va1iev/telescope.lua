@@ -37,7 +37,6 @@ telescope.setup{
     project = {
       base_dirs = {
         "~/dev/",
-	      {"~/dev/joom", max_depth = 5}
       },
       order_by = "recent",
       search_by = "title",

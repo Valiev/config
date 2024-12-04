@@ -19,33 +19,41 @@ brew install \
   telnet \
   pipx \
   yq \
-  flock
+  flock \
+  ;
 
 # k8s
 brew install \
   kubectl \
-  kustomize
+  kustomize \
+  ;
 
 # tmux & terminal
 brew install \
   iterm2 \
   tmux \
   tpm \
-  reattach-to-user-namespace
+  reattach-to-user-namespace \
+  font-hack-nerd-font \
+  font-jetbrains-mono-nerd-font \
+  ;
 
 # coding
 brew install \
   pyenv \
   nvim \
   pre-commit \
-  gh
+  gh \
+  git-delta \
+  ;
 
 # internet
 brew install \
   google-chrome \
   pritunl \
-  outline
-brew install --cask arc
+  outline \ 
+  ; 
+
 
 # apps
 brew install \
@@ -54,11 +62,11 @@ brew install \
   ollama \
   porting-kit \
   rocket \
-  slack \
   spotify \
-  tailscale
+  obsidian \
+  ;
 
 # misc
 brew install \
-  font-hack-nerd-font \
-  the-unarchiver
+  the-unarchiver \
+  ;

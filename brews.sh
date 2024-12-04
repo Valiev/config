@@ -51,8 +51,8 @@ brew install \
 brew install \
   google-chrome \
   pritunl \
-  outline \ 
-  ; 
+  outline \
+  ;
 
 
 # apps

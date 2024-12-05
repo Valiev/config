@@ -7,24 +7,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
-  -- COLORS
-  use('christoomey/vim-tmux-navigator')
-  use('nyoom-engineering/oxocarbon.nvim')
-  use('Shatur/neovim-ayu')
-  use('shaunsingh/solarized.nvim')
-  use('savq/melange-nvim')
-  use("EdenEast/nightfox.nvim")
-  use('folke/tokyonight.nvim')
-  use('jonstoler/werewolf.vim')
-  use {
-    "loctvl842/monokai-pro.nvim",
-    config = function()
-      require("monokai-pro").setup({
-       filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
-      })
-    end
-  }
-
 
   -- PRETTY VIM ENHANCEMENTS
   -- use({'mhinz/vim-startify'})
@@ -61,66 +43,12 @@ return require('packer').startup(function(use)
   --   }
   -- })
 
-  -- GENERAL EDITOR FEATURES
-  use({
-    "kylechui/nvim-surround",
-    tag = "*",
-    config = function()
-      require("nvim-surround").setup({})
-      -- todo: check integration with
-      -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-    end
-    })
-  use('ntpeters/vim-better-whitespace')
-  use('rmagatti/alternate-toggler')
-  use('windwp/nvim-autopairs')
-  use({
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  })
-  use('karb94/neoscroll.nvim')
-  use('mbbill/undotree')
-  use('tpope/vim-repeat')
-  use('tpope/vim-obsession')
-  use('junegunn/vim-easy-align')
-  use('junegunn/vim-after-object')
-  use('github/copilot.vim')
-  -- use {
-  --   "folke/todo-comments.nvim",
-  --   requires = "nvim-lua/plenary.nvim"
-  -- }
-
   -- MOVEMENTS
   use({
     "phaazon/hop.nvim",
     branch = "v2"
   })
 
-  -- TELESCOPE
-  use({
-    'nvim-telescope/telescope.nvim', tag = '0.1.4',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  })
-  use({
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make'
-    -- run = 'make -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && make --build build --config Release && make --install build --prefix build'
-  })
-  use({'nvim-telescope/telescope-project.nvim',
-    requires = { "nvim-telescope/telescope-file-browser.nvim" }
-  })
-  use "stevearc/dressing.nvim"
-  use({
-    "ziontee113/icon-picker.nvim",
-    config = function()
-      require("icon-picker").setup({
-        -- disable_legac_commands = true
-      })
-    end,
-  })
-  use{'jvgrootveld/telescope-zoxide'}
 
   -- TODO play around with treesetter playground
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -128,11 +56,6 @@ return require('packer').startup(function(use)
   use('HiPhish/nvim-ts-rainbow2')
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
-  -- GIT
-  use('lewis6991/gitsigns.nvim')
-  use('tpope/vim-fugitive')
-  use('tpope/vim-rhubarb')
-  use('junegunn/gv.vim')
 
   -- LSP
   use("jose-elias-alvarez/null-ls.nvim")

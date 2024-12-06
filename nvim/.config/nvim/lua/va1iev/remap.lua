@@ -2,7 +2,7 @@ local telescope = require("telescope.builtin")
 local telescope_ext = require("telescope").extensions
 -- local ts_jump = require('va1iev.ts_jump')
 -- local IconPicker = require('icon-picker')
-local Func = require('va1iev.func')
+local Func = require('helpers.func')
 -- local map = Func.map
 local nmap = Func.nmap
 local imap = Func.imap
@@ -126,9 +126,9 @@ nmap('<Leader>hl', ":HopLine<CR>")
 nmap('<Leader>hv', ":HopVertical<CR>")
 
 -- Sessions
-vim.keymap.set("n", "<Leader>ss",
-  require("auto-session.session-lens").search_session, { noremap = true }
-)
+-- vim.keymap.set("n", "<Leader>ss",
+--   require("auto-session.session-lens").search_session, { noremap = true }
+-- )
 
 -- Undo
 vim.keymap.set("n", "<leader>u" , vim.cmd.UndotreeToggle, {})

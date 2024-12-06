@@ -1,7 +1,16 @@
+-- FIXME: color depends on scheme
 return {
 	{'christoomey/vim-tmux-navigator'},
   	{'nyoom-engineering/oxocarbon.nvim'},
-  	{'Shatur/neovim-ayu'},
+  	{
+      'Shatur/neovim-ayu',
+      config = function()
+        require("ayu").setup({
+          mirage = false,
+          terminal = true,
+        })
+       end
+  },
   	{'shaunsingh/solarized.nvim'},
   	{'savq/melange-nvim'},
   	{"EdenEast/nightfox.nvim"},

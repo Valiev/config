@@ -69,5 +69,20 @@ return {
   {
     "folke/trouble.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
-  },
+    cmd = "Trouble",
+    config = function()
+      require("trouble").setup({
+        auto_preview = true,
+        auto_close = true,
+        follow = true,
+        position = "top",
+        mode = "workspace_diagnostics",
+        use_diagnostic_signs = true,
+        -- multiline = true,
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      })
+    end,
+  }
 }

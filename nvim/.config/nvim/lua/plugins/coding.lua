@@ -72,7 +72,6 @@ return {
         -- local lspkind = require('lspkind')
         local M = cmp.mapping
         vim.opt.completeopt = "menu,menuone,noselect"
-
         cmp.setup({
           sources = cmp.config.sources({
             { name = 'nvim_lsp' },

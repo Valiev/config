@@ -38,10 +38,7 @@ imap("<C-k>", "<C-o>k", opts)
 nmap("<leader>y",  '"+yg_')
 nmap("<leader>yy",  '"+yy')
 xmap("<leader>y",  '"*y')
-
-
 -- vnoremap  <leader>y  "+y
-
 -- `x` not change buffer
 nmap("x", "_x")
 

@@ -53,6 +53,7 @@ for key, value in pairs(config) do
   vim.opt[key] = value
 end
 
+vim.g.lualine_theme = 'solarized'
 -- consider "-" a part of "word"
 vim.opt.iskeyword:append("-")
 

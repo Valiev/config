@@ -23,7 +23,7 @@ local on_attach = function(_, _)
 end
 
 local lsp = require('lsp-zero')
-lsp.preset('recommended')
+-- lsp.preset('recommended')
 lsp.setup()
 
 vim.diagnostic.config({

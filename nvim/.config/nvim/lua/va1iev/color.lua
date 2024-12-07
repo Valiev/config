@@ -1,4 +1,4 @@
--- local colorscheme = "ayu-mirage"
+local colorscheme = "ayu-mirage"
 -- local colorscheme = "monokai-pro"
 -- vim.opt.background = "dark"
 
@@ -9,7 +9,7 @@
 -- vim.g.solarized_contrast = true
 
 -- vim.g.solarized_disable_background = true
-require('solarized').set()
+-- require('solarized').set()
 
 -- vim.g.werewolf_day_themes = {"solarized"}
 -- vim.g.werewolf_night_themes = {"ayu-mirage"}

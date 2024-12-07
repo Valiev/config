@@ -11,24 +11,11 @@ return require('packer').startup(function(use)
   -- PRETTY VIM ENHANCEMENTS
   -- use({'mhinz/vim-startify'})
   use({
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  })
-  use({'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'})
-  use('kyazdani42/nvim-web-devicons')
-  use({
     "folke/noice.nvim",
     requires = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
-  })
-  use({
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    }
-    -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
   })
   use({
     "folke/trouble.nvim",
@@ -43,56 +30,8 @@ return require('packer').startup(function(use)
   --   }
   -- })
 
-  -- MOVEMENTS
-  use({
-    "phaazon/hop.nvim",
-    branch = "v2"
-  })
 
-
-  -- TODO play around with treesetter playground
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('nvim-treesitter/playground')
-  use('HiPhish/nvim-ts-rainbow2')
   use {"akinsho/toggleterm.nvim", tag = '*'}
-
-
-  -- LSP
-  use("jose-elias-alvarez/null-ls.nvim")
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      -- {'glepnir/lspsaga.nvim'},
-      {'onsails/lspkind.nvim'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
-
-      -- Snippets
-      {'L3MON4D3/LuaSnip'},
-      {'rafamadriz/friendly-snippets'},
-    }
-  }
-  use({'romgrk/fzy-lua-native', run = 'make'})
-  use("hrsh7th/nvim-cmp")
-  use({
-    'tzachar/cmp-fuzzy-buffer',
-    requires = {
-      'hrsh7th/nvim-cmp',
-      'tzachar/fuzzy.nvim'
-    }
-  })
-
-
   use {'kevinhwang91/nvim-bqf', ft = 'qf'}
   use {'junegunn/fzf',
     run = function()
@@ -126,24 +65,7 @@ return require('packer').startup(function(use)
     end
   }
   -- AI
-
   use { "David-Kunz/gen.nvim" }
 
-  -- SESSION
-  use {
-  'rmagatti/auto-session',
-  config = function()
-    require("auto-session").setup {
-      log_level = "error",
-      auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-      session_lens = {
-        buftypes_to_ignore = {},
-        load_on_setup = true,
-        theme_conf = { border = true },
-        previewer = false
-      }
-    }
-  end
-}
 
 end)

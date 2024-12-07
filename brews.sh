@@ -17,6 +17,7 @@ brew install \
   watch \
   tcpdump \
   telnet \
+
   pipx \
   yq \
   flock \

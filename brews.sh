@@ -17,10 +17,10 @@ brew install \
   watch \
   tcpdump \
   telnet \
-
   pipx \
   yq \
   flock \
+  jq \
   ;
 
 # k8s

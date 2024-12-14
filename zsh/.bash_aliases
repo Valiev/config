@@ -156,12 +156,12 @@ function bat_theme() {
   echo "$bat_theme"
 }
 
-function bat_color() {
-  bat --theme="$(bat_theme)" $@
-}
+# function bat_color() {
+#   bat --theme="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo OneHalfLight || echo GitHub)" $@
+# }
 
-alias bat=bat_color
-export MANPAGER="sh -c 'col -bx | bat_color -l man -p '"
+# alias bat=bat_color
+# export MANPAGER="sh -c 'col -bx | bat -l man -p '"
 alias bat_json="bat -l json"
 alias bat_yaml="bat -l yaml"
 alias vimba="vim $bash_aliases"

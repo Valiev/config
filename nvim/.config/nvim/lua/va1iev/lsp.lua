@@ -50,17 +50,27 @@ lspconfig["lua_ls"].setup({
   }
 })
 
-lspconfig['jedi_language_server'].setup({
-  on_attach = on_attach
-})
+lspconfig.ruff.setup {
+  on_attach = on_attach,
+  init_options = {
+    settings = {
+      -- Any extra CLI arguments for `ruff` go here.
+      args = {},
+    }
+  }
+}
+-- lspconfig['jedi_language_server'].setup({
+--   on_attach = on_attach
+-- })
 
-lspconfig['pyre'].setup({
-  on_attach = on_attach
-})
 
-lspconfig['pylsp'].setup({
-  on_attach = on_attach
-})
+-- lspconfig['pyre'].setup({
+--   on_attach = on_attach
+-- })
+--
+-- lspconfig['pylsp'].setup({
+--   on_attach = on_attach
+-- })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lspconfig["yamlls"].setup({

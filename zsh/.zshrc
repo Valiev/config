@@ -12,21 +12,19 @@ eval "$(oh-my-posh -c ~/.config/oh-my-posh/config.toml init zsh)"
 # Path to your oh-my-zsh configuration.
 plugins=(
   auto-notify
-  #almostontop
-  vi-mode
   brew
   docker
   extract
-  fzf
-  # fasd
   fancy-ctrl-z
+  fzf
   git
   git-extras
   kubectl
   macos
   terraform
   themes
-  # tmux
+  vi-mode
+  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 

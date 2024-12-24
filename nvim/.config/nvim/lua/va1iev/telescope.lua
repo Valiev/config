@@ -10,8 +10,10 @@ telescope.setup{
     wrap_results = true,
     mappings = {
       i = {
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = "move_selection_next",
+        ["<C-k>"] = "move_selection_previous",
+        ["<C-/>"] = "which_key",
+        ["<C-l>"] = "select_default",
       }
     }
   },

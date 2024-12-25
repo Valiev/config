@@ -50,7 +50,7 @@ lspconfig["lua_ls"].setup({
   }
 })
 
-lspconfig.ruff.setup {
+  lspconfig.ruff.setup {
   on_attach = on_attach,
   init_options = {
     settings = {
@@ -59,14 +59,20 @@ lspconfig.ruff.setup {
     }
   }
 }
--- lspconfig['jedi_language_server'].setup({
---   on_attach = on_attach
--- })
+
+lspconfig.jedi_language_server.setup({
+  on_attach = on_attach
+})
+
+lspconfig.pyright.setup({
+  on_attach = on_attach
+})
 
 
 -- lspconfig['pyre'].setup({
 --   on_attach = on_attach
 -- })
+
 --
 -- lspconfig['pylsp'].setup({
 --   on_attach = on_attach

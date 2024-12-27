@@ -44,18 +44,21 @@ return {
   -- }
   -- movement
 
-  {
-    "phaazon/hop.nvim",
-    config = function()
-      require('hop').setup({
-        keys = "qweroiuasdflkjghvn"
-      })
-    end
-  },
-  {
-    "karb94/neoscroll.nvim",
-    config = function ()
-      require('neoscroll').setup({})
-    end
+    -- movement
+
+    {
+      "phaazon/hop.nvim",
+      config = function()
+        require('hop').setup({
+          keys = "qweroiuasdflkjghvn"
+        })
+      end
+    },
+    {
+      "karb94/neoscroll.nvim",
+      config = function ()
+        require('neoscroll').setup({})
+      end
+    }
   }
 }

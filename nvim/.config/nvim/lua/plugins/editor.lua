@@ -9,14 +9,15 @@ return {
   },
   {'ntpeters/vim-better-whitespace'},
   {'rmagatti/alternate-toggler'},
-  {
-    'Wansmer/langmapper.nvim',
-    lazy = false,
-    priority = 1, -- High priority is needed if you will use `autoremap()`
-    config = function()
-      require('langmapper').setup({--[[ your config ]]})
-    end,
-  },
+  {"powerman/vim-plugin-ruscmd"},
+  -- {
+  --   'Wansmer/langmapper.nvim',
+  --   lazy = false,
+  --   priority = 1, -- High priority is needed if you will use `autoremap()`
+  --   config = function()
+  --     require('langmapper').setup({--[[ your config ]]})
+  --   end,
+  -- },
   {
     'windwp/nvim-autopairs',
     config = function()
@@ -37,12 +38,12 @@ return {
   {'tpope/vim-obsession'},
   {'junegunn/vim-easy-align'},
   {'junegunn/vim-after-object'},
-
-  -- {
-  --   "folke/todo-comments.nvim",
-  --   requires = "nvim-lua/plenary.nvim"
-  -- }
-  -- movement
+  {
+    "folke/todo-comments.nvim",
+    dependencies = {"nvim-lua/plenary.nvim"},
+    -- TODO
+    -- HACK
+  },
 
     -- movement
 
@@ -61,4 +62,3 @@ return {
       end
     }
   }
-}

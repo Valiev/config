@@ -46,7 +46,8 @@ local config = {
   ruler = true,
 
   -- what?
-  colorcolumn = "80"
+  colorcolumn = "80",
+  cmdheight = 0,
 }
 
 for key, value in pairs(config) do

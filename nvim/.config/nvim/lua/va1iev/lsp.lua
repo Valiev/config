@@ -50,7 +50,7 @@ lspconfig["lua_ls"].setup({
   }
 })
 
-  lspconfig.ruff.setup {
+lspconfig.ruff.setup {
   on_attach = on_attach,
   init_options = {
     settings = {

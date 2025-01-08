@@ -118,9 +118,10 @@ vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, {})
 -- si
 
 -- Happy Hopping
-nmap('<Leader>hw', ":HopWord<CR>")
-nmap('<Leader>hl', ":HopLine<CR>")
-nmap('<Leader>hv', ":HopVertical<CR>")
+-- j - jump
+nmap('<Leader>jw', ":HopWord<CR>")
+nmap('<Leader>jl', ":HopLineStart<CR>")
+nmap('<Leader>jv', ":HopVertical<CR>")
 
 -- Sessions
 -- vim.keymap.set("n", "<Leader>ss",

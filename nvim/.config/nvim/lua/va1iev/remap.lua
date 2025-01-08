@@ -79,10 +79,6 @@ vim.keymap.set("n", "<leader>ps", function()
 	telescope.grep_string({ search = vim.fn.input("Grep > ") });
 end)
 vim.keymap.set("n", "<leader>ff", telescope.find_files, {})
--- vim.keymap.set("n", "<leader>fl", telescope.find_files, {
---   cwd = vim.fn.expand('%:p')
--- })
-vim.keymap.set("n", "<leader><leader>", telescope.find_files, {})
 vim.keymap.set("n", "<leader>fg", telescope.live_grep, {})
 vim.keymap.set("n", "<leader>dd", telescope.diagnostics, {})
 vim.keymap.set("n", "<leader>fw", function()
@@ -90,9 +86,9 @@ vim.keymap.set("n", "<leader>fw", function()
 end, {})
 vim.keymap.set("n", "<leader>gg", telescope.git_files, {})
 vim.keymap.set("n", "<leader>gb", telescope.git_branches, {})
--- vim.keymap.set("n", "<leader>gc", telescope.git_commits, {})
 vim.keymap.set("n", "<leader>gs", telescope.git_status, {})
 vim.keymap.set("n", "<leader>bb", telescope.buffers, {})
+vim.keymap.set("n", "<leader><leader>", telescope.buffers, {})
 vim.keymap.set("n", '<C-">', telescope.buffers, {})
 
 -- AI

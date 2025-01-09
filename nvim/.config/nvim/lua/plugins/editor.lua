@@ -33,6 +33,15 @@ return {
   {
     'folke/todo-comments.nvim',
     dependencies = {'nvim-lua/plenary.nvim'},
+    opts = {
+      signs = true,
+      highlight = {
+        pattern = { [[.*<(KEYWORDS)\s*:]], [[.*(KEYWORDS)\s*]] },
+      },
+      search = {
+        pattern = [[\b(KEYWORDS):\b]]
+      },
+    },
     -- TODO
     -- HACK
   },

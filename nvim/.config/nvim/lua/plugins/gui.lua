@@ -9,7 +9,19 @@ return {
             packer = {},
             NVimTree = {},
           },
-          theme = vim.g.lualine_theme
+          theme = vim.g.lualine_theme,
+          options = { fmt = string.lower },
+          sections = {
+            lualine_a = {
+              {
+                'mode',
+                fmt = function(str)
+                  return str:sub(1,1)
+                end,
+               }
+            },
+            lualine_b = {'branch'}
+          }
         }
       })
     end

@@ -25,10 +25,10 @@ return {
       require('Comment').setup()
     end
   },
-  {'karb94/neoscroll.nvim'},
   {'mbbill/undotree'},
   {'tpope/vim-repeat'},
   {'tpope/vim-obsession'},
+  {'tpope/vim-speeddating'},
   {'junegunn/vim-easy-align'},
   {'junegunn/vim-after-object'},
   {
@@ -43,8 +43,6 @@ return {
         pattern = [[\b(KEYWORDS):\b]]
       },
     },
-    -- TODO
-    -- HACK
   },
 
   -- movement

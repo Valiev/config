@@ -19,7 +19,7 @@ local config = {
 
   wrap = false,
   -- this is a very very very long line, please disreguad it it was wrapped after 80 symboles
-  showbreak='‣',
+  showbreak='⩫',
   breakindent = true,
   linebreak = true,
   textwidth = 80,
@@ -31,22 +31,22 @@ local config = {
   hlsearch = true,
   incsearch = true,
   showmatch = true,
-
-  --
   clipboard = "unnamed",
 
   -- gui
   termguicolors = true,
 
-  -- margin
+  -- visual highlighting
+  colorcolumn = "80",
+
+  -- margin for scrolling
   scrolloff = 4,
 
   -- what?
   updatetime = 50,
   ruler = true,
 
-  -- what?
-  colorcolumn = "80",
+  -- hide cmd by default
   cmdheight = 0,
 }
 

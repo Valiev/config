@@ -13,7 +13,7 @@ local xmap = Func.xmap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 -- local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 -- quick exit from imput mode
 
@@ -29,15 +29,14 @@ imap("<C-j>", "<C-o>j", opts)
 imap("<C-k>", "<C-o>k", opts)
 
 -- Keep visual indent
--- TODO: fix it
 
 -- vmap("<", '<gv' )
 -- vmap(">", '>gv\"' )
 
 -- vmap("<leader>y", '"+y')
-nmap("<leader>y",  '"+yg_')
-nmap("<leader>yy",  '"+yy')
-xmap("<leader>y",  '"*y')
+-- nmap("<leader>y", '"+yg_')
+-- nmap("<leader>yy", '"+yy')
+-- xmap("<leader>y", '"*y')
 -- vnoremap  <leader>y  "+y
 -- `x` not change buffer
 nmap("x", "_x")
@@ -76,13 +75,13 @@ nmap("*", "#")
 vim.keymap.set("n", "<C-p>", telescope_ext.project.project, {})
 vim.keymap.set("n", "<leader>cd", telescope_ext.zoxide.list, {})
 vim.keymap.set("n", "<leader>ps", function()
-	telescope.grep_string({ search = vim.fn.input("Grep > ") });
+  telescope.grep_string({ search = vim.fn.input("Grep > ") });
 end)
 vim.keymap.set("n", "<leader>ff", telescope.find_files, {})
 vim.keymap.set("n", "<leader>fg", telescope.live_grep, {})
 vim.keymap.set("n", "<leader>dd", telescope.diagnostics, {})
 vim.keymap.set("n", "<leader>fw", function()
-  telescope.live_grep({default_text = vim.fn.expand("<cword>")})
+  telescope.live_grep({ default_text = vim.fn.expand("<cword>") })
 end, {})
 vim.keymap.set("n", "<leader>gg", telescope.git_files, {})
 vim.keymap.set("n", "<leader>gb", telescope.git_branches, {})
@@ -90,9 +89,6 @@ vim.keymap.set("n", "<leader>gs", telescope.git_status, {})
 vim.keymap.set("n", "<leader>bb", telescope.buffers, {})
 vim.keymap.set("n", "<leader><leader>", telescope.buffers, {})
 vim.keymap.set("n", '<C-">', telescope.buffers, {})
-
--- AI
-vim.keymap.set({ 'n', 'v' }, '<leader>aa', ':Gen<CR>')
 
 -- Git hunks
 nmap('<Leader>gj', ":Gitsigns next_hunk<CR>")
@@ -111,7 +107,7 @@ xmap('<Enter>', "<Plug>(EasyAlign)")
 vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, {})
 vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, {})
--- si
+
 
 -- Happy Hopping
 -- j - jump
@@ -119,21 +115,17 @@ nmap('<Leader>jw', ":HopWord<CR>")
 nmap('<Leader>jl', ":HopLineStart<CR>")
 nmap('<Leader>jv', ":HopVertical<CR>")
 
--- Sessions
--- vim.keymap.set("n", "<Leader>ss",
---   require("auto-session.session-lens").search_session, { noremap = true }
--- )
+nmap('<Leader>ss', ":StripWhitespace<CR>")
 
 -- Undo
-vim.keymap.set("n", "<leader>u" , vim.cmd.UndotreeToggle, {})
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, {})
 
 -- Toggler
 nmap('-', ":ToggleAlternate<CR>")
--- vim.keymap.set("n", "gj", ts_jump.next, {})
--- vim.keymap.set("n", "gk", ts_jump.prev, {})
--- vim.keymap.set("n", "gh", ts_jump.prev, {})
--- vim.keymap.set("n", "gj", ts_jump.test, {})
 
 -- icons
-vim.keymap.set("n", "<Leader>i", "<cmd>IconPickerNormal emoji symbols nerd_font alt_font<cr>", opts)
-vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<bufferscr>", opts)
+vim.keymap.set("n", "<Leader>i", "<cmd>IconPickerNormal emoji symbols nerd_font alt_font<CR>", opts)
+
+-- FIXME
+-- vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<CR>", opts)
+

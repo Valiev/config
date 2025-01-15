@@ -1,4 +1,5 @@
 return {
+  {'christoomey/vim-tmux-navigator'},
   {
     'kylechui/nvim-surround',
     config = function()

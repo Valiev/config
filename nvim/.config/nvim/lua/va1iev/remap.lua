@@ -92,7 +92,7 @@ vim.keymap.set("n", "<leader><leader>", telescope.buffers, {})
 vim.keymap.set("n", '<C-">', telescope.buffers, {})
 
 -- AI
-vim.keymap.set({ 'n', 'v'}, '<leader>aa', ':Gen<CR>')
+vim.keymap.set({ 'n', 'v' }, '<leader>aa', ':Gen<CR>')
 
 -- Git hunks
 nmap('<Leader>gj', ":Gitsigns next_hunk<CR>")

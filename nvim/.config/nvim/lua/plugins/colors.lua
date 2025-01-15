@@ -1,6 +1,5 @@
 -- FIXME: color depends on scheme
 return {
-  {'christoomey/vim-tmux-navigator'},
   {'nyoom-engineering/oxocarbon.nvim'},
   {'marko-cerovac/material.nvim'},
   {

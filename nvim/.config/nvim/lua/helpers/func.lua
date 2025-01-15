@@ -2,6 +2,7 @@ local Func = {}
 
 function Func.map(mode, lhs, rhs, opts)
     local options = { noremap = true }
+    opts = opts or {}
     if opts then
         options = vim.tbl_extend("force", options, opts)
     end

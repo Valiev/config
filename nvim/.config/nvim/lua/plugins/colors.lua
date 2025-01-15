@@ -15,6 +15,7 @@ return {
   {'savq/melange-nvim'},
   {'EdenEast/nightfox.nvim'},
   {'folke/tokyonight.nvim'},
+  {'Kimononono/Colorscheme-Previewer.nvim'},
   {
     'sheharyarn/werewolf.nvim',
     config = function()
@@ -32,7 +33,8 @@ return {
               vim.o.background = 'light'
               vim.g.solarized_termcolors = 256
               vim.g.lualine_theme = 'solarized_light'
-              vim.cmd.colorscheme('solarized')
+              vim.cmd.colorscheme('ayu')
+              -- vim.cmd.colorscheme('solarized')
             end
           end,
           -- Change the check interval (optional)

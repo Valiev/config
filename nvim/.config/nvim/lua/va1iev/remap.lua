@@ -27,7 +27,6 @@ imap("<C-h>", "<C-o>h", opts)
 imap("<C-l>", "<C-o>a", opts)
 imap("<C-j>", "<C-o>j", opts)
 imap("<C-k>", "<C-o>k", opts)
-
 -- Keep visual indent
 
 -- vmap("<", '<gv' )
@@ -54,7 +53,7 @@ nmap("<Leader>wq", ":wq<CR>")
 nmap("<Leader>bd", ":bd<CR>")
 nmap("<Leader>qq", ":q<CR>")
 nmap("<Leader>hh", ":set cursorline!<CR>")
-nmap("<Leader><Tab>", ":NvimTreeToggle<CR>")
+-- nmap("<Leader><Tab>", ":NvimTreeToggle<CR>")
 nmap("<Leader>tt", ":Trouble diagnostics toggle filter.buf=0<CR>")
 nmap("<Leader>ta", ":Trouble diagnostics toggle<CR>")
 vim.keymap.set("n", "<leader>cf", function()
@@ -77,7 +76,9 @@ vim.keymap.set("n", "<leader>cd", telescope_ext.zoxide.list, {})
 vim.keymap.set("n", "<leader>ps", function()
   telescope.grep_string({ search = vim.fn.input("Grep > ") });
 end)
+vim.keymap.set("n", "<leader><Tab>", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
 vim.keymap.set("n", "<leader>ff", telescope.find_files, {})
+vim.keymap.set("n", "<leader>jj", telescope.jumplist, {})
 vim.keymap.set("n", "<leader>fg", telescope.live_grep, {})
 vim.keymap.set("n", "<leader>dd", telescope.diagnostics, {})
 vim.keymap.set("n", "<leader>fw", function()
@@ -115,7 +116,7 @@ nmap('<Leader>jw', ":HopWord<CR>")
 nmap('<Leader>jl', ":HopLineStart<CR>")
 nmap('<Leader>jv', ":HopVertical<CR>")
 
-nmap('<Leader>ss', ":StripWhitespace<CR>")
+-- nmap('<Leader>ss', ":StripWhitespace<CR>")
 
 -- Undo
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, {})
@@ -126,6 +127,4 @@ nmap('-', ":ToggleAlternate<CR>")
 -- icons
 vim.keymap.set("n", "<Leader>i", "<cmd>IconPickerNormal emoji symbols nerd_font alt_font<CR>", opts)
 
--- FIXME
--- vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<CR>", opts)
 

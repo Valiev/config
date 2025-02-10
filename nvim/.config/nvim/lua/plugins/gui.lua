@@ -9,18 +9,20 @@ return {
             packer = {},
             NVimTree = {},
           },
-          theme = vim.g.lualine_theme,
+          -- theme = vim.g.lualine_theme,
           options = { fmt = string.lower },
           sections = {
             lualine_a = {
               {
-                'mode',
-                fmt = function(str)
-                  return str:sub(1,1)
-                end,
-               }
+                'diagnostics',
+                sources = { 'nvim_diagnostic', 'nvim_lsp' },
+                sections = { 'error', 'warn', 'info', 'hint' },
+                symbols = {error = 'E', warn = 'W', info = 'I', hint = 'H'},
+                      colored = true,           -- Displays diagnostics status in color if set to true.
+      update_in_insert = false, -- Update diagnostics in insert mode.
+      always_visible = false,   -- Show diagnostics even if there are none.
+              },
             },
-            lualine_b = {'branch'}
           }
         }
       })

@@ -1,13 +1,23 @@
 return {
-  {'christoomey/vim-tmux-navigator'},
   {
-    'kylechui/nvim-surround',
+    'echasnovski/mini.nvim', version = '*',
     config = function()
-      require('nvim-surround').setup({})
-      -- todo: check integration with
-      -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+      require('mini.ai').setup();
+      require('mini.indentscope').setup();
+      require('mini.cursorword').setup();
+      require('mini.surround').setup()
+      -- require('mini.animate').setup();
     end
   },
+  {'christoomey/vim-tmux-navigator'},
+  -- {
+  --   'kylechui/nvim-surround',
+  --   config = function()
+  --     require('nvim-surround').setup({})
+  --     -- todo: check integration with
+  --     -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  --   end
+  -- },
   {'ntpeters/vim-better-whitespace'},
   {'rmagatti/alternate-toggler'},
   {'powerman/vim-plugin-ruscmd'},

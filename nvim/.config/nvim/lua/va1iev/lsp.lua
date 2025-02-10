@@ -55,7 +55,9 @@ lspconfig.ruff.setup {
   init_options = {
     settings = {
       -- Any extra CLI arguments for `ruff` go here.
-      args = {},
+      args = {
+        '--ignore E302', -- E302: missing blank line
+      },
     }
   }
 }

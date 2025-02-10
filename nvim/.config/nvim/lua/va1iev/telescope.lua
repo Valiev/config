@@ -1,6 +1,9 @@
 local builtin = require("telescope.builtin")
 local actions = require('telescope.actions')
+
 local telescope = require('telescope')
+local fb_actions = require('telescope').extensions.file_browser.actions
+
 -- local trouble = require("trouble.providers.telescope")
 -- telescope.load_extension('file_browser')
 
@@ -19,13 +22,16 @@ telescope.setup{
   },
   pickers = {
     find_files = {
-      theme = "dropdown"
+      theme = "ivy"
     },
     live_grep = {
       theme = "ivy"
     },
     git_files = {
-      theme = "dropdown"
+      theme = "ivy"
+    },
+    file_browser = {
+      theme = "ivy"
     }
   },
   extensions = {
@@ -36,6 +42,15 @@ telescope.setup{
       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
                                        -- the default case_mode is "smart_case"
     },
+    file_browser = {
+      theme = "dropdown",
+      mappings = {
+        ["i"] = {
+          ["<C-o>"] = fb_actions.goto_parent_dir,
+          ["<C-g>"] = fb_actions.goto_home_dir,
+        }
+      }
+    }
     -- project = {
     --   base_dirs = {
     --     "~/dev/",
@@ -46,6 +61,8 @@ telescope.setup{
     -- }
   }
 }
+
+telescope.load_extension("file_browser")
 
 -- telescope.load_extension('fzf')
 -- telescope.load_extension('project')

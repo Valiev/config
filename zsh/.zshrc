@@ -107,3 +107,6 @@ export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 [ -f ~/.tars/shell/.tars.zsh ] && source ~/.tars/shell/.tars.zsh
 
 # export PATH="/opt/homebrew/opt/pyside@2/bin:$PATH"
+
+# The next line enables shell completion for TARS utility
+[ -f ~/.tars/shell/rc_ext.zsh ] && source ~/.tars/shell/rc_ext.zsh

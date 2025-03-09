@@ -6,7 +6,7 @@ return {
     config = function()
       require('nvim-treesitter.configs').setup {
         -- A list of parser names, or "all"
-        ensure_installed = { "c", "lua", "rust", "python", "hcl", "json"},
+        ensure_installed = { "c", "lua", "rust", "python", "json"},
         -- ensure_installed = "maintained",
         enable = true,
         line_number = true,
@@ -63,7 +63,7 @@ return {
  {'HiPhish/nvim-ts-rainbow2'},
 
  -- LSP
- { "jose-elias-alvarez/null-ls.nvim" },
+ { "nvimtools/none-ls.nvim" },
  {
       'hrsh7th/nvim-cmp',
       config = function ()

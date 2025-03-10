@@ -4,8 +4,8 @@ local actions = require('telescope.actions')
 local telescope = require('telescope')
 local fb_actions = require('telescope').extensions.file_browser.actions
 
--- local trouble = require("trouble.providers.telescope")
--- telescope.load_extension('file_browser')
+local trouble = require("trouble.providers.telescope")
+telescope.load_extension('file_browser')
 
 
 telescope.setup{

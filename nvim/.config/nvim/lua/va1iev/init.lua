@@ -1,5 +1,5 @@
 require("va1iev.telescope")
--- require("va1iev.tmlescope_emoji")
+-- require("va1iev.telescope_emoji")
 require("va1iev.null_ls")
 require("va1iev.lsp")
 require("va1iev.remap")

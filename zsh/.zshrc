@@ -39,7 +39,6 @@ export PATH="/opt/homebrew/opt/kubernetes-cli@1.22/bin:$PATH"
 alias - -='cd -'
 alias -g VIM='| xargs nvim'
 alias -g JQ='| jq'
-alias -g FLUX='-n flux logs deploy/flux -c flux'
 
 AUTO_NOTIFY_IGNORE+=("git")
 zstyle ":completion:*:commands" rehash 1
@@ -65,20 +64,6 @@ bindkey '^[j' fzf-history-widget
 COMPLETION_WAITING_DOTS="true"
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help";
 
-# function fasd_cd_fzf() {
-#   local cd_paths=$(echo "$*" | tr '-' ' ' | tr '_' ' ' | xargs fasd -ldR)
-#   local cd_path=$(echo "$cd_paths" | fzf --reverse -0 -1 -q "$*")
-#   if [ -d "$cd_path" ]; then
-#     cd "$cd_path"
-#   else
-#     cd $(fd -t=d . ~ -E /Library/ -E /Documents/ | fzf --reverse -0 -1 -q "$*")
-#   fi
-# }
-
-# alias j=fasd_cd_fzf
-
-# Customize to your needs...
-# brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
